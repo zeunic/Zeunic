@@ -9,7 +9,12 @@ html {
 #container {
 	width: 960px;
 	margin: 0 auto;
-	overflow: hidden;
+}
+
+#content {
+	width: 660px;
+	height: 500px;
+	margin-left: 301px;
 }
 
 strong {
@@ -67,12 +72,14 @@ header small strong {
 #logo {
 	display: block;
 	margin-top: 140px;
+	width: 230px;
 }
 
 /* -----------------NAVIGATION------------------ */
 
 nav {
 	width: 230px;
+	float: left;
 }
 
 nav ul {
@@ -116,6 +123,16 @@ nav p {
 	font: bold 17px/60px "Droid Sans", sans-serif;
 	color: #2a4052;
 	float: right;
+}
+
+/* -----------------VERTICAL DIVIDER------------------ */
+
+#vertrule {
+	margin-left: 40px;
+	margin-top: 35px;
+	width: 6px;
+	height: 305px;
+	float: left;
 }
 
 /* -----------------FOOTER------------------ */

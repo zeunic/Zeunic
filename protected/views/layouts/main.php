@@ -13,12 +13,11 @@
 	</header>
 	
 	<div id="container">
-	
-		<a id="logo" href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="Zeunic" /> 
-		</a>
 		
 		<nav>
+			<a id="logo" href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">
+				<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="Zeunic" /> 
+			</a>
 			<ul>
 				<li id="nav_about"><a href="#">About Us</a></li>
 				<li id="nav_search"><a href="#">Search</a></li>
@@ -28,6 +27,10 @@
 			</ul>
 			<p>Our Work</p>
 		</nav>
+		
+		<div id="vertrule">
+			<img src="images/vert_rule.png" alt="Vertical Divider" />
+		</div>
 	
 		<?php echo $content; ?>
 	
