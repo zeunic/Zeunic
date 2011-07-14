@@ -15,5 +15,16 @@
 
 	<?php echo $content; ?>
 	
+	<footer>
+		<aside>
+			<img src="images/icons/@zeunic.png" alt="@Zeunic" /><br />
+			<q></q>
+			<cite>7 minutes ago via Twitter for Android</cite>
+		</aside>
+	</footer>
+	
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.6.2.min.js"></script>
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/tweet.js"></script>
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/main.js"></script>
 </body>
 </html>

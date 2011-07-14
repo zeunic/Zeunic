@@ -1,7 +1,8 @@
 /* -----------------GENERAL------------------ */
 
 html {
-	background-color: #cbdcea;
+	background: 200px -moz-linear-gradient(top, rgba(230,240,248,1) 0%, rgba(203,220,234,1) 100%) #cbdcea;
+	background: 200px -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgba(240,234,249,1)), color-stop(100%,rgba(203,220,234,1))) #cbdcea;
 	font-family: "Droid Sans", sans-serif;
 }
 
@@ -24,6 +25,8 @@ header {
 	padding-top: 20px;
 	background: url(../images/bg_header.png) repeat-x;
 }
+
+/* -----------------QUOTE------------------ */
 
 header q {
 	font: 23px/1.1 "Droid Sans";
@@ -51,4 +54,40 @@ header small {
 
 header small strong {
 	font-size: 15px;
+}
+
+/* -----------------FOOTER------------------ */
+
+footer {
+	height: 160px;
+	background: url(../images/bg_footer.png) repeat-x;
+}
+
+footer aside {
+	width: 960px;
+	margin: 0 auto;
+	text-align: right;
+	padding-top: 31px;
+	clear: both;
+}
+
+footer aside q {
+	color: #909498;
+	font: 12px/1.4 "Droid Sans", sans-serif;
+	width: 375px;
+	display: block;
+	float: right;
+	margin: 5px 0;
+}
+
+footer aside cite {
+	color: #505355;
+	font: bold 10px "Droid Sans", sans-serif;
+	display: block;
+	float: right;
+	clear: right;
+}
+
+footer cite a {
+	color: #505355;
 }
