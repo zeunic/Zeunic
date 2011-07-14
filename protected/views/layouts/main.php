@@ -13,24 +13,6 @@
 	</header>
 	
 	<div id="container">
-		
-		<nav>
-			<a id="logo" href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">
-				<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo.png" alt="Zeunic" /> 
-			</a>
-			<ul>
-				<li id="nav_about"><a href="#">About Us</a></li>
-				<li id="nav_search"><a href="#">Search</a></li>
-				<li id="nav_contact"><a href="#">Contact</a></li>
-				<li id="nav_login"><a href="#">Login</a></li>
-				<li id="nav_work" class="active"><a href="#">Our Work</a></li>
-			</ul>
-			<p>Our Work</p>
-		</nav>
-		
-		<div id="vertrule">
-			<img src="images/vert_rule.png" alt="Vertical Divider" />
-		</div>
 	
 		<?php echo $content; ?>
 	
@@ -38,7 +20,7 @@
 	
 	<footer>
 		<aside>
-			<img src="images/icons/@zeunic.png" alt="@Zeunic" /><br />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/@zeunic.png" alt="@Zeunic" /><br />
 			<q></q>
 			<cite></cite>
 		</aside>
