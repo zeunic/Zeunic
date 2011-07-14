@@ -6,6 +6,12 @@ html {
 	font-family: "Droid Sans", sans-serif;
 }
 
+#container {
+	width: 960px;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
 strong {
 	font-weight: bold;
 }
@@ -54,6 +60,62 @@ header small {
 
 header small strong {
 	font-size: 15px;
+}
+
+/* -----------------LOGO------------------ */
+
+#logo {
+	display: block;
+	margin-top: 140px;
+}
+
+/* -----------------NAVIGATION------------------ */
+
+nav {
+	width: 230px;
+}
+
+nav ul {
+	margin-left: -5px;
+}
+
+nav ul li {
+	background: url(../images/icons/nav.png) no-repeat;
+	width: 30px;
+	height: 43px;
+	text-indent: -9999px;
+	float: left;
+}
+
+nav ul li:hover {
+	background: url(../images/icons/nav_active.png) no-repeat;
+	cursor: pointer;
+}
+
+#nav_search {
+	background-position: -30px 0;
+}
+
+#nav_contact {
+	background-position: -60px 0;
+}
+
+#nav_login {
+	background-position: -90px 0;
+}
+
+#nav_work {
+	background-position: -120px 0;
+}
+
+nav .active {
+	background: url(../images/icons/nav_active.png) no-repeat;
+}
+
+nav p {
+	font: bold 17px/60px "Droid Sans", sans-serif;
+	color: #2a4052;
+	float: right;
 }
 
 /* -----------------FOOTER------------------ */
