@@ -44,9 +44,11 @@ small {
 /* -----------------HEADER------------------ */
 
 header {
-	height: 104px;
+	height: 100px;
 	padding-top: 20px;
-	background: url(../images/bg_header.png) repeat-x;
+	background-image: url(../images/swirl_top.png), url(../images/bg_header.png);
+	background-position: bottom center, bottom center;
+	background-repeat: no-repeat, repeat-x;
 }
 
 /* -----------------QUOTE------------------ */
@@ -199,6 +201,7 @@ form#contact input:focus, form#contact textarea:focus {
 form#contact textarea {
 	width: 530px;
 	height: 30px;
+	resize: vertical;
 	padding: 10px 10px 0 10px;
 	margin-top: 5px;
 	line-height: 30px;
@@ -241,7 +244,9 @@ form#contact p.error img {
 
 footer {
 	height: 160px;
-	background: url(../images/bg_footer.png) repeat-x;
+	background-image: url(../images/swirl_btm.png), url(../images/bg_footer.png);
+	background-position: bottom center, bottom center;
+	background-repeat: no-repeat, repeat-x;
 }
 
 footer aside {
