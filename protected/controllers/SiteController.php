@@ -59,10 +59,20 @@ class SiteController extends Controller
 		if(isset($_POST['ContactForm'])){
 		    $model->attributes=$_POST['ContactForm'];
 		    if($model->validate()){
-            	//MAIL Form
+		    	$attributes = $model->attributes;
+		    	$message = $attributes['name'].'\n\n'.$attributes['body'];
+            	$to      = 'joe@zeunic.com';
+				$subject = 'Zeunic Contact Form';
+				$headers = 'From: web@zeunic.com' . "\r\n" .
+				    'Reply-To: '.$attributes['email'].''."\r\n" .
+				    'X-Mailer: PHP/' . phpversion();
+				
+				mail($to, $subject, $message, $headers);
+				$this->render('contactSuccess');
             }
+		} else {
+			$this->render('contact',array('model'=>$model));
 		}
-		$this->render('contact',array('model'=>$model));
 	}
 	
 	public function actionPortfolio()
