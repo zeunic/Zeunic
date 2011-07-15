@@ -24,8 +24,9 @@ html {
 }
 
 #main {
-	width: 660px;
-	float: right;
+	width: 635px;
+	padding: 0 0 0 40px;
+	float: left;
 }
 
 strong {
@@ -168,7 +169,6 @@ form#contact {
 	height: 245px;
 	background: url(../images/bg_contact.jpg) no-repeat;
 	box-shadow: 0 0 6px #888;
-	float: right;
 	margin-top: 20px;
 	padding: 20px;
 }
@@ -189,10 +189,12 @@ form#contact input {
 	padding: 0 10px;
 	background-color: #c0d2e0;
 	border: none;
+	border-bottom: 1px dashed #6c8598;
 }
 
 form#contact input:focus, form#contact textarea:focus {
 	box-shadow: 0 0 10px #1b598d;
+	border-bottom: 1px dashed #0eb2bd;
 }
 
 form#contact textarea {
@@ -203,6 +205,7 @@ form#contact textarea {
 	line-height: 30px;
 	background-color: #c0d2e0;
 	border: none;
+	border-bottom: 1px dashed #6c8598;
 }
 
 form#contact .error {
@@ -215,6 +218,7 @@ form#contact #submit {
 	box-shadow: 0 0 6px #888;
 	padding: 0;
 	float: right;
+	border: none;
 }
 
 form#contact p.error {
