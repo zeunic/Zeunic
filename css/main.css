@@ -166,11 +166,10 @@ nav h1 {
 
 form#contact {
 	width: 550px;
-	height: 245px;
-	background: url(../images/bg_contact.jpg) no-repeat;
-	box-shadow: 0 0 6px #888;
+	background: #d8e5ef top center url(../images/bg_contact.jpg) no-repeat;
+	box-shadow: 0 0 9px rgba(0,0,0,.2);
 	margin-top: 20px;
-	padding: 20px;
+	padding: 20px 20px 50px 20px;
 }
 
 form#contact h2 {
