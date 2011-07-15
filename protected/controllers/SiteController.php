@@ -29,31 +29,45 @@ class SiteController extends Controller
 	{
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
+		$this->pageTitle = 'Zeunic';
 		$this->render('index');
 	}
 	
 	public function actionAbout()
 	{
+		$this->pageTitle = 'Zeunic - About Us';
 		$this->render('about');
 	}
 	
 	public function actionSearch()
 	{
+		$this->pageTitle = 'Zeunic - Search';
 		$this->render('search');
 	}
 	
 	public function actionLogin()
 	{
+		$this->pageTitle = 'Zeunic - Client Login';
 		$this->render('login');
 	}
 	
 	public function actionContact()
 	{
-		$this->render('contact');
+		$this->pageTitle = 'Zeunic - Contact Us';
+		//Handle for submission
+		$model=new ContactForm;
+		if(isset($_POST['ContactForm'])){
+		    $model->attributes=$_POST['ContactForm'];
+		    if($model->validate()){
+            	//MAIL Form
+            }
+		}
+		$this->render('contact',array('model'=>$model));
 	}
 	
 	public function actionPortfolio()
 	{
+		$this->pageTitle = 'Zeunic - Our Work';
 		$this->render('portfolio');
 	}
 

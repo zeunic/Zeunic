@@ -14,7 +14,7 @@
 		}
 	?>
 	</ul>
-	<p><? if($page != -1) echo $pages[$page][1]; ?></p>
+	<h1><? if($page != -1) echo $pages[$page][1]; else echo 'Welcome'; ?></h1>
 </nav>
 		
 <div id="vertrule">

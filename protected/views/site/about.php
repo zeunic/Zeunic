@@ -1,2 +1,2 @@
-<?php $this->beginWidget('application.components.NavWidget', array('page'=>0)); ?>
+<?php $this->beginWidget('application.components.NavWidget', array('page'=>1)); ?>
 <?php $this->endWidget(); ?>
