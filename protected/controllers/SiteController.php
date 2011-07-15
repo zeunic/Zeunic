@@ -69,7 +69,9 @@ class SiteController extends Controller
 				
 				mail($to, $subject, $message, $headers);
 				$this->render('contactSuccess');
-            }
+            } else {
+				$this->render('contact',array('model'=>$model));
+			}
 		} else {
 			$this->render('contact',array('model'=>$model));
 		}
