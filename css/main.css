@@ -199,7 +199,7 @@ form#contact input:focus, form#contact textarea:focus {
 form#contact textarea {
 	width: 530px;
 	height: 30px;
-	padding: 0 10px;
+	padding: 10px 10px 0 10px;
 	margin-top: 5px;
 	line-height: 30px;
 	background-color: #c0d2e0;
