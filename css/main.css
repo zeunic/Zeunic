@@ -1,6 +1,11 @@
 /* -----------------GENERAL------------------ */
 
 html {
+	font-family: "Droid Sans", sans-serif;
+	background-color: #171c20;
+}
+
+body {
 	background: #e6f0f8;
 	background: -moz-linear-gradient(top, #e6f0f8 0%, #cbdcea 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6f0f8), color-stop(100%,#cbdcea));
@@ -9,7 +14,7 @@ html {
 	background: -ms-linear-gradient(top, #e6f0f8 0%,#cbdcea 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0f8', endColorstr='#cbdcea',GradientType=0 );
 	background: linear-gradient(top, #e6f0f8 0%,#cbdcea 100%);
-	font-family: "Droid Sans", sans-serif;
+	font: 62.5%/2em "Droid Sans", Helvetica, sans-serif;
 }
 
 #container {
@@ -239,11 +244,38 @@ form#contact p.error img {
 }
 
 
+/* -----------------ABOUTUS------------------ */
+
+.about-us {
+	margin: 20px 0 0 0;
+}
+
+.about-us h1 {
+	font-family: Garamond, sans-serif;
+	text-transform: lowercase;
+	float: right;
+	font-size: 2.4em;
+	line-height: 1.2em;
+	width: 270px;
+	margin: 10px 20px 20px 30px;
+	font-weight: bold;
+}
+
+.about-us h1 em {
+	font-weight: bold;
+}
+
+.about-us p {
+	margin: 10px 0;
+	font-size: 1.3em;
+}
+
 
 /* -----------------FOOTER------------------ */
 
 footer {
-	height: 160px;
+	overflow: hidden;
+	min-height: 160px;
 	background-image: url(../images/swirl_btm.png), url(../images/bg_footer.png);
 	background-position: bottom center, bottom center;
 	background-repeat: no-repeat, repeat-x;
@@ -253,7 +285,7 @@ footer aside {
 	width: 960px;
 	margin: 0 auto;
 	text-align: right;
-	padding-top: 31px;
+	padding-top: 51px;
 	clear: both;
 }
 
