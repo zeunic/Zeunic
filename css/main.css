@@ -55,7 +55,7 @@ small {
 header {
 	height: 100px;
 	padding-top: 20px;
-	background-image: url(../images/swirl_top.png), url(../images/bg_header.png);
+	background-image: url(../images/swirl_top.jpg), url(../images/bg_header.png);
 	background-position: bottom center, bottom center;
 	background-repeat: no-repeat, repeat-x;
 }
@@ -291,7 +291,7 @@ footer {
 	overflow: hidden;
 	min-height: 160px;
 	min-width: 960px;
-	background-image: url(../images/swirl_btm.png), url(../images/bg_footer.png);
+	background-image: url(../images/swirl_btm.jpg), url(../images/bg_footer.png);
 	background-position: bottom center, bottom center;
 	background-repeat: no-repeat, repeat-x;
 }
