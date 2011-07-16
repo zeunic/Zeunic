@@ -189,7 +189,7 @@ form#contact {
 	width: 550px;
 	background: #d8e5ef top center url(../images/bg_contact.jpg) no-repeat;
 	box-shadow: 0 0 9px rgba(0,0,0,.2);
-	margin-top: 20px;
+	margin: 20px 0 20px 0;
 	padding: 20px 20px 50px 20px;
 }
 
