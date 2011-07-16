@@ -94,6 +94,10 @@ header small strong {
 	width: 230px;
 }
 
+#logo img:hover {
+	background-image: url(../images/logo_hover.png);
+}
+
 /* -----------------NAVIGATION------------------ */
 
 nav {
