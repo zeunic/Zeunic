@@ -10,7 +10,7 @@
 				echo 'class="active"';
 			}
 			$base = Yii::app()->request->baseUrl;
-			echo '><a href="'.$base.'/index.php/site/'.$value[0].'">'.$value[1].'</a></li>';
+			echo '><a href="'.$base.'/index.php/site/'.$value[0].'" title="'.$value[1].'">'.$value[1].'</a></li>';
 		}
 	?>
 	</ul>

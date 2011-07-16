@@ -7,7 +7,7 @@ class NavWidget extends CWidget
     {
         // this method is called by CController::beginWidget()
         
-        $this->pages = array(array('portfolio', 'Our Work'), array('about', 'About Us'), array('contact', 'Contact'), array('login', 'Login'), array('search', 'Search'));
+        $this->pages = array(array('portfolio', 'our work'), array('about', 'about us'), array('contact', 'contact'), array('login', 'login'), array('search', 'search'));
     }
  
     public function run()

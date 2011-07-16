@@ -29,9 +29,9 @@ body {
 }
 
 #main {
-	width: 635px;
-	padding: 0 0 0 40px;
+	margin: 0 0 0 20px;
 	float: left;
+	width: 590px;
 }
 
 strong {
@@ -97,12 +97,16 @@ header small strong {
 /* -----------------NAVIGATION------------------ */
 
 nav {
-	width: 230px;
+	width: 235px;
 	float: left;
+	margin: 0 0 0 35px;
 }
 
 nav ul {
-	margin-left: -5px;
+	margin: 0 0 0 -5px;
+	width: 150px;
+	overflow: hidden;
+	float: left;
 }
 
 nav li a {
@@ -156,13 +160,15 @@ nav .active {
 nav h1 {
 	font: bold 17px/60px "Droid Sans", sans-serif;
 	color: #2a4052;
-	float: right;
+	float: left;
+	width: 85px;
+	text-align: right;
 }
 
 /* -----------------VERTICAL DIVIDER------------------ */
 
 #vertrule {
-	margin-left: 40px;
+	margin-left: 25px;
 	margin-top: 15px;
 	width: 6px;
 	height: 305px;
@@ -282,11 +288,12 @@ footer {
 }
 
 footer aside {
-	width: 960px;
+	width: 870px;
 	margin: 0 auto;
 	text-align: right;
-	padding-top: 51px;
+	padding: 51px 0 0 0;
 	clear: both;
+	overflow: hidden;
 }
 
 footer aside q {
