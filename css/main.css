@@ -6,6 +6,10 @@ html {
 }
 
 body {
+	font: 62.5%/2em "Droid Sans", Helvetica, sans-serif;
+}
+
+#container {
 	background: #e6f0f8;
 	background: -moz-linear-gradient(top, #e6f0f8 0%, #cbdcea 100%);
 	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6f0f8), color-stop(100%,#cbdcea));
@@ -14,12 +18,12 @@ body {
 	background: -ms-linear-gradient(top, #e6f0f8 0%,#cbdcea 100%);
 	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0f8', endColorstr='#cbdcea',GradientType=0 );
 	background: linear-gradient(top, #e6f0f8 0%,#cbdcea 100%);
-	font: 62.5%/2em "Droid Sans", Helvetica, sans-serif;
+	min-width: 960px;
 }
 
-#container {
+.container {
 	width: 960px;
-	margin: 20px auto;
+	margin: 0 auto;
 }
 
 #content {
@@ -286,6 +290,7 @@ form#contact p.error img {
 footer {
 	overflow: hidden;
 	min-height: 160px;
+	min-width: 960px;
 	background-image: url(../images/swirl_btm.png), url(../images/bg_footer.png);
 	background-position: bottom center, bottom center;
 	background-repeat: no-repeat, repeat-x;
