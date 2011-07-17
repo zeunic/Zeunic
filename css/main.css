@@ -134,7 +134,7 @@ nav ul li {
 }
 
 nav ul li:hover {
-	background: url(../images/icons/nav_active.png) no-repeat;
+	background: url(../images/icons/nav_hover.png) no-repeat;
 	cursor: pointer;
 }
 
@@ -142,7 +142,7 @@ nav ul li:hover {
 	background-position: 0 0;
 }
 
-#search {
+#blog {
 	background-position: -30px 0;
 }
 

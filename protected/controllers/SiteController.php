@@ -39,10 +39,10 @@ class SiteController extends Controller
 		$this->render('about');
 	}
 	
-	public function actionSearch()
+	public function actionBlog()
 	{
 		$this->pageTitle = 'Zeunic - Search';
-		$this->render('search');
+		$this->render('blog');
 	}
 	
 	public function actionLogin()
