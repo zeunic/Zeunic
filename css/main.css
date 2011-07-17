@@ -10,14 +10,16 @@ body {
 }
 
 #container {
-	background: #e6f0f8;
-	background: -moz-linear-gradient(top, #e6f0f8 0%, #cbdcea 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#e6f0f8), color-stop(100%,#cbdcea));
-	background: -webkit-linear-gradient(top, #e6f0f8 0%,#cbdcea 100%);
-	background: -o-linear-gradient(top, #e6f0f8 0%,#cbdcea 100%);
-	background: -ms-linear-gradient(top, #e6f0f8 0%,#cbdcea 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#e6f0f8', endColorstr='#cbdcea',GradientType=0 );
-	background: linear-gradient(top, #e6f0f8 0%,#cbdcea 100%);
+	border-bottom: 1px solid black;
+	border-top: 1px solid black;
+	background: #dce8f2;
+	background: -moz-linear-gradient(top, #dce8f2 0%, #9ab0c2 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dce8f2), color-stop(100%,#9ab0c2));
+	background: -webkit-linear-gradient(top, #dce8f2 0%,#9ab0c2 100%);
+	background: -o-linear-gradient(top, #dce8f2 0%,#9ab0c2 100%);
+	background: -ms-linear-gradient(top, #dce8f2 0%,#9ab0c2 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dce8f2', endColorstr='#9ab0c2',GradientType=0 );
+	background: linear-gradient(top, #dce8f2 0%,#9ab0c2 100%);
 	min-width: 960px;
 }
 
@@ -53,6 +55,7 @@ small {
 /* -----------------HEADER------------------ */
 
 header {
+	box-shadow: inset 0px -40px 40px -40px #000000;
 	height: 100px;
 	padding-top: 20px;
 	background-image: url(../images/swirl_top.png), url(../images/bg_header.png);
@@ -288,10 +291,11 @@ form#contact p.error img {
 /* -----------------FOOTER------------------ */
 
 footer {
+	box-shadow: inset 0px 20px 20px -15px #0d0d0d;
 	overflow: hidden;
 	min-height: 160px;
 	min-width: 960px;
-	background-image: url(../images/swirl_btm.png), url(../images/bg_footer.png);
+	background-image: url(../images/swirl_btm.png), url(../images/bg_foot2er.png);
 	background-position: top center, top center;
 	background-repeat: no-repeat, repeat-x;
 }
