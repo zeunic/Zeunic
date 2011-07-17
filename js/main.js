@@ -10,7 +10,9 @@ $(function(){
 	    // More extra space:
 	    extraSpace : 20,
 	    limit: 999999999
-	});
+	}).bind('click', function(){
+		$(this).trigger('keyup');
+	});;
 	
 	$('#ContactForm_name').bind('blur', function(){
 		var name = $(this).val();
