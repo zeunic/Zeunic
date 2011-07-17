@@ -2,7 +2,7 @@
 
 html {
 	font-family: "Droid Sans", sans-serif;
-	background-color: #171c20;
+	background-color: #171f24;
 }
 
 body {
@@ -12,14 +12,14 @@ body {
 #container {
 	border-bottom: 1px solid black;
 	border-top: 1px solid black;
-	background: #dce8f2;
-	background: -moz-linear-gradient(top, #dce8f2 0%, #9ab0c2 100%);
-	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#dce8f2), color-stop(100%,#9ab0c2));
-	background: -webkit-linear-gradient(top, #dce8f2 0%,#9ab0c2 100%);
-	background: -o-linear-gradient(top, #dce8f2 0%,#9ab0c2 100%);
-	background: -ms-linear-gradient(top, #dce8f2 0%,#9ab0c2 100%);
-	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#dce8f2', endColorstr='#9ab0c2',GradientType=0 );
-	background: linear-gradient(top, #dce8f2 0%,#9ab0c2 100%);
+	background: #eaeaea;
+	background: -moz-linear-gradient(top, #eaeaea 0%, #8a9cac 100%);
+	background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#eaeaea), color-stop(100%,#8a9cac));
+	background: -webkit-linear-gradient(top, #eaeaea 0%,#8a9cac 100%);
+	background: -o-linear-gradient(top, #eaeaea 0%,#8a9cac 100%);
+	background: -ms-linear-gradient(top, #eaeaea 0%,#8a9cac 100%);
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#eaeaea', endColorstr='#8a9cac',GradientType=0 );
+	background: linear-gradient(top, #eaeaea 0%,#8a9cac 100%);
 	min-width: 960px;
 }
 
@@ -294,7 +294,7 @@ footer {
 	overflow: hidden;
 	min-height: 160px;
 	min-width: 960px;
-	background-image: url(../images/swirl_btm.png), url(../images/bg_foot2er.png);
+	background-image: url(../images/swirl_btm.png), url(../images/bg_footer.png);
 	background-position: top center, top center;
 	background-repeat: no-repeat, repeat-x;
 }
