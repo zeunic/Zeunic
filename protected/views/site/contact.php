@@ -6,7 +6,6 @@
     'id'=>'contact',
     'enableAjaxValidation'=>true,
     'enableClientValidation'=>true,
-    'focus'=>array($model,'name'),
 )); ?>
 		<?php 
 		if(count($model->getErrors())){
