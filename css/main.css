@@ -210,6 +210,7 @@ form#contact input {
 	background-color: #c0d2e0;
 	border: none;
 	border-bottom: 1px dashed #6c8598;
+	font-weight: normal;
 }
 
 form#contact input:focus, form#contact textarea:focus {
@@ -220,13 +221,14 @@ form#contact input:focus, form#contact textarea:focus {
 form#contact textarea {
 	width: 530px;
 	height: 30px;
-	resize: vertical;
+	display: block;
 	padding: 10px 10px 0 10px;
 	margin-top: 5px;
-	line-height: 30px;
+	line-height: 20px;
 	background-color: #c0d2e0;
 	border: none;
 	border-bottom: 1px dashed #6c8598;
+	font-weight: normal;
 }
 
 form#contact .error {

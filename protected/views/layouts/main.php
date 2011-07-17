@@ -27,7 +27,8 @@
 	</footer>
 	
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.6.2.min.js"></script>
-	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/tweet.js"></script>
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tweet.js"></script>
+	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autoresize.js"></script>
 	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/main.js"></script>
 </body>
 </html>
