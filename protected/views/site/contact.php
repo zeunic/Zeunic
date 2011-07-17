@@ -18,7 +18,7 @@
 			My name is <?php echo $form->textField($model,'name',array('placeholder' => '(your name)')) ?> and you can get ahold of me at<br />
 			<?php echo $form->textField($model,'email',array('placeholder' => '(email or phone)')) ?>. I would really like to talk to you guys about<br />
 			<?php echo $form->textArea($model,'body',array('placeholder' => '(what would you like to chat about?)')) ?><br />
-			Thanks!
+			<span id="signature">Thanks.</span>
 		</p>
 		<p>
 			<input type="image" src="<?php echo Yii::app()->request->baseUrl; ?>/images/btn_contact.jpg" id="submit" />
