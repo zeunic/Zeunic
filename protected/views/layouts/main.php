@@ -2,9 +2,15 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="en" />
+	 <link rel="shortcut icon" href="http://www.zeunic.com/favicon.ico" type="image/x-icon" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
+	
+	
+	<!-- jQuery & Modernizr Loaded in Header -->
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.6.2.min.js"></script>
+	
 </head>
 <body>
 
@@ -20,15 +26,14 @@
 	
 	<footer>
 		<aside>
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/@zeunic.png" alt="@Zeunic" /><br />
+			<a href="http://www.twitter.com/zeunic" title="Follow Us on Twitter @zeunic"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/@zeunic.png" alt="@Zeunic" /></a><br />
 			<q></q>
 			<cite></cite>
 		</aside>
 	</footer>
 	
-	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.6.2.min.js"></script>
-	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tweet.js"></script>
-	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autoresize.js"></script>
-	<script src="<?php echo Yii::app()->request->baseUrl; ?>/js/main.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tweet.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autoresize.js"></script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/main.js"></script>
 </body>
 </html>
