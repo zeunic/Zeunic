@@ -301,6 +301,13 @@ article h1 em {
 
 
 
+/* -----------------ADMIN------------------ */
+
+ul#admin li {
+	display: inline;
+	margin-right: 10px;
+}
+
 
 /* -----------------FOOTER------------------ */
 

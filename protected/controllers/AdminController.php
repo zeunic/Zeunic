@@ -28,11 +28,17 @@ class AdminController extends Controller
 	public function actionIndex()
 	{
 		if(Yii::app()->user->isGuest){
-			$this->redirect('site/login');
+			$this->redirect(array('site/login'));
 		} else {
 			$this->pageTitle = 'Zeunic - Administration';
 			$this->render('index');
 		}
+	}
+	
+	public function actionLogout()
+	{
+		Yii::app()->user->logout();
+		$this->redirect(array('site/index'));
 	}
 
 }

@@ -26,33 +26,15 @@ class UserController extends Controller
 	public function accessRules()
 	{
 		return array(
-			array('allow',  // allow all users to perform 'index' and 'view' actions
-				'actions'=>array('index','view'),
-				'users'=>array('*'),
-			),
 			array('allow', // allow authenticated user to perform 'create' and 'update' actions
-				'actions'=>array('create','update'),
+				'actions'=>array('index','delete','create','update'),
 				'users'=>array('@'),
-			),
-			array('allow', // allow admin user to perform 'admin' and 'delete' actions
-				'actions'=>array('admin','delete'),
-				'users'=>array('admin'),
+				'expression'=>'Yii::app()->user->type == "super"'
 			),
 			array('deny',  // deny all users
 				'users'=>array('*'),
 			),
 		);
-	}
-
-	/**
-	 * Displays a particular model.
-	 * @param integer $id the ID of the model to be displayed
-	 */
-	public function actionView($id)
-	{
-		$this->render('view',array(
-			'model'=>$this->loadModel($id),
-		));
 	}
 
 	/**
@@ -69,8 +51,9 @@ class UserController extends Controller
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
+			$model->password = md5($model->password);
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->username));
+				$this->redirect(array('index'));
 		}
 
 		$this->render('create',array(
@@ -83,20 +66,26 @@ class UserController extends Controller
 	 * If update is successful, the browser will be redirected to the 'view' page.
 	 * @param integer $id the ID of the model to be updated
 	 */
-	public function actionUpdate($id)
+	public function actionUpdate($username)
 	{
-		$model=$this->loadModel($id);
-
+		$model=$this->loadModel($username);
+		$oldpassword = $model->password;
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['User']))
 		{
 			$model->attributes=$_POST['User'];
+			if($model->password == ''){
+				$model->password = $oldpassword;
+			} else {
+				$model->password = md5($model->password);
+			}
 			if($model->save())
-				$this->redirect(array('view','id'=>$model->username));
+				$this->redirect(array('index'));
 		}
 
+		$model->password = '';
 		$this->render('update',array(
 			'model'=>$model,
 		));
@@ -107,21 +96,11 @@ class UserController extends Controller
 	 * If deletion is successful, the browser will be redirected to the 'admin' page.
 	 * @param integer $id the ID of the model to be deleted
 	 */
-	public function actionDelete($id)
+	public function actionDelete($username)
 	{
-		if(Yii::app()->request->isPostRequest)
-		{
-			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
-
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		}
-		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+			$this->loadModel($username)->delete();
+			$this->redirect(array('index'));
 	}
-
 	/**
 	 * Lists all models.
 	 */
@@ -156,8 +135,6 @@ class UserController extends Controller
 	public function loadModel($id)
 	{
 		$model=User::model()->findByPk($id);
-		if($model===null)
-			throw new CHttpException(404,'The requested page does not exist.');
 		return $model;
 	}
 

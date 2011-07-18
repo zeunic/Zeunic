@@ -47,6 +47,16 @@ class SiteController extends Controller
 	
 	public function actionLogin()
 	{
+		//If Logged in redirect to correct administration page
+		if(!Yii::app()->user->isGuest){
+		    if(Yii::app()->user->type == 'super'){
+		    	$this->redirect(array('admin/index'));
+		    } else {
+		    	$this->redirect(array('client/index'));
+		    }
+	    }
+		
+		//Login		    
 		$this->pageTitle = 'Zeunic - Client Login';
 		$model = new LoginForm;
 		$error = '';
@@ -56,7 +66,11 @@ class SiteController extends Controller
 				$identity=new UserIdentity($model->attributes['username'],$model->attributes['password']);
 				if($identity->authenticate()){
 				    Yii::app()->user->login($identity);
-				    $this->redirect(array('admin/index'));
+				    if(Yii::app()->user->type == 'super'){
+				    	$this->redirect(array('admin/index'));
+				    } else {
+				    	$this->redirect(array('client/index'));
+				    }
 				} else {
 					$error = 'Username/Password combination is incorrect';
 				}
