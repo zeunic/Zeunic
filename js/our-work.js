@@ -14,6 +14,6 @@ $(function(){
 		return false;
 	});
 
-	$('#source').quicksand( $('#data li') );
+	$('#portfolio_display').quicksand( $('#data li') );
 
 });

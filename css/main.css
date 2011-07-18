@@ -265,6 +265,19 @@ form#contact p.error img {
 	float: right;
 }
 
+.contact-print, .contact-media, .contact-social {
+	width: 190px;
+	float: left;
+	font-size: 1.4em;
+	margin: 0 0 20px 0;
+	border-top: 1px solid #777777;
+	padding: 5px 0 0 0;
+}
+
+.contact-print, .contact-media {
+	margin-right: 10px;
+}
+
 
 /* -----------------ARTICLE CONTENT------------------ */
 

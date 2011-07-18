@@ -16,7 +16,7 @@
 		<li><input type="text" name="search" placeholder="Search..." /></li>
 	</ul>
 	
-	<ul id="portfolio">
+	<ul id="portfolio_display">
 		<!-- this list is the displayed result after the ajax and quicksand sorting -->
 		<li data-id="iphone">iPhone OS</li>
 		<li data-id="android">Android</li>

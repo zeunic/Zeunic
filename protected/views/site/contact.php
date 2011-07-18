@@ -24,4 +24,32 @@
 			<input type="image" src="<?php echo Yii::app()->request->baseUrl; ?>/images/btn_contact.jpg" id="submit" />
 		</p>
 	<?php $this->endWidget(); ?>
+	
+	<aside class="contact-print">
+		<dl>
+			<dt>Mail</dt>
+			<dd><address>
+			Zeunic, LLC<br />
+			560 Twisting Pine Court, Longwood FL 322279
+			</address></dd>
+		</dl>
+	</aside>
+	
+	<aside class="contact-media">
+		<dl>
+			<dt>Phone</dt>
+			<dd>407-615-0794</dd>
+			<dt>Email</dt>
+			<dd>social@zeunic.com</dd>
+		</dl>
+	</aside>
+	
+	<aside class="contact-social">
+		<dl>
+			<dt>Twitter</dt>
+			<dd>twitter.com/zeunic</dd>
+			<dt>Google+</dt>
+			<dd>zeunic.com/+</dd>
+		</dl>
+	</aside>
 </div>
