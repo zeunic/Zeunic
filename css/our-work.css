@@ -1,0 +1,49 @@
+/*
+ *
+ * CSS Specifics for the Our-Work List and Detail View Pages
+ * Author: Zeunic
+ *
+ */
+ 
+.button-row {
+ 	overflow: hidden;
+}
+ 
+.button-row a {
+	display: block;
+	float: left;
+	background: url(../images/icons/tag-filters.png) no-repeat;
+	width: 91px;
+	height: 20px;
+	text-indent: -99999px;
+	margin: 0 10px 0 0;
+}
+
+.button-row a.selected {
+	background-position-y: -20px;
+}
+
+.button-row a[data-value="web"] {
+	.background-position-x: 0;
+}
+
+.button-row a[data-value="mobile"] {
+	background-position-x: -91px;
+}
+
+.button-row a[data-value="brand"] {
+	background-position-x: -182px;
+}
+
+.button-row a[data-value="media"] {
+	background-position-x: -273px;
+}
+ 
+.our-work .button-row li {
+	display: inline;
+	overflow: hidden;
+}
+
+.our-work #destination {
+	display: none;
+}

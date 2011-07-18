@@ -32,9 +32,15 @@ body {
 }
 
 #main {
-	margin: 0 0 0 20px;
+	position: relative;
+	margin: 20px 0 0 20px;
 	float: left;
 	width: 590px;
+}
+
+p {
+	margin: 0 0 10px 0;
+	font-size: 1.3em;
 }
 
 strong {
@@ -189,7 +195,7 @@ form#contact {
 	width: 550px;
 	background: #d8e5ef top center url(../images/bg_contact.jpg) no-repeat;
 	box-shadow: 0 0 9px rgba(0,0,0,.2);
-	margin: 20px 0 20px 0;
+	margin: 0 0 20px 0;
 	padding: 20px 20px 50px 20px;
 }
 
@@ -260,13 +266,9 @@ form#contact p.error img {
 }
 
 
-/* -----------------ABOUTUS------------------ */
+/* -----------------ARTICLE CONTENT------------------ */
 
-.about-us {
-	margin: 20px 0 0 0;
-}
-
-.about-us h1 {
+article h1 {
 	font-family: Garamond, sans-serif;
 	text-transform: lowercase;
 	float: right;
@@ -277,48 +279,14 @@ form#contact p.error img {
 	font-weight: bold;
 }
 
-.about-us h1 em {
+article h1 em {
 	font-weight: bold;
-}
-
-.about-us p {
-	margin: 10px 0;
-	font-size: 1.3em;
 }
 
 /* -----------------PORTFOLIO------------------ */
 
-.left-thumb {
-	position: absolute;
-	overflow: hidden;
-	width: 190px;
-	height: 120px;
-	float: left;
-}
-
-.center-thumb {
-	background-color: red;
-	overflow: hidden;
-	width: 190px;
-	height: 120px;
-	float: left;
-	margin-left: 200px;
-}
-
-.right-thumb {
-	background-color: red;
-	overflow: hidden;
-	width: 190px;
-	height: 120px;
-	float: left;
-	margin-left: 10px;
-}
 
 
-.left-thumb .lg-thumb {
-	position: absolute;
-	opacity: 0;
-}
 
 
 /* -----------------FOOTER------------------ */

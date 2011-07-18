@@ -3,8 +3,8 @@
 
 <div id="main">
 
-<article>
-	<section class="about-us">
+<article id="about_us">
+	<section>
 	<h1>&#8220;We're about the details. <em>Your details.</em>&#8221;</h1>
 	
 	<p>Zeunic was started in Spring 2011 around an idea that passion, focus, and energy could create great things if you could see both the big picture and the details that nobody else pays attention to.</p>

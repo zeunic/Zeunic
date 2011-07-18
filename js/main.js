@@ -24,30 +24,4 @@ $(function(){
 		}
 	});
 	
-	
-	// temp animation for portfolio testing code
-	
-	$('.left-thumb').bind('mouseenter', function(){
-		var that = $(this);
-		var sm_thumb = that.children('.sm-thumb');
-		var lg_thumb = that.children('.lg-thumb');
-		
-		setTimeout(function(){
-			lg_thumb.animate({ opacity: 1});
-			that.animate({ width: 590 }, 800);
-		}, 500);
-				
-	});
-	
-	$('.left-thumb').bind('mouseleave', function(){
-		var that = $(this);
-		var sm_thumb = that.children('.sm-thumb');
-		var lg_thumb = that.children('.lg-thumb');
-		
-		lg_thumb.animate({ opacity: 0});
-		
-		that.animate({ width: 190 })
-		
-	});
-	
 });
