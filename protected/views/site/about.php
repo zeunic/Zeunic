@@ -20,6 +20,17 @@
 
 	<p>That's what we are about. Why don't you <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/contact">tell us about you?</a></p>
 	</section>
+	
+	<!-- <section>
+		<h2>Meet the Team</h2>
+		
+		<div class="minibio">
+			<img src="" width="190" height="120" alt="parker" />
+			<ul>
+				<li></li>
+			</ul>
+		</div>
+	</section> -->
 </article>
 
 </div>

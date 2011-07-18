@@ -18,18 +18,21 @@
 	
 	<ul id="portfolio_display">
 		<!-- this list is the displayed result after the ajax and quicksand sorting -->
-		<li data-id="iphone">iPhone OS</li>
-		<li data-id="android">Android</li>
-		<li data-id="winmo">Windows Mobile</li>
+		<li data-id="iphone">Project</li>
+		<li data-id="android">Project</li>
+		<li data-id="winmo">Project</li>
 	</ul>
 	
 	<ul id="data" class="hidden">
 		<!-- this list is populated via the selected user choice, sorted, and then cloned into the display -->
-		<li data-id="macosx">Mac OS X</li>
-		<li data-id="macos9">Mac OS 9</li>
-		<li data-id="iphone">iPhone OS</li>
+		<li data-id="web">World Vision</li>
+		<li data-id="web">Wind Pro</li>
+		<li data-id="web">Jill Zarin</li>
+		<li data-id="mobile">Voice Tricks</li>
+		<li data-id="mobile">Mp3co</li>
+		<li data-id="brand">Tickr.us</li>
+		<li data-id="media">Bumper</li>
 	</ul>
-	
 </section>
 </article>
 

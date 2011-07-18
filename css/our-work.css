@@ -44,6 +44,18 @@
 	overflow: hidden;
 }
 
-.our-work #destination {
+.our-work .hidden {
 	display: none;
+}
+
+/*
+ * Portfolio Display --------------------------------------------- /
+ */
+ 
+#portfolio_display li {
+	float: left;
+	width: 190px;
+	height: 120px;
+	overflow: hidden;
+	border: 1px solid red;
 }
