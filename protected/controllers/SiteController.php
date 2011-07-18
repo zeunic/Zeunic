@@ -48,14 +48,28 @@ class SiteController extends Controller
 	public function actionLogin()
 	{
 		$this->pageTitle = 'Zeunic - Client Login';
-		$this->render('login');
+		$model = new LoginForm;
+		$error = '';
+		if(isset($_POST['LoginForm'])){
+			$model->attributes = $_POST['LoginForm'];
+			if($model->validate()){
+				$identity=new UserIdentity($model->attributes['username'],$model->attributes['password']);
+				if($identity->authenticate()){
+				    Yii::app()->user->login($identity);
+				    $this->redirect(array('admin/index'));
+				} else {
+					$error = 'Username/Password combination is incorrect';
+				}
+			}
+		}
+		$this->render('login',array('model'=>$model, 'error'=>$error));
 	}
 	
 	public function actionContact()
 	{
 		$this->pageTitle = 'Zeunic - Contact Us';
-		//Handle for submission
-		$model=new ContactForm;
+		//Handle form submission
+		$model = new ContactForm;
 		if(isset($_POST['ContactForm'])){
 		    $model->attributes=$_POST['ContactForm'];
 		    if($model->validate()){
