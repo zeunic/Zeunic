@@ -2,6 +2,13 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" lang="en" />
+	<meta http-equiv="Content-Language" content="EN" />
+	<meta name="description" content="Mobile Development, Web Design & Branding" />
+	<meta name="keywords" content="zeunic, zeunic.com, mobile, mobile development, web, web design, web site, branding, corporate branding, orlando, florida," />
+	<meta name="author" content="Stephen Rivas JR, Joe Lessard & Parker W. Young" />
+	<meta name="robots" content="all" />
+	<meta name="copyright" content="Copyright © 2011 Zeunic. All Rights Reserved." />
+	<meta name="abstract" content="Mobile Development, Web Design & Branding" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
