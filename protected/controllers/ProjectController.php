@@ -27,11 +27,7 @@ class ProjectController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('index'),
-				'users'=>array('*'),
-			),
-			array('allow',
-				'actions'=>array('create','update', 'admin', 'delete'),
+				'actions'=>array('create','update', 'delete', 'index'),
 				'users'=>array('@'),
 				'expression'=>'Yii::app()->user->type == "super"'
 			),
@@ -48,6 +44,7 @@ class ProjectController extends Controller
 	public function actionCreate()
 	{
 		$model=new Project;
+		$galleryModel = new Gallery;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -55,12 +52,40 @@ class ProjectController extends Controller
 		if(isset($_POST['Project']))
 		{
 			$model->attributes=$_POST['Project'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->thumb = CUploadedFile::getInstance($model, 'thumb');
+			$model->thumb_lg = CUploadedFile::getInstance($model, 'thumb_lg');
+			if($model->save()){
+				//Rename Uploaded Images with ProjectID and Update Database
+				$baseURL = dirname(Yii::app()->request->scriptFile);
+				$imageDir = '/images/projects/thumbs/';
+				$id = $model->id;
+	            $file= $baseURL . $imageDir . $id . '.' . $model->thumb->extensionName;
+	            $model->thumb->saveAs($file);
+	            $model->thumb = $id . '.' . $model->thumb->extensionName;
+	            $file2= $baseURL . $imageDir . $id . '_lg.' . $model->thumb_lg->extensionName;
+	            $model->thumb_lg->saveAs($file2);
+	            $model->thumb_lg = $id . '_lg.' . $model->thumb_lg->extensionName;
+	            $model->save();
+	            
+	            //Save images to Gallery table
+	            $images = CUploadedFile::getInstances($galleryModel, 'image');
+				$imageDir = '/images/projects/gallery/';
+	            foreach($images as $key => $value){
+	            	$galleryImage = new Gallery;
+	            	$file= $baseURL . $imageDir . $id . '_' . $key . '.' . $value->extensionName;
+	            	$value->saveAs($file);
+	            	$galleryImage->image = $id . '_' . $key . '.' . $value->extensionName;
+		            $galleryImage->projectID = $id;
+		            $galleryImage->save();
+	            }
+	            
+				$this->redirect(array('index'));
+			}
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
+			'galleryModel'=>$galleryModel
 		));
 	}
 
@@ -79,8 +104,22 @@ class ProjectController extends Controller
 		if(isset($_POST['Project']))
 		{
 			$model->attributes=$_POST['Project'];
-			if($model->save())
-				$this->redirect(array('view','id'=>$model->id));
+			$model->thumb = CUploadedFile::getInstance($model, 'thumb');
+			$model->thumb_lg = CUploadedFile::getInstance($model, 'thumb_lg');
+			if($model->save()){
+				//Rename Uploaded Images with ProjectID and Update Database
+				$baseURL = dirname(Yii::app()->request->scriptFile);
+				$imageDir = '/images/projects/thumbs/';
+				$id = $model->id;
+	            $file= $baseURL . $imageDir . $id . '.' . $model->thumb->extensionName;
+	            $model->thumb->saveAs($file);
+	            $model->thumb = $id . '.' . $model->thumb->extensionName;
+	            $file2= $baseURL . $imageDir . $id . '_lg.' . $model->thumb_lg->extensionName;
+	            $model->thumb_lg->saveAs($file2);
+	            $model->thumb_lg = $id . '_lg.' . $model->thumb_lg->extensionName;
+	            $model->save();
+				$this->redirect(array('index'));
+			}
 		}
 
 		$this->render('update',array(
@@ -95,17 +134,8 @@ class ProjectController extends Controller
 	 */
 	public function actionDelete($id)
 	{
-		if(Yii::app()->request->isPostRequest)
-		{
-			// we only allow deletion via POST request
-			$this->loadModel($id)->delete();
-
-			// if AJAX request (triggered by deletion via admin grid view), we should not redirect the browser
-			if(!isset($_GET['ajax']))
-				$this->redirect(isset($_POST['returnUrl']) ? $_POST['returnUrl'] : array('admin'));
-		}
-		else
-			throw new CHttpException(400,'Invalid request. Please do not repeat this request again.');
+		$this->loadModel($id)->delete();
+		$this->redirect(array('index'));
 	}
 
 	/**
@@ -116,21 +146,6 @@ class ProjectController extends Controller
 		$dataProvider=new CActiveDataProvider('Project');
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
-		));
-	}
-
-	/**
-	 * Manages all models.
-	 */
-	public function actionAdmin()
-	{
-		$model=new Project('search');
-		$model->unsetAttributes();  // clear any default values
-		if(isset($_GET['Project']))
-			$model->attributes=$_GET['Project'];
-
-		$this->render('admin',array(
-			'model'=>$model,
 		));
 	}
 

@@ -44,7 +44,7 @@ class Project extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('desc', 'required'),
+			array('desc,thumb,thumb_lg,title','required'),
 			array('thumb, thumb_lg', 'file', 'types'=>'jpg,png'),
 			array('title', 'length', 'max'=>50),
 			array('link', 'length', 'max'=>100),
@@ -76,10 +76,10 @@ class Project extends CActiveRecord
 	{
 		return array(
 			'id' => 'ID',
-			'thumb' => 'Thumb',
-			'thumb_lg' => 'Thumb Lg',
+			'thumb' => 'Thumbnail (180x110)',
+			'thumb_lg' => 'Wide Thumbnail (590x120)',
 			'title' => 'Title',
-			'desc' => 'Desc',
+			'desc' => 'Description',
 			'link' => 'Link',
 		);
 	}

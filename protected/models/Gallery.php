@@ -58,6 +58,15 @@ class Gallery extends CActiveRecord
 			'project' => array(self::BELONGS_TO, 'Project', 'projectID'),
 		);
 	}
+	
+	/*
+public function insert($pID, $image)
+	{
+		$this->projectID = $pID;
+		$this->image = $image;
+		$this->save();
+	}
+*/
 
 	/**
 	 * @return array customized attribute labels (name=>label)
