@@ -13,7 +13,6 @@ $(function(){
 	$('.portfolio_display').quicksand( $('#data li') );
 	
 	//Quicksand Preferences
-	
 	var $preferences = {
 		duration: 800
 		, easing: 'easeOutQuad'
@@ -46,6 +45,12 @@ $(function(){
 		// add in AJAX calls to repopulate #data
 		
 		return false;
+	});
+	
+	// Hover event binding
+	$('.portfolio_display li').live('mouseenter', function(){
+		var that = $(this);
+		console.log(that);
 	});
 
 });
