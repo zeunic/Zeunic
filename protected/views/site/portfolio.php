@@ -44,6 +44,27 @@
 		<li data-id="id-7" data-type="media">
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/media01.jpg" />
 			World Vision</li>
+		<li data-id="id-8" data-type="web">
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web01.jpg" />
+			World Vision</li>
+		<li data-id="id-9" data-type="web">
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web02.jpg" />
+			World Vision</li>
+		<li data-id="id-10" data-type="web">
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web03.jpg" />
+			World Vision</li>
+		<li data-id="id-11" data-type="mobile">
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/mobile01.jpg" />
+			World Vision</li>
+		<li data-id="id-12" data-type="mobile">
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/mobile02.jpg" />
+			World Vision</li>
+		<li data-id="id-13" data-type="brand">
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/brand01.jpg" />
+			World Vision</li>
+		<li data-id="id-14" data-type="media">
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/media01.jpg" />
+			World Vision</li>
 	</ul>
 </section>
 </article>
