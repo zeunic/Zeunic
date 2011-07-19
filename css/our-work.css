@@ -5,11 +5,16 @@
  *
  */
  
+
+/*
+ * Tag Filters Button Row --------------------------------------------- /
+ */
+ 
 .button-row {
  	overflow: hidden;
  	margin: 20px 0 0 15px;
  	float: left;
- 	width: 590px;
+ 	width: 600px;
 }
 
 #content .button-row + #main {
@@ -54,18 +59,37 @@
 	background-position-x: -273px;
 }
  
-.our-work .button-row li {
+.button-row li {
 	display: inline;
 	overflow: hidden;
+	float: left;
 }
 
-.our-work .hidden {
-	display: none;
+/*
+ * Search Input --------------------------------------------- /
+ */
+ 
+.button-row input[type="text"] {
+	width: 162px;
+	height: 16px;
+	font-size: 1.2em;
+	padding: 2px 25px 2px 2px;
+	border: 1px solid #768ea3;
+	border-radius: 5px;
+	background-color: #ffffff;
+	margin: 2px 2px 2px 0;
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.1);
+	background: #ffffff right center url(../images/icons/search_input.png) no-repeat;
 }
+
 
 /*
  * Portfolio Display --------------------------------------------- /
  */
+
+.our-work .hidden {
+	display: none;
+}
  
 .portfolio_display {
 	width: 600px;
