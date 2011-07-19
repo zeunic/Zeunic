@@ -41,6 +41,7 @@ class Gallery extends CActiveRecord
 			array('projectID', 'required'),
 			array('projectID', 'length', 'max'=>11),
 			array('image', 'length', 'max'=>50),
+			array('image', 'file', 'types'=>'jpg,png,gif'),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, projectID, image', 'safe', 'on'=>'search'),

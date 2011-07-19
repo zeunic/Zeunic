@@ -97,33 +97,58 @@ class ProjectController extends Controller
 	public function actionUpdate($id)
 	{
 		$model=$this->loadModel($id);
+		$galleryModel = new Gallery;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Project']))
 		{
-			$model->attributes=$_POST['Project'];
-			$model->thumb = CUploadedFile::getInstance($model, 'thumb');
-			$model->thumb_lg = CUploadedFile::getInstance($model, 'thumb_lg');
+			$model->title=$_POST['Project']['title'];
+			$model->desc=$_POST['Project']['desc'];
+			$model->link=$_POST['Project']['link'];
+			if(CUploadedFile::getInstance($model, 'thumb')){
+				$model->thumb = CUploadedFile::getInstance($model, 'thumb');
+			}
+			if(CUploadedFile::getInstance($model, 'thumb_lg')){
+				$model->thumb_lg = CUploadedFile::getInstance($model, 'thumb_lg');
+			}
 			if($model->save()){
 				//Rename Uploaded Images with ProjectID and Update Database
 				$baseURL = dirname(Yii::app()->request->scriptFile);
 				$imageDir = '/images/projects/thumbs/';
 				$id = $model->id;
-	            $file= $baseURL . $imageDir . $id . '.' . $model->thumb->extensionName;
-	            $model->thumb->saveAs($file);
-	            $model->thumb = $id . '.' . $model->thumb->extensionName;
-	            $file2= $baseURL . $imageDir . $id . '_lg.' . $model->thumb_lg->extensionName;
-	            $model->thumb_lg->saveAs($file2);
-	            $model->thumb_lg = $id . '_lg.' . $model->thumb_lg->extensionName;
+				if(gettype($model->thumb) == 'object'){
+		            $file= $baseURL . $imageDir . $id . '.' . $model->thumb->extensionName;
+		            $model->thumb->saveAs($file);
+		            $model->thumb = $id . '.' . $model->thumb->extensionName;
+	            }
+				if(gettype($model->thumb_lg) == 'object'){
+		            $file2= $baseURL . $imageDir . $id . '_lg.' . $model->thumb_lg->extensionName;
+		            $model->thumb_lg->saveAs($file2);
+		            $model->thumb_lg = $id . '_lg.' . $model->thumb_lg->extensionName;
+	            }
 	            $model->save();
+	            
+	            //Save images to Gallery table
+	            $images = CUploadedFile::getInstances($galleryModel, 'image');
+				$imageDir = '/images/projects/gallery/';
+	            foreach($images as $key => $value){
+	            	$galleryImage = new Gallery;
+	            	$file= $baseURL . $imageDir . $id . '_' . $key . '.' . $value->extensionName;
+	            	$value->saveAs($file);
+	            	$galleryImage->image = $id . '_' . $key . '.' . $value->extensionName;
+		            $galleryImage->projectID = $id;
+		            $galleryImage->save();
+	            }
+	            
 				$this->redirect(array('index'));
 			}
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
+			'galleryModel'=>$galleryModel
 		));
 	}
 

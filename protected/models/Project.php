@@ -44,8 +44,9 @@ class Project extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
-			array('desc,thumb,thumb_lg,title','required'),
-			array('thumb, thumb_lg', 'file', 'types'=>'jpg,png'),
+			array('desc,title','required'),
+			array('thumb, thumb_lg', 'file', 'on'=>'create','types'=>'jpg,png,gif'),
+			array('thumb,thumb_lg','file','on'=>'update','allowEmpty'=>true,'types'=>'jpg,png,gif'),
 			array('title', 'length', 'max'=>50),
 			array('link', 'length', 'max'=>100),
 			// The following rule is used by search().
