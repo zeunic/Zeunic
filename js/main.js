@@ -5,7 +5,9 @@ $(function(){
 	});
 	
 	$('nav li a').bind('mouseleave', function(){
-		$('nav h1').text( $('nav li.active').text() );
+		var def = $('nav li.active').text();
+		def = (!def)? 'welcome' : def;
+		$('nav h1').text( def );
 	});
 
 	$('footer').find('q').tweets({
