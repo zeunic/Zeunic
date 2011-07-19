@@ -72,9 +72,10 @@ class ProjectController extends Controller
 				$imageDir = '/images/projects/gallery/';
 	            foreach($images as $key => $value){
 	            	$galleryImage = new Gallery;
-	            	$file= $baseURL . $imageDir . $id . '_' . $key . '.' . $value->extensionName;
+	            	$uid = uniqid();
+	            	$file= $baseURL . $imageDir . $id . '_' . $uid . '.' . $value->extensionName;
 	            	$value->saveAs($file);
-	            	$galleryImage->image = $id . '_' . $key . '.' . $value->extensionName;
+	            	$galleryImage->image = $id . '_' . $uid . '.' . $value->extensionName;
 		            $galleryImage->projectID = $id;
 		            $galleryImage->save();
 	            }
@@ -98,6 +99,7 @@ class ProjectController extends Controller
 	{
 		$model=$this->loadModel($id);
 		$galleryModel = new Gallery;
+		$images = Gallery::model()->findAll('projectID=:$id',array(':id'=>$id));
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -135,9 +137,10 @@ class ProjectController extends Controller
 				$imageDir = '/images/projects/gallery/';
 	            foreach($images as $key => $value){
 	            	$galleryImage = new Gallery;
-	            	$file= $baseURL . $imageDir . $id . '_' . $key . '.' . $value->extensionName;
+	            	$uid = uniqid();
+	            	$file= $baseURL . $imageDir . $id . '_' . $uid . '.' . $value->extensionName;
 	            	$value->saveAs($file);
-	            	$galleryImage->image = $id . '_' . $key . '.' . $value->extensionName;
+	            	$galleryImage->image = $id . '_' . $uid . '.' . $value->extensionName;
 		            $galleryImage->projectID = $id;
 		            $galleryImage->save();
 	            }
