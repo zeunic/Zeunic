@@ -5,12 +5,16 @@
 	<ul>
 	<? 
 		foreach($pages as $key => $value){
-			echo '<li id="'.$value[0].'"';
-			if($key == $page){
-				echo 'class="active"';
-			}
 			$base = Yii::app()->request->baseUrl;
-			echo '><a href="'.$base.'/index.php/site/'.$value[0].'" title="'.$value[1].'">'.$value[1].'</a></li>';
+			$anchor = '<a href="'.$base.'/index.php/site/'.$value[0].'" title="'.$value[1].'">'. $value[1].'</a>';
+			
+			echo '<li id="'.$value[0].'"';
+			
+			if($key == $page){
+				echo 'class="active">'.$value[1].'</li>';
+			} else {
+				echo '>'. $anchor .'</li>';
+			}
 		}
 	?>
 	</ul>

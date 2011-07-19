@@ -1,4 +1,13 @@
 $(function(){ 
+
+	$('nav li a').bind('mouseenter', function(){
+		$('nav h1').text( $(this).attr('title') );
+	});
+	
+	$('nav li a').bind('mouseleave', function(){
+		$('nav h1').text( $('nav li.active').text() );
+	});
+
 	$('footer').find('q').tweets({
 		tweets: 1,
 		username: "zeunic"

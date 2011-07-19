@@ -129,7 +129,7 @@ nav li a {
 	display: block;
 	width: 30px;
 	height: 43px;
-	cursor: pointer;	
+	cursor: pointer;
 }
 
 nav ul li {
@@ -138,12 +138,10 @@ nav ul li {
 	height: 43px;
 	text-indent: -9999px;
 	float: left;
-	cursor: pointer;
 }
 
 nav ul li:hover {
 	background: url(../images/icons/nav_hover.png) no-repeat;
-	cursor: pointer;
 }
 
 #about {
@@ -166,7 +164,7 @@ nav ul li:hover {
 	background-position: -120px 0;
 }
 
-nav .active {
+nav .active, nav ul li.active:hover {
 	background: url(../images/icons/nav_active.png) no-repeat;
 	-moz-box-shadow: 0 4px 7px #ced9e1;
 	-webkit-box-shadow: 0 4px 7px #ced9e1;
@@ -174,7 +172,7 @@ nav .active {
 }
 
 nav h1 {
-	font: bold 17px/60px "Droid Sans", sans-serif;
+	font: bold 17px/56px "Droid Sans", sans-serif;
 	color: #2a4052;
 	float: left;
 	width: 85px;
