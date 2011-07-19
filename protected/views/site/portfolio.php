@@ -1,20 +1,21 @@
 <?php $this->beginWidget('application.components.NavWidget', array('page'=>0)); ?>
 <?php $this->endWidget(); ?>
 
-<div id="main">
-
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/our-work.css" />
 
-<article>
-<section class="our-work">
-	<ul class="button-row">
+<ul class="button-row">
 		<li><a class="selected" href="#" data-value="all">All</a></li>
 		<li><a href="#" data-value="web">Web</a></li>
 		<li><a href="#" data-value="mobile">Mobile</a></li>
 		<li><a href="#" data-value="brand">Branding</a></li>
 		<li><input type="text" name="search" placeholder="Search..." /></li>
-	</ul>
+</ul>
+
+<div id="main">
+
+<article>
+<section class="our-work">
 	
 	<ul class="portfolio_display">
 		<!-- this list is the displayed result after the ajax and quicksand sorting -->
