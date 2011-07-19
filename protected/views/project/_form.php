@@ -59,18 +59,6 @@
         <?php echo $form->fileField($galleryModel,'image',array('size'=>50,'maxlength'=>50, 'name'=>'Gallery[image][0]')); ?>
         <?php echo $form->error($galleryModel,'image'); ?>
     </div>
-
-    <div class="row">
-        <?php echo $form->labelEx($galleryModel,'image'); ?>
-        <?php echo $form->fileField($galleryModel,'image',array('size'=>50,'maxlength'=>50, 'name'=>'Gallery[image][1]')); ?>
-        <?php echo $form->error($galleryModel,'image'); ?>
-    </div>
-
-    <div class="row">
-        <?php echo $form->labelEx($galleryModel,'image'); ?>
-        <?php echo $form->fileField($galleryModel,'image',array('size'=>50,'maxlength'=>50, 'name'=>'Gallery[image][2]')); ?>
-        <?php echo $form->error($galleryModel,'image'); ?>
-    </div>
 	
 	</fieldset>
 
@@ -81,3 +69,5 @@
 <?php $this->endWidget(); ?>
 
 </div><!-- form -->
+
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/admin.js"></script>
