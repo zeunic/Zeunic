@@ -35,7 +35,7 @@
 	background-position-x: -182px;
 }
 
-.button-row a[data-value="media"] {
+.button-row a[data-value="all"] {
 	background-position-x: -273px;
 }
  
@@ -52,10 +52,16 @@
  * Portfolio Display --------------------------------------------- /
  */
  
-#portfolio_display li {
+.portfolio_display {
+	width: 600px;
+	height: 360px;
+	margin: 10px 0 0 0;
+}
+ 
+.portfolio_display li {
 	float: left;
 	width: 190px;
 	height: 120px;
 	overflow: hidden;
-	border: 1px solid red;
+	margin: 10px 10px 0 0;
 }

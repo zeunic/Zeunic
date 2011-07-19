@@ -8,21 +8,33 @@
 
 $(function(){
 
+	var portfolioDisplay = $('.portfolio_display');
+	
+	$('.portfolio_display').quicksand( $('#data li') );
+
 	$('.button-row a').bind('click', function(){
-		$(this).toggleClass('selected');
-		// add in AJAX calls to repopulate #data
+		$('.selected').toggleClass('selected'); // grab the selected filter, and turn it off.
 		
-		$('#portfolio_display').quicksand( $('#data li'), 
-			{ adjustHeight: 'dynamic'
-			 , attribute: function(v) { console.log( $(v) ); return $(v).find('li').attr('data-id'); }
-             , duration: 750
-             , easing: 'swing'
-             , useScaling: true
-			}); // end quicksand()
+		var that = $(this);
+		that.toggleClass('selected'); // make this the current selected filter
+		
+		var filter = that.attr('data-value'),
+			dataList = $('#data');
+		;
+		
+		// Gather elements from the dataList based on the filter type
+		// so that QuickSand can be used on the #portfolio_display
+		if (filter == 'all') {
+			var $displayData = dataList.find('li');
+		} else {
+			var $displayData = dataList.find('li[data-type=' + filter + ']');
+		}
+		
+		portfolioDisplay.quicksand($displayData);
+		
+		// add in AJAX calls to repopulate #data
 		
 		return false;
 	});
-
-	$('#portfolio_display').quicksand( $('#data li') );
 
 });
