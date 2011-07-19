@@ -74,8 +74,10 @@
  
 .portfolio_display li {
 	float: left;
-	width: 190px;
-	height: 120px;
+	width: 180px;
+	height: 110px;
 	overflow: hidden;
 	margin: 10px 10px 0 0;
+	padding: 4px;
+	border: 1px solid #768EA3;
 }
