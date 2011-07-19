@@ -8,10 +8,21 @@
 
 $(function(){
 
+	// Definte Portfolio Display list, Fill it with data from #data li list (populated later from DB)
 	var portfolioDisplay = $('.portfolio_display');
-	
 	$('.portfolio_display').quicksand( $('#data li') );
+	
+	//Quicksand Preferences
+	
+	var $preferences = {
+		duration: 800
+		, easing: 'easeOutQuad'
+		, adjustHeight: 'dynamic'
+		, attribute: 'data-id'
+		, useScaling: true
+	};
 
+	// Filter Function when toggling between top 4 tag filters
 	$('.button-row a').bind('click', function(){
 		$('.selected').toggleClass('selected'); // grab the selected filter, and turn it off.
 		
@@ -30,7 +41,7 @@ $(function(){
 			var $displayData = dataList.find('li[data-type=' + filter + ']');
 		}
 		
-		portfolioDisplay.quicksand($displayData);
+		portfolioDisplay.quicksand($displayData, $preferences);
 		
 		// add in AJAX calls to repopulate #data
 		
