@@ -29,7 +29,7 @@ $(function(){
 		that.toggleClass('selected'); // make this the current selected filter
 		
 		var filter = that.attr('data-value'),
-			dataList = $('#data');
+			dataList = $('#data')
 		;
 		
 		// Gather elements from the dataList based on the filter type
@@ -49,8 +49,42 @@ $(function(){
 	
 	// Hover event binding
 	$('.portfolio_display li').live('mouseenter', function(){
-		var that = $(this);
-		console.log(that);
+		var that = $(this),
+			parentOffset = that.parent('.portfolio_display').offset(),
+			offset = that.offset(),
+			col = Math.floor( (offset.left - parentOffset.left) / 200 ),
+			thumbSrc = that.children('img').attr('data-extended')
+		;
+		
+		extendThumbnail(col, offset.top - 177 , thumbSrc);
+		
+		return false;
 	});
+	
+	// Hover leave for .extend-thumb
+	$('.extend-thumb').live('mouseleave', function(){
+		$(this).animate({ opacity: 0, width: 0 }, 300);
+	});
+	
+	var extendThumbnail = function(col, row, src) {
+		var extThumb = $('.extend-thumb'); //.clone().appendTo('.our-work');
+		extThumb.children('img').attr({ src: baseUrl + '/images/thumbs/' + src });
+		
+		extThumb.css({ top: row, display: 'block', zIndex: 900 });
+		
+		switch( col ) {
+			case 0:
+				extThumb.css({ left: 0, width: 190 }).animate({ width: 590, opacity: 1 });
+				break;
+			case 1:
+				extThumb.css({ left: 190, width: 190 }).animate({ width: 590, left: 0, opacity: 1});
+				break;
+			case 2:
+				extThumb.css({ left: 400, width: 190 }).animate({ width: 590, opacity: 1, left: 0});
+				break;
+		}
+		
+		// extThumb.css({ top: row, display: 'block', zIndex: 50 }).animate({ opacity: 1 });
+	}
 
 });

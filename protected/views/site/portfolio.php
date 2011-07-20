@@ -17,6 +17,8 @@
 <article>
 <section class="our-work">
 	
+	<div class="extend-thumb"><img src="" width="590" height="120" /></div>
+	
 	<ul class="portfolio_display">
 		<!-- this list is the displayed result after the ajax and quicksand sorting -->
 	</ul>
@@ -24,46 +26,46 @@
 	<ul id="data" class="hidden">
 		<!-- this list is populated via the selected user choice, sorted, and then cloned into the display -->
 		<li data-id="id-1" data-type="web">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web01.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web01.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-2" data-type="web">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web02.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web02.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-3" data-type="web">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web03.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web03.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-4" data-type="mobile">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/mobile01.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/mobile01.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-5" data-type="mobile">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/mobile02.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/mobile02.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-6" data-type="brand">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/brand01.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/brand01.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-7" data-type="media">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/media01.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/media01.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-8" data-type="web">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web01.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web01.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-9" data-type="web">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web02.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web02.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-10" data-type="web">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web03.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web03.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-11" data-type="mobile">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/mobile01.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/mobile01.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-12" data-type="mobile">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/mobile02.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/mobile02.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-13" data-type="brand">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/brand01.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/brand01.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 		<li data-id="id-14" data-type="media">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/media01.jpg" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/media01.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
 	</ul>
 </section>

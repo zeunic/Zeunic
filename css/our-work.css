@@ -90,11 +90,16 @@
 .our-work .hidden {
 	display: none;
 }
+
+.our-work {
+	position: relative;
+}
  
 .portfolio_display {
 	width: 600px;
 	height: 360px;
 	margin: 10px 0 0 0;
+	position: relative;
 }
  
 .portfolio_display li {
@@ -102,8 +107,17 @@
 	width: 180px;
 	height: 110px;
 	overflow: hidden;
-	margin: 10px 10px 0 0;
+	margin: 0 10px 10px 0;
 	padding: 4px;
 	border: 1px solid #768EA3;
 	background: #f9fafb;
+}
+
+.extend-thumb {
+	position: absolute;
+	overflow: hidden;
+	width: 590px;
+	background-color: red;
+	height: 120px;
+	opacity: 0;
 }
