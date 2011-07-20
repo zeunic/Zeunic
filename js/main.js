@@ -44,10 +44,10 @@ $(function(){
 		logo.children('img').animate({opacity: 0});
 	});
 	var logoPulse = function(){
-		$('#logo img').animate({ opacity: 1 }, 700, function(){
-			$(this).animate({opacity: 0}, 700);
+		$('#logo img').animate({ opacity: 1 }, 1750, function(){
+			$(this).animate({opacity: 0}, 1750);
 		});
 	}
-	setInterval(logoPulse, 15000)
+	setInterval(logoPulse, 10000)
 	
 });
