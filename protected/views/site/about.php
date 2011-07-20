@@ -8,7 +8,7 @@
 <article id="about_us">
 	<section>
 	
-	<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/590x120_vignette.jpg" alt="590x120_vignette" width="590" height="120" />
+	<img class="header" src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/header.png" alt="About Zeunic" />
 	
 	<h1>&#8220;We're about the details. <em>Your details.</em>&#8221;</h1>
 	
@@ -27,31 +27,31 @@
 		<h2>Meet the Team</h2>
 		
 		<div class="minibio">
-			<img src="" width="190" height="120" alt="stephen" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/stephen.png" alt="stephen" />
 			<ul>
 				<li class="tweet"><a href="twitter.com/olivierlacan">@olivierlacan</a> lol, I need to retain reference to a setInterval and setTimeout in a .bind()/.live() scenario. I'll call some time.</li>
-				<li>Weight: 180lbs</li>
-				<li>Favorite Food: Ramen</li>
-				<li>Likes: InDesign</li>
+				<li>Weight: <strong>180lbs</strong></li>
+				<li>Favorite Food: <strong>Mexican</strong></li>
+				<li>Likes: <strong>InDesign</strong></li>
 			</ul>
 			<p>Morbi leo risus, porta ac consectetur ac, vestibulum at eros. Donec id elit non mi porta gravida at eget metus. Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nulla vitae elit libero, a pharetra augue.</p>
 		</div>
 		
 		<div class="minibio">
-			<img src="" width="190" height="120" alt="joe" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/joe.png" alt="joe" />
 			<ul>
 				<li class="tweet">Hangin with Edward Maya tonight <a href="http://t.co/Yb5OnO4">http://t.co/Yb5OnO4</a></li>
-				<li>iPhones Destroyed: 2</li>
-				<li>Music: House/Techno</li>
-				<li>Status: Baller</li>
+				<li><strong>iPhones Destroyed:</strong> 2</li>
+				<li><strong>Music:</strong> House/Techno</li>
+				<li><strong>Status:</strong> Baller</li>
 			</ul>
 			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod.</p>
 		</div>
 		
 		<div class="minibio">
-			<img src="" width="190" height="120" alt="parker" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/parker.png" alt="parker" />
 			<ul>
-				<li class="tweet">Just realized if you took the cost of education to get us where we are, the website we're deploying this month cost roughly $225,000.</li>
+				<li class="tweet">Serif and Sans-serif fonts play nice together, you just gotta lay down some ground rules first. <a href="fb.me/12jIDAl0K">fb.me/12jIDAl0K</a></li>
 				<li>Drives: Toyota</li>
 				<li>Dislikes: Then ending to Inception</li>
 				<li>Favorite Site: Adobe.com</li>
@@ -60,7 +60,7 @@
 		</div>
 		
 		<div class="minibio">
-			<img src="" width="190" height="120" alt="spencer" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/spencer.png" alt="spencer" />
 			<ul>
 				<li class="tweet">Finished up the new Zeunic teaser site with help of my esteemed colleagues! Check it out over at zeunic.com</li>
 				<li>Cats: On A Couch</li>

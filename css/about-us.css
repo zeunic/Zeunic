@@ -4,6 +4,33 @@
  * Author: Zeunic
  *
  */
+
+ 
+
+/*
+ * Images & Headings --------------------------------------------- /
+ */
+
+#about_us img.header {
+	border: 1px solid black;
+	margin: 5px 0 15px 3px;
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.5);
+}
+
+.minibio img {
+	border: 1px solid black;
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.5);
+	float: left;
+	margin: 5px 20px 0 5px;
+}
+
+#about_us h2 {
+	font-size: 1.8em;
+	margin: 20px 0 20px 0;
+	font-weight: bold;
+	padding: 4px 0;
+	border-bottom: 1px dashed #777777;
+}
  
 
 /*
@@ -15,15 +42,11 @@
 	margin: 0 0 40px 0;
 }
 
-.minibio img {
-	float: left;
-	margin: 0 20px 0 0;
-}
-
 .minibio ul {
 	float: left;
 	width: 380px;
 	height: 120px;
+	font-size: 1.2em;
 }
 
 .minibio .tweet {
