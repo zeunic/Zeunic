@@ -72,7 +72,7 @@ header {
 /* -----------------QUOTE------------------ */
 
 header q {
-	font: 23px/1.1 "Garamond";
+	font: 23px/1.1 'Garamond', serif;
 	color: #b7c7d4;
 	width: 870px;
 	text-align: right;

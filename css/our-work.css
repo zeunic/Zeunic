@@ -39,25 +39,40 @@
 	-moz-box-shadow: 0 0 5px rgba(0,0,0,.5);
 }
 
-.button-row a.selected {
-	background-position-y: -20px;
-	-webkit-box-shadow: 0 0 5px rgba(102,184,232,1);
-}
-
 .button-row a[data-value="web"] {
-	.background-position-x: 0;
+	background-position: 0 0;
 }
 
 .button-row a[data-value="mobile"] {
-	background-position-x: -91px;
+	background-position: -91px 0;
 }
 
 .button-row a[data-value="brand"] {
-	background-position-x: -182px;
+	background-position: -182px 0;
 }
 
 .button-row a[data-value="all"] {
-	background-position-x: -273px;
+	background-position: -273px 0;
+}
+
+.button-row a.selected[data-value="web"] {
+	background-position: 0 -20px;
+	box-shadow: 0 0 5px rgba(102,184,232,1);
+}
+
+.button-row a.selected[data-value="mobile"] {
+	background-position: -91px -20px;
+	box-shadow: 0 0 5px rgba(102,184,232,1);
+}
+
+.button-row a.selected[data-value="brand"] {
+	background-position: -182px -20px;
+	box-shadow: 0 0 5px rgba(102,184,232,1);
+}
+
+.button-row a.selected[data-value="all"] {
+	background-position: -273px -20px;
+	box-shadow: 0 0 5px rgba(102,184,232,1);
 }
  
 .button-row li {
