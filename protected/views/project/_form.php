@@ -92,19 +92,19 @@
     
     <legend>Testimonials</legend><div class="row">
         <?php echo $form->labelEx($testimonialModel,'testimonial'); ?><br />
-        <?php echo $form->textArea($testimonialModel,'testimonial',array('rows'=>6, 'cols'=>50)); ?>
+        <?php echo $form->textArea($testimonialModel,'testimonial',array('rows'=>6, 'cols'=>50, 'name'=>'Testimonial[testimonial][0]')); ?>
         <?php echo $form->error($testimonialModel,'testimonial'); ?>
     </div>
 
     <div class="row">
         <?php echo $form->labelEx($testimonialModel,'author'); ?><br />
-        <?php echo $form->textField($testimonialModel,'author',array('size'=>40,'maxlength'=>40)); ?>
+        <?php echo $form->textField($testimonialModel,'author',array('size'=>40,'maxlength'=>40, 'name'=>'Testimonial[author][0]')); ?>
         <?php echo $form->error($testimonialModel,'author'); ?>
     </div>
 
     <div class="row">
         <?php echo $form->labelEx($testimonialModel,'authorTitle'); ?><br />
-        <?php echo $form->textField($testimonialModel,'authorTitle',array('size'=>40,'maxlength'=>40)); ?>
+        <?php echo $form->textField($testimonialModel,'authorTitle',array('size'=>40,'maxlength'=>40, 'name'=>'Testimonial[authorTitle][0]')); ?>
         <?php echo $form->error($testimonialModel,'authorTitle'); ?>
     </div>
     

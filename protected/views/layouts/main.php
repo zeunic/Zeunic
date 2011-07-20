@@ -29,6 +29,7 @@
 
 	<link rel="shortcut icon" href="http://www.zeunic.com/favicon.ico" type="image/x-icon" />
 	<link rel="image_src" href="http://www.zeunic.com/images/og.jpg" />
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700&v2' rel='stylesheet' type='text/css'>
 	
 	
 	<!-- jQuery & Modernizr Loaded in Header -->

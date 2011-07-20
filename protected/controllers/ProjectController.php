@@ -53,6 +53,15 @@ class ProjectController extends Controller
 
 		if(isset($_POST['Project']))
 		{
+	            
+	            //Save testimonials to Testimonial table
+	            $counter = 0;
+	            $testimonialModel->attributes = $_POST['Testimonial'];
+	            foreach($testimonialModel->attributes as $key => $value){
+	            	echo print_r($value);
+	            	$counter++;
+	            }
+	            die;
 			$model->attributes=$_POST['Project'];
 			$model->thumb = CUploadedFile::getInstance($model, 'thumb');
 			$model->thumb_lg = CUploadedFile::getInstance($model, 'thumb_lg');
@@ -93,7 +102,6 @@ class ProjectController extends Controller
 		            	$tagModel->save();
 		            }
 	            }
-	            
 	            
 				$this->redirect(array('index'));
 			}
