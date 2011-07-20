@@ -36,6 +36,7 @@
 
 .button-row a:hover {
 	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,.5);
 }
 
 .button-row a.selected {

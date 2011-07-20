@@ -35,4 +35,19 @@ $(function(){
 		}
 	});
 	
+	// Logo Flicker & Hover Animation
+	var logo = $('#logo');
+	logo.bind('mouseenter', function(){
+		logo.children('img').animate({opacity: 1});
+	});
+	logo.bind('mouseleave', function(){
+		logo.children('img').animate({opacity: 0});
+	});
+	var logoPulse = function(){
+		$('#logo img').animate({ opacity: 1 }, 700, function(){
+			$(this).animate({opacity: 0}, 700);
+		});
+	}
+	setInterval(logoPulse, 15000)
+	
 });
