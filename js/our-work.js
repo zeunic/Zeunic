@@ -71,6 +71,12 @@ $(function(){
 		return false;
 	});
 	
+	$('.portfolio_display li').live('mouseleave', function(){
+		if (zeunic.portfolio) {
+			clearTimeout( zeunic.portfolio.timeout );
+		}
+	});
+	
 	// Hover leave for .extend-thumb
 	$('.extend-thumb').live('mouseleave', function(){
 		$(this).animate({ opacity: 0, width: 0 }, 300);
