@@ -50,6 +50,9 @@ $(function(){
 			$(this).animate({opacity: 0}, 1750);
 		});
 	}
-	setInterval(logoPulse, 10000)
+	setInterval(logoPulse, 10000);
+	
+	// Navigation StickyFloat
+	$('#content nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 	
 });
