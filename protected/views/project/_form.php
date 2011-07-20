@@ -45,10 +45,16 @@
 		<?php echo $form->textField($model,'link',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'link'); ?>
 	</div>
+
+    <div class="row">
+        <?php echo $form->labelEx($model,'show'); ?>
+        <?php echo $form->checkBox($model,'show'); ?>
+        <?php echo $form->error($model,'show'); ?>
+    </div>
 	
 	</fieldset>
 	
-	<fieldset>
+	<fieldset id="imageGallery">
 	
 	<legend>Image Gallery</legend>
 	
@@ -76,9 +82,49 @@
 	
 	</fieldset>
 	
+	<fieldset id="video">
+	
+	<legend>Video</legend>
+	
+	<? if(!$model->isNewRecord): ?>
+	
+	<div class="row">
+		<ul>
+		<? foreach($videos as $key => $value): ?>
+			<li><? echo $value->video ?><br />
+					<? echo CHtml::link('delete', array('project/deletevideo', 'id'=>$value->id)); ?>
+			</li>
+		<? endforeach; ?>
+		</ul>
+	</div>
+	
+	<? endif; ?>
+	
+	<div class="row">
+        <?php echo $form->labelEx($videoModel,'video'); ?><br />
+        <?php echo $form->fileField($videoModel,'video',array('size'=>50,'maxlength'=>50, 'name'=>'Video[video][0]')); ?>
+        <?php echo $form->error($videoModel,'video'); ?>
+    </div>
+	
+	</fieldset>
+	
 	<fieldset>
 	
 	<legend>Tags</legend>
+	
+	<? if(!$model->isNewRecord): ?>
+	
+	<div class="row">
+		<ul>
+		<? foreach($tags as $key => $value): ?>
+			<li><? echo $value->tag ?><br />
+					<? echo CHtml::link('delete', array('project/deletetag', 'id'=>$value->id)); ?>
+			</li>
+		<? endforeach; ?>
+		</ul>
+	</div>
+	
+	<? endif; ?>
 
     <div class="row">
         <?php echo $form->labelEx($tagModel,'tag'); ?><br />
@@ -90,7 +136,23 @@
     
     <fieldset>
     
-    <legend>Testimonials</legend><div class="row">
+    <legend>Testimonials</legend>
+	
+	<? if(!$model->isNewRecord): ?>
+	
+	<div class="row">
+		<ul>
+		<? foreach($testimonials as $key => $value): ?>
+			<li><? echo $value->testimonial ?><br />
+					<? echo CHtml::link('delete', array('project/deletetestimonial', 'id'=>$value->id)); ?>
+			</li>
+		<? endforeach; ?>
+		</ul>
+	</div>
+	
+	<? endif; ?>
+    
+    <div class="row">
         <?php echo $form->labelEx($testimonialModel,'testimonial'); ?><br />
         <?php echo $form->textArea($testimonialModel,'testimonial',array('rows'=>6, 'cols'=>50, 'name'=>'Testimonial[testimonial][0]')); ?>
         <?php echo $form->error($testimonialModel,'testimonial'); ?>

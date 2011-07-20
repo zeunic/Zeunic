@@ -314,6 +314,9 @@ ul#admin li {
 #project-form li {
 	display: inline;
 	float: left;
+	margin-right: 10px;
+	border: 1px dotted black;
+	padding: 5px;
 }
 
 .row {

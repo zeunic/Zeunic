@@ -82,6 +82,7 @@ class Project extends CActiveRecord
 			'title' => 'Title',
 			'desc' => 'Description',
 			'link' => 'Link',
+			'show' => 'Show?'
 		);
 	}
 
