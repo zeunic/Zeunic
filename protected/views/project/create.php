@@ -10,6 +10,6 @@
 	<h1>Create Project</h1>
 
 	<?php echo $this->renderPartial('_form', array('model'=>$model,'galleryModel'=>$galleryModel,'tagModel'=>$tagModel,
-			'testimonialModel'=>$testimonialModel)); ?>
+			'testimonialModel'=>$testimonialModel,'videoModel'=>$videoModel)); ?>
 
 </div>

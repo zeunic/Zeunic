@@ -27,7 +27,7 @@ class ProjectController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('create','update', 'delete', 'index', 'deletegallery'),
+				'actions'=>array('create','update', 'delete', 'index', 'deletegallery', 'deletevideo', 'deletetag', 'deletetestimonial'),
 				'users'=>array('@'),
 				'expression'=>'Yii::app()->user->type == "super"'
 			),
@@ -47,21 +47,13 @@ class ProjectController extends Controller
 		$galleryModel = new Gallery;
 		$tagModel = new Tag;
 		$testimonialModel = new Testimonial;
+		$videoModel = new Video;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
 
 		if(isset($_POST['Project']))
 		{
-	            
-	            //Save testimonials to Testimonial table
-	            $counter = 0;
-	            $testimonialModel->attributes = $_POST['Testimonial'];
-	            foreach($testimonialModel->attributes as $key => $value){
-	            	echo print_r($value);
-	            	$counter++;
-	            }
-	            die;
 			$model->attributes=$_POST['Project'];
 			$model->thumb = CUploadedFile::getInstance($model, 'thumb');
 			$model->thumb_lg = CUploadedFile::getInstance($model, 'thumb_lg');
@@ -91,6 +83,19 @@ class ProjectController extends Controller
 		            $galleryImage->save();
 	            }
 	            
+	            //Save video to Video table
+	            $videos = CUploadedFile::getInstances($videoModel, 'video');
+				$videosDir = '/images/projects/videos/';
+	            foreach($videos as $key => $value){
+	            	$video = new Video;
+	            	$uid = uniqid();
+	            	$file= $baseURL . $videosDir . $id . '_' . $uid . '.' . $value->extensionName;
+	            	$value->saveAs($file);
+	            	$video->video = $id . '_' . $uid . '.' . $value->extensionName;
+		            $video->projectID = $id;
+		            $video->save();
+	            }
+	            
 	            //Save tags to Tag table
 	            $tagModel->attributes=$_POST['Tag'];
 	            $tags = explode(',',str_replace(' ', '', $tagModel->tag));
@@ -103,6 +108,18 @@ class ProjectController extends Controller
 		            }
 	            }
 	            
+	            //Save testimonials to Testimonial table
+	            foreach($_POST['Testimonial']['testimonial'] as $key => $value){
+	            	$testimonial = new Testimonial;
+	            	$testimonial->testimonial = $value;
+	            	if($value != ''){
+		            	$testimonial->author = $_POST['Testimonial']['author'][$key];
+		            	$testimonial->authorTitle = $_POST['Testimonial']['authorTitle'][$key];
+		            	$testimonial->projectID = $id;
+		            	$testimonial->save();
+	            	}
+	            }
+	            
 				$this->redirect(array('index'));
 			}
 		}
@@ -111,7 +128,8 @@ class ProjectController extends Controller
 			'model'=>$model,
 			'galleryModel'=>$galleryModel,
 			'tagModel'=>$tagModel,
-			'testimonialModel'=>$testimonialModel
+			'testimonialModel'=>$testimonialModel,
+			'videoModel'=>$videoModel,
 		));
 	}
 
@@ -122,11 +140,18 @@ class ProjectController extends Controller
 	 */
 	public function actionUpdate($id)
 	{
+		//models
 		$model=$this->loadModel($id);
 		$galleryModel = new Gallery;
 		$tagModel = new Tag;
-		$images = Gallery::model()->findAll('projectID=:id',array(':id'=>$id));
 		$testimonialModel = new Testimonial;
+		$videoModel = new Video;
+		
+		//assets
+		$images = Gallery::model()->findAll('projectID=:id',array(':id'=>$id));
+		$testimonials = Testimonial::model()->findAll('projectId=:id',array(':id'=>$id));
+		$videos = Video::model()->findAll('projectId=:id',array(':id'=>$id));
+		$tags = Tag::model()->findAll('projectId=:id',array(':id'=>$id));
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -172,11 +197,24 @@ class ProjectController extends Controller
 		            $galleryImage->save();
 	            }
 	            
+	            //Save video to Video table
+	            $vids = CUploadedFile::getInstances($videoModel, 'video');
+				$videosDir = '/images/projects/videos/';
+	            foreach($vids as $key => $value){
+	            	$video = new Video;
+	            	$uid = uniqid();
+	            	$file= $baseURL . $videosDir . $id . '_' . $uid . '.' . $value->extensionName;
+	            	$value->saveAs($file);
+	            	$video->video = $id . '_' . $uid . '.' . $value->extensionName;
+		            $video->projectID = $id;
+		            $video->save();
+	            }
+	            
 	            //Save tags to Tag table
 	            $tagModel->attributes=$_POST['Tag'];
 	            $tagId = $tagModel->id;
-	            $tags = explode(',',str_replace(' ', '', $tagModel->tag));
-	            foreach($tags as $key => $tag){
+	            $thetags = explode(',',str_replace(' ', '', $tagModel->tag));
+	            foreach($thetags as $key => $tag){
 	            	$tagExists=Tag::model()->exists('projectID=:id AND tag=:tag',array(':id'=>$id, ':tag'=>$tag));
 	            	if($tag != '' && !$tagExists){
 		            	$tagModel = new Tag;
@@ -184,6 +222,18 @@ class ProjectController extends Controller
 		            	$tagModel->tag = $tag;
 		            	$tagModel->save();
 		            }
+	            }
+	            
+	            //Save testimonials to Testimonial table
+	            foreach($_POST['Testimonial']['testimonial'] as $key => $value){
+	            	$testimonial = new Testimonial;
+	            	$testimonial->testimonial = $value;
+	            	if($value != ''){
+		            	$testimonial->author = $_POST['Testimonial']['author'][$key];
+		            	$testimonial->authorTitle = $_POST['Testimonial']['authorTitle'][$key];
+		            	$testimonial->projectID = $id;
+		            	$testimonial->save();
+	            	}
 	            }
 	            
 				$this->redirect(array('index'));
@@ -195,7 +245,22 @@ class ProjectController extends Controller
 			'galleryModel'=>$galleryModel,
 			'images'=>$images,
 			'tagModel'=>$tagModel,
-			'testimonialModel'=>$testimonialModel
+			'testimonialModel'=>$testimonialModel,
+			'videoModel'=>$videoModel,
+			'videos'=>$videos,
+			'testimonials'=>$testimonials,
+			'tags'=>$tags,
+		));
+	}
+
+	/**
+	 * Lists all models.
+	 */
+	public function actionIndex()
+	{
+		$dataProvider=new CActiveDataProvider('Project');
+		$this->render('index',array(
+			'dataProvider'=>$dataProvider,
 		));
 	}
 
@@ -209,27 +274,28 @@ class ProjectController extends Controller
 		$this->loadModel($id)->delete();
 		$this->redirect(array('index'));
 	}
-
-	/**
-	 * Lists all models.
-	 */
-	public function actionIndex()
-	{
-		$dataProvider=new CActiveDataProvider('Project');
-		$this->render('index',array(
-			'dataProvider'=>$dataProvider,
-		));
-	}
 	
-
-	/**
-	 * Deletes a particular model.
-	 * If deletion is successful, the browser will be redirected to the 'admin' page.
-	 * @param integer $id the ID of the model to be deleted
-	 */
-	public function actionDeletegallery($id){
+	public function actionDeleteGallery($id){
 		$image=Gallery::model()->findByPk($id);
 		$image->delete();
+		$this->redirect(Yii::app()->request->urlReferrer);
+	}
+	
+	public function actionDeleteTestimonial($id){
+		$t=Testimonial::model()->findByPk($id);
+		$t->delete();
+		$this->redirect(Yii::app()->request->urlReferrer);
+	}
+	
+	public function actionDeleteTag($id){
+		$tag=Tag::model()->findByPk($id);
+		$tag->delete();
+		$this->redirect(Yii::app()->request->urlReferrer);
+	}
+	
+	public function actionDeleteVideo($id){
+		$video=Video::model()->findByPk($id);
+		$video->delete();
 		$this->redirect(Yii::app()->request->urlReferrer);
 	}
 
