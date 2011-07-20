@@ -41,7 +41,7 @@
 <body>
 
 	<header>
-		<q><em>we <strong>guarantee</strong></em><br /><em>you will <strong>appreciate</strong></em><br /><small>the <strong>effort</strong> we put into </small><strong>our work.</strong></q>
+		<q><em>we guarantee</em><br /><em>you'll <strong>appreciate</strong><small> the little details</small></em><br /><small><strong> we put into our work.</strong></small></q>
 	</header>
 	
 	<div id="container">
