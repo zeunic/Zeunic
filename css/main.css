@@ -315,6 +315,15 @@ ul#admin li {
 	margin-right: 10px;
 }
 
+#project-form li {
+	display: inline;
+	float: left;
+}
+
+.row {
+	clear: left;
+}
+
 
 /* -----------------FOOTER------------------ */
 

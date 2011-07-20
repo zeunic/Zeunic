@@ -27,7 +27,7 @@ class ProjectController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('create','update', 'delete', 'index'),
+				'actions'=>array('create','update', 'delete', 'index', 'deletegallery'),
 				'users'=>array('@'),
 				'expression'=>'Yii::app()->user->type == "super"'
 			),
@@ -45,6 +45,8 @@ class ProjectController extends Controller
 	{
 		$model=new Project;
 		$galleryModel = new Gallery;
+		$tagModel = new Tag;
+		$testimonialModel = new Testimonial;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -80,13 +82,28 @@ class ProjectController extends Controller
 		            $galleryImage->save();
 	            }
 	            
+	            //Save tags to Tag table
+	            $tagModel->attributes=$_POST['Tag'];
+	            $tags = explode(',',str_replace(' ', '', $tagModel->tag));
+	            foreach($tags as $key => $tag){
+	            	if($tag != ''){
+		            	$tagModel = new Tag;
+		            	$tagModel->projectID = $id;
+		            	$tagModel->tag = $tag;
+		            	$tagModel->save();
+		            }
+	            }
+	            
+	            
 				$this->redirect(array('index'));
 			}
 		}
 
 		$this->render('create',array(
 			'model'=>$model,
-			'galleryModel'=>$galleryModel
+			'galleryModel'=>$galleryModel,
+			'tagModel'=>$tagModel,
+			'testimonialModel'=>$testimonialModel
 		));
 	}
 
@@ -99,7 +116,9 @@ class ProjectController extends Controller
 	{
 		$model=$this->loadModel($id);
 		$galleryModel = new Gallery;
-		$images = Gallery::model()->findAll('projectID=:$id',array(':id'=>$id));
+		$tagModel = new Tag;
+		$images = Gallery::model()->findAll('projectID=:id',array(':id'=>$id));
+		$testimonialModel = new Testimonial;
 
 		// Uncomment the following line if AJAX validation is needed
 		// $this->performAjaxValidation($model);
@@ -145,13 +164,30 @@ class ProjectController extends Controller
 		            $galleryImage->save();
 	            }
 	            
+	            //Save tags to Tag table
+	            $tagModel->attributes=$_POST['Tag'];
+	            $tagId = $tagModel->id;
+	            $tags = explode(',',str_replace(' ', '', $tagModel->tag));
+	            foreach($tags as $key => $tag){
+	            	$tagExists=Tag::model()->exists('projectID=:id AND tag=:tag',array(':id'=>$id, ':tag'=>$tag));
+	            	if($tag != '' && !$tagExists){
+		            	$tagModel = new Tag;
+		            	$tagModel->projectID = $id;
+		            	$tagModel->tag = $tag;
+		            	$tagModel->save();
+		            }
+	            }
+	            
 				$this->redirect(array('index'));
 			}
 		}
 
 		$this->render('update',array(
 			'model'=>$model,
-			'galleryModel'=>$galleryModel
+			'galleryModel'=>$galleryModel,
+			'images'=>$images,
+			'tagModel'=>$tagModel,
+			'testimonialModel'=>$testimonialModel
 		));
 	}
 
@@ -175,6 +211,18 @@ class ProjectController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+	}
+	
+
+	/**
+	 * Deletes a particular model.
+	 * If deletion is successful, the browser will be redirected to the 'admin' page.
+	 * @param integer $id the ID of the model to be deleted
+	 */
+	public function actionDeletegallery($id){
+		$image=Gallery::model()->findByPk($id);
+		$image->delete();
+		$this->redirect(Yii::app()->request->urlReferrer);
 	}
 
 	/**

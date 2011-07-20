@@ -53,14 +53,62 @@
 	<legend>Image Gallery</legend>
 	
 	<?php echo $form->errorSummary($galleryModel); ?>
+	
+	<? if(!$model->isNewRecord): ?>
+	
+	<div class="row">
+		<ul>
+		<? foreach($images as $key => $value): ?>
+			<li><img alt="Project Gallery Image" src="<? echo Yii::app()->request->baseUrl ?>/images/projects/gallery/<? echo $value->image ?>"/><br />
+					<? echo CHtml::link('delete', array('project/deletegallery', 'id'=>$value->id)); ?>
+			</li>
+		<? endforeach; ?>
+		</ul>
+	</div>
+	
+	<? endif; ?>
 
     <div class="row">
-        <?php echo $form->labelEx($galleryModel,'image'); ?>
+        <?php echo $form->labelEx($galleryModel,'image'); ?><br />
         <?php echo $form->fileField($galleryModel,'image',array('size'=>50,'maxlength'=>50, 'name'=>'Gallery[image][0]')); ?>
         <?php echo $form->error($galleryModel,'image'); ?>
     </div>
 	
 	</fieldset>
+	
+	<fieldset>
+	
+	<legend>Tags</legend>
+
+    <div class="row">
+        <?php echo $form->labelEx($tagModel,'tag'); ?><br />
+        <?php echo $form->textField($tagModel,'tag'); ?>
+        <?php echo $form->error($tagModel,'tag'); ?>
+    </div>
+    
+    </fieldset>
+    
+    <fieldset>
+    
+    <legend>Testimonials</legend><div class="row">
+        <?php echo $form->labelEx($testimonialModel,'testimonial'); ?><br />
+        <?php echo $form->textArea($testimonialModel,'testimonial',array('rows'=>6, 'cols'=>50)); ?>
+        <?php echo $form->error($testimonialModel,'testimonial'); ?>
+    </div>
+
+    <div class="row">
+        <?php echo $form->labelEx($testimonialModel,'author'); ?><br />
+        <?php echo $form->textField($testimonialModel,'author',array('size'=>40,'maxlength'=>40)); ?>
+        <?php echo $form->error($testimonialModel,'author'); ?>
+    </div>
+
+    <div class="row">
+        <?php echo $form->labelEx($testimonialModel,'authorTitle'); ?><br />
+        <?php echo $form->textField($testimonialModel,'authorTitle',array('size'=>40,'maxlength'=>40)); ?>
+        <?php echo $form->error($testimonialModel,'authorTitle'); ?>
+    </div>
+    
+    </fieldset>
 
 	<div class="row buttons">
 		<?php echo CHtml::submitButton($model->isNewRecord ? 'Create' : 'Save'); ?>

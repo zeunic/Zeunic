@@ -1,23 +1,21 @@
 <?php
 
 /**
- * This is the model class for table "testimonial".
+ * This is the model class for table "tag".
  *
- * The followings are the available columns in table 'testimonial':
+ * The followings are the available columns in table 'tag':
  * @property string $id
  * @property string $projectID
- * @property string $testimonial
- * @property string $author
- * @property string $authorTitle
+ * @property string $tag
  *
  * The followings are the available model relations:
  * @property Project $project
  */
-class Testimonial extends CActiveRecord
+class Tag extends CActiveRecord
 {
 	/**
 	 * Returns the static model of the specified AR class.
-	 * @return Testimonial the static model class
+	 * @return Tag the static model class
 	 */
 	public static function model($className=__CLASS__)
 	{
@@ -29,7 +27,7 @@ class Testimonial extends CActiveRecord
 	 */
 	public function tableName()
 	{
-		return 'testimonial';
+		return 'tag';
 	}
 
 	/**
@@ -40,11 +38,12 @@ class Testimonial extends CActiveRecord
 		// NOTE: you should only define rules for those attributes that
 		// will receive user inputs.
 		return array(
+			array('projectID', 'required'),
 			array('projectID', 'length', 'max'=>11),
-			array('author, authorTitle', 'length', 'max'=>40),
+			array('tag', 'length', 'max'=>200),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
-			array('id, projectID, testimonial, author, authorTitle', 'safe', 'on'=>'search'),
+			array('id, projectID, tag', 'safe', 'on'=>'search'),
 		);
 	}
 
@@ -68,9 +67,7 @@ class Testimonial extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'projectID' => 'Project',
-			'testimonial' => 'Testimonial (use &lt;pull&gt;&lt;/pull&gt; to identify pull quote)',
-			'author' => 'Author',
-			'authorTitle' => 'Author Title',
+			'tag' => 'Comma Separated Tags',
 		);
 	}
 
@@ -87,9 +84,7 @@ class Testimonial extends CActiveRecord
 
 		$criteria->compare('id',$this->id,true);
 		$criteria->compare('projectID',$this->projectID,true);
-		$criteria->compare('testimonial',$this->testimonial,true);
-		$criteria->compare('author',$this->author,true);
-		$criteria->compare('authorTitle',$this->authorTitle,true);
+		$criteria->compare('tag',$this->tag,true);
 
 		return new CActiveDataProvider($this, array(
 			'criteria'=>$criteria,
