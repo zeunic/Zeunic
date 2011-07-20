@@ -114,6 +114,12 @@
 	background: #f9fafb;
 }
 
+.portfolio_display li:hover {
+	padding: 0;
+	border: 5px solid #EC1559;
+	background: #f9fafb;
+}
+
 .extend-thumb {
 	position: absolute;
 	overflow: hidden;
