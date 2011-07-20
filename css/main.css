@@ -72,13 +72,13 @@ header {
 /* -----------------QUOTE------------------ */
 
 header q {
-	font: 23px/1.1 'Garamond', serif;
+	font: 23px/1.1 'Droid Sans', sans-serif;
 	color: #b7c7d4;
 	width: 870px;
 	text-align: right;
 	margin: 0 auto;
 	display: block;
-	letter-spacing: .02em;
+	letter-spacing: .01em;
 	line-height: 16px;
 }
 
@@ -95,8 +95,8 @@ header br+em {
 
 header small {
 	color: #90aec6;
-	margin-left: 3px;
-	letter-spacing: .08em;
+	margin-left: 2px;
+	letter-spacing: .03em;
 }
 
 header small strong {
