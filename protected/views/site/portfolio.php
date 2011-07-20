@@ -46,9 +46,6 @@
 		<li data-id="id-7" data-type="media">
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/media01.jpg" data-extended="590x120_vignette.jpg" />
 			World Vision</li>
-		<li data-id="id-8" data-type="web">
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web01.jpg" data-extended="590_01.jpg" />
-			World Vision</li>
 		<li data-id="id-9" data-type="web">
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/thumbs/web02.jpg" data-extended="590_02.jpg" />
 			World Vision</li>
