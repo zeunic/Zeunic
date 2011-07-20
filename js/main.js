@@ -64,6 +64,6 @@ $(function(){
 	zeunic.logo.interval = setInterval(logoPulse, 10000);
 	
 	// Navigation StickyFloat
-	$('#content nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
+	$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 	
 });

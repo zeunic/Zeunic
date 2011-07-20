@@ -36,7 +36,7 @@ body {
 #main, div#admin {
 	overflow: hidden;
 	position: relative;
-	margin: 20px 0 20px 20px;
+	margin: 20px 0 20px 325px;
 	float: left;
 	width: 590px;
 }
@@ -193,7 +193,7 @@ nav #logo img {
 /* -----------------VERTICAL DIVIDER------------------ */
 
 #vertrule {
-	margin-left: 295px;
+	margin-left: 15px;
 	margin-top: 15px;
 	width: 6px;
 	height: 305px;
