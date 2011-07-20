@@ -1,3 +1,5 @@
+zeunic = {};
+
 $(function(){ 
 
 	$('nav li a').bind('mouseenter', function(){

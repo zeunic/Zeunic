@@ -49,6 +49,11 @@ $(function(){
 	
 	// Hover event binding
 	$('.portfolio_display li').live('mouseenter', function(){
+		
+		if (zeunic.portfolio) {
+			clearTimeout( zeunic.portfolio.timeout );
+		}
+	
 		var that = $(this),
 			parentOffset = that.parent('.portfolio_display').offset(),
 			offset = that.offset(),
@@ -56,7 +61,12 @@ $(function(){
 			thumbSrc = that.children('img').attr('data-extended')
 		;
 		
-		extendThumbnail(col, offset.top - 177 , thumbSrc);
+		zeunic.portfolio = {}
+		
+		zeunic.portfolio.col = col;
+		zeunic.portfolio.top = offset.top - 177;
+		zeunic.portfolio.src = thumbSrc;
+		zeunic.portfolio.timeout = setTimeout( extendThumbnail, 600 );
 		
 		return false;
 	});
@@ -66,13 +76,13 @@ $(function(){
 		$(this).animate({ opacity: 0, width: 0 }, 300);
 	});
 	
-	var extendThumbnail = function(col, row, src) {
+	var extendThumbnail = function() {
 		var extThumb = $('.extend-thumb'); //.clone().appendTo('.our-work');
-		extThumb.children('img').attr({ src: baseUrl + '/images/thumbs/' + src });
+		extThumb.children('img').attr({ src: baseUrl + '/images/thumbs/' + zeunic.portfolio.src });
 		
-		extThumb.css({ top: row, display: 'block', zIndex: 900 });
+		extThumb.css({ top: zeunic.portfolio.top, display: 'block', zIndex: 900 });
 		
-		switch( col ) {
+		switch( zeunic.portfolio.col ) {
 			case 0:
 				extThumb.css({ left: 0, width: 190 }).animate({ width: 590, opacity: 1 }, { queue: false });
 				break;
@@ -83,8 +93,6 @@ $(function(){
 				extThumb.css({ left: 400, width: 190 }).animate({ width: 590, opacity: 1, left: 0}, { queue: false });
 				break;
 		}
-		
-		// extThumb.css({ top: row, display: 'block', zIndex: 50 }).animate({ opacity: 1 });
 	}
 
 });
