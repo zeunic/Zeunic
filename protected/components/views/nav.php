@@ -4,9 +4,12 @@
 	</a>
 	<ul>
 	<? 
+		$base = Yii::app()->request->baseUrl;
 		foreach($pages as $key => $value){
-			$base = Yii::app()->request->baseUrl;
-			$anchor = '<a href="'.$base.'/index.php/site/'.$value[0].'" title="'.$value[1].'">'. $value[1].'</a>';
+			
+			$section = ($value[1] == 'admin') ? 'admin/index' : ('site/'.$value[0]);
+		
+			$anchor = '<a href="'.$base.'/index.php/'.$section.'/" title="'.$value[1].'">'. $value[1].'</a>';
 			
 			echo '<li id="'.$value[0].'"';
 			

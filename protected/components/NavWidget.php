@@ -7,7 +7,11 @@ class NavWidget extends CWidget
     {
         // this method is called by CController::beginWidget()
         
-        $this->pages = array(array('portfolio', 'our work'), array('about', 'about us'), array('blog', 'our blog'), array('contact', 'contact'), array('login', 'login'));
+        if (Yii::app()->user->getIsGuest()) {
+        	$this->pages = array(array('portfolio', 'our work'), array('about', 'about us'), array('blog', 'our blog'), array('contact', 'contact'), array('login', 'login'));
+        } else {
+        	$this->pages = array(array('portfolio', 'our work'), array('about', 'about us'), array('blog', 'our blog'), array('contact', 'contact'), array('admin', 'admin'));
+        }
     }
  
     public function run()

@@ -33,7 +33,7 @@ body {
 	position: relative;
 }
 
-#main, #admin {
+#main, div#admin {
 	overflow: hidden;
 	position: relative;
 	margin: 20px 0 20px 20px;
@@ -159,6 +159,10 @@ nav ul li:hover {
 }
 
 #login {
+	background-position: -90px 0;
+}
+
+li#admin {
 	background-position: -90px 0;
 }
 
