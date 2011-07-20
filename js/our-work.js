@@ -74,13 +74,13 @@ $(function(){
 		
 		switch( col ) {
 			case 0:
-				extThumb.css({ left: 0, width: 190 }).animate({ width: 590, opacity: 1 });
+				extThumb.css({ left: 0, width: 190 }).animate({ width: 590, opacity: 1 }, { queue: false });
 				break;
 			case 1:
-				extThumb.css({ left: 190, width: 190 }).animate({ width: 590, left: 0, opacity: 1});
+				extThumb.css({ left: 190, width: 190 }).animate({ width: 590, left: 0, opacity: 1}, { queue: false });
 				break;
 			case 2:
-				extThumb.css({ left: 400, width: 190 }).animate({ width: 590, opacity: 1, left: 0});
+				extThumb.css({ left: 400, width: 190 }).animate({ width: 590, opacity: 1, left: 0}, { queue: false });
 				break;
 		}
 		
