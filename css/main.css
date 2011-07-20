@@ -104,7 +104,7 @@ header small strong {
 	display: block;
 	margin-top: 120px;
 	width: 240px;
-	background-image: url(../images/logo.png);
+	background: no-repeat url(../images/logo.png);
 }
 
 /* -----------------NAVIGATION------------------ */
