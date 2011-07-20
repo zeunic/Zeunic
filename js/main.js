@@ -1,4 +1,5 @@
 zeunic = {};
+zeunic.logo = {};
 
 $(function(){ 
 
@@ -40,17 +41,27 @@ $(function(){
 	// Logo Flicker & Hover Animation
 	var logo = $('#logo');
 	logo.bind('mouseenter', function(){
-		logo.children('img').animate({opacity: 1});
+		if(zeunic.logo) {
+			clearInterval( zeunic.logo.interval );
+		}
+		logo.children('img').stop().animate({opacity: 1});
 	});
 	logo.bind('mouseleave', function(){
+		zeunic.logo.interval = setInterval(logoPulse, 10000);
 		logo.children('img').animate({opacity: 0});
 	});
 	var logoPulse = function(){
+	
+		if(!zeunic.logo.interval) {
+			return false;
+		}
+	
 		$('#logo img').animate({ opacity: 1 }, 1750, function(){
 			$(this).animate({opacity: 0}, 1750);
 		});
 	}
-	setInterval(logoPulse, 10000);
+	
+	zeunic.logo.interval = setInterval(logoPulse, 10000);
 	
 	// Navigation StickyFloat
 	$('#content nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
