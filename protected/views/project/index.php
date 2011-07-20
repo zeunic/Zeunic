@@ -1,11 +1,11 @@
 <?php $this->beginWidget('application.components.NavWidget', array('page'=>4)); ?>
 <?php $this->endWidget(); ?>
 
-<div id="main">
+<div id="admin">
 
 	<h1>Projects</h1>
 
-	<ul id="admin">
+	<ul class="admin-nav">
 		<li><? echo CHtml::link('< Back', array('admin/index')); ?></li>
 		<li><? echo CHtml::link('Create New Project', array('project/create')); ?></li>
 		<li><? echo CHtml::link('logout', array('admin/logout')); ?></li>

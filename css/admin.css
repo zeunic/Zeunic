@@ -1,0 +1,13 @@
+/*
+ *
+ * Admin CSS Specifics for the Client Login & Project Management Sections
+ * Author: Zeunic
+ *
+ */
+ 
+#admin input[type="text"] {
+	font-size: 1.2em;
+	background-color: silver;
+	border: 1px solid #555555;
+	padding: 2px;
+}

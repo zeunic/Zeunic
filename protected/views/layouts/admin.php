@@ -25,7 +25,6 @@
 	<meta property="og:country-name" content="USA" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
-	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/admin.css" />
 	<title><?php echo CHtml::encode($this->pageTitle); ?></title>
 
 	<link rel="shortcut icon" href="http://www.zeunic.com/favicon.ico" type="image/x-icon" />
