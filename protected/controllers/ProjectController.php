@@ -161,6 +161,7 @@ class ProjectController extends Controller
 			$model->title=$_POST['Project']['title'];
 			$model->desc=$_POST['Project']['desc'];
 			$model->link=$_POST['Project']['link'];
+			$model->show=$_POST['Project']['show'];
 			if(CUploadedFile::getInstance($model, 'thumb')){
 				$model->thumb = CUploadedFile::getInstance($model, 'thumb');
 			}

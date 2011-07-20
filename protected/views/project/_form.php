@@ -45,6 +45,12 @@
 		<?php echo $form->textField($model,'link',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'link'); ?>
 	</div>
+
+    <div class="row">
+        <?php echo $form->labelEx($model,'show'); ?>
+        <?php echo $form->checkBox($model,'show'); ?>
+        <?php echo $form->error($model,'show'); ?>
+    </div>
 	
 	</fieldset>
 	

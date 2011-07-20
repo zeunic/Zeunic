@@ -24,6 +24,10 @@
 	<?php echo CHtml::encode($data->link); ?>
 	<br />
 
+	<b><?php echo CHtml::encode($data->getAttributeLabel('show')); ?>:</b>
+	<?php echo CHtml::encode($data->show); ?>
+	<br />
+
 	<strong><?php echo CHtml::link('Edit', array('project/update/'.$data->id)); ?></strong>
 
 	<strong><?php echo CHtml::link('Remove', array('project/delete/'.$data->id)); ?></strong>
