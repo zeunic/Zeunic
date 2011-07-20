@@ -1,6 +1,6 @@
 <nav>
 	<a id="logo" href="<?php echo Yii::app()->request->baseUrl; ?>/index.php">
-		<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo_hover.png" alt="Zeunic" /> 
+		<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo_hover.png" alt="Zeunic" width="250" height="80" /> 
 	</a>
 	<ul>
 	<? 
