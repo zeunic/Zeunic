@@ -71,6 +71,10 @@ small {
 	font-size: 11px;
 }
 
+article nav {
+	margin: 0;
+}
+
 /* -----------------HEADER------------------ */
 
 header {
@@ -383,6 +387,7 @@ footer aside cite {
 	clear: right;
 }
 
-footer cite a {
+footer cite a:link, footer cite a:visited {
 	color: #505355;
+	text-decoration: underline;
 }

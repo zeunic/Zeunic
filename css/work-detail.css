@@ -1,0 +1,49 @@
+#work-detail h1 {
+	font: bold 30px/1.4 "Droid Sans";
+	color: #24282c;
+	text-align: left;
+	float: none;
+	text-transform: none;
+	width: auto;
+	margin: 0;
+	clear: left;
+}
+
+#work-detail p, #work-detail li {
+	font: 12px/1.4 "Droid Sans";
+	color: #182123;
+}
+
+#work-detail section {
+	border-bottom: 1px dotted #424b53;
+	padding-bottom: 10px;
+	margin-bottom: 10px;
+}
+
+#work-detail img {
+	height: 200px;
+}
+
+#work-detail h2 {
+	font: bold 16px/2 "Droid Sans";
+	color: #424b53;
+}
+
+#project-details {
+	width: 480px;
+	margin-right: 20px;
+	float: left;
+}
+
+#project-details+section {
+	float: left;
+	width: 90px;
+}
+
+#project-testimonials {
+	clear: left;
+}
+
+#project-testimonials li {
+	margin-bottom: 10px;
+}

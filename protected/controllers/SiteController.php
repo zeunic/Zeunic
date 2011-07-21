@@ -105,12 +105,28 @@ class SiteController extends Controller
 		}
 	}
 	
-	public function actionPortfolio()
+	public function actionPortfolio($id = NULL)
 	{
+		if($id){
+			$project = Project::model()->findByPk($id);
+			$this->render('workdetail',array('project'=>$project));
+			endContent();
+		}
+		
 		$projects = Project::model()->findAllByAttributes(array('show'=>1));
+		$tagmodels = Tag::model()->findAll(array(
+				    'select'=>'t.tag',
+				    'distinct'=>true,
+				));
+		$tags = Array();		
+				
+		foreach($tagmodels as $key => $value){
+			$tags[] = $value->tag;
+		}
+		
 	
 		$this->pageTitle = 'Zeunic - Our Work';
-		$this->render('portfolio', array('projects'=>$projects));
+		$this->render('portfolio', array('projects'=>$projects, 'tags'=>$tags));
 	}
 
 }

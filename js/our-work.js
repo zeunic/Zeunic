@@ -58,7 +58,8 @@ $(function(){
 			parentOffset = that.parent('.portfolio_display').offset(),
 			offset = that.offset(),
 			col = Math.floor( (offset.left - parentOffset.left) / 200 ),
-			thumbSrc = that.children('img').attr('data-extended')
+			thumbSrc = that.children().children('img').attr('data-extended'),
+			thumbHref = that.children('a').attr('href');
 		;
 		
 		zeunic.portfolio = {}
@@ -67,6 +68,7 @@ $(function(){
 		zeunic.portfolio.top = offset.top - 177;
 		zeunic.portfolio.src = thumbSrc;
 		zeunic.portfolio.timeout = setTimeout( extendThumbnail, 600 );
+		zeunic.portfolio.href = thumbHref;
 		
 		return false;
 	});
@@ -84,7 +86,7 @@ $(function(){
 	
 	var extendThumbnail = function() {
 		var extThumb = $('.extend-thumb'); //.clone().appendTo('.our-work');
-		extThumb.children('img').attr({ src: baseUrl + '/images/projects/thumbs/' + zeunic.portfolio.src });
+		extThumb.children('a').attr({href:zeunic.portfolio.href}).children('img').attr({ src: baseUrl + '/images/projects/thumbs/' + zeunic.portfolio.src });
 		
 		extThumb.css({ top: zeunic.portfolio.top, display: 'block', zIndex: 900 });
 		
@@ -100,5 +102,10 @@ $(function(){
 				break;
 		}
 	}
+	
+	//AUTOCOMPLETE FUNCTIONALITY
+	$('#search').autocomplete({
+		source: tags
+	});
 
 });

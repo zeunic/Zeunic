@@ -92,10 +92,28 @@
 	padding: 2px 25px 2px 2px;
 	border: 1px solid #768ea3;
 	border-radius: 5px;
-	background-color: #ffffff;
 	margin: 2px 2px 2px 0;
 	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.1);
 	background: #ffffff right center url(../images/icons/search_input.png) no-repeat;
+}
+
+.ui-autocomplete {
+	width: 162px;
+	border-radius: 0 0 5px 5px;
+	font-size: 1.2em
+	padding: 10px;
+	background-color: #fff;
+	border: 1px solid #768ea3;
+}
+
+.ui-menu-item {
+	border-bottom: 1px solid #768ea3
+}
+
+.ui-menu-item a {
+	padding: 3px 0 2px 10px;
+	text-decoration: underline;
+	cursor: pointer;
 }
 
 
@@ -132,6 +150,7 @@
 .portfolio_display li:hover {
 	padding: 0;
 	border: 5px solid #EC1559;
+	-webkit-border-image: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#ec5137), color-stop(50%,#ec1559), color-stop(100%,#99074d));
 	background: #f9fafb;
 }
 

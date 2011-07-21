@@ -55,6 +55,8 @@ class ProjectController extends Controller
 		if(isset($_POST['Project']))
 		{
 			$model->attributes=$_POST['Project'];
+			$model->show = $_POST['Project']['show'];
+			$model->type = $_POST['Project']['type'];
 			$model->thumb = CUploadedFile::getInstance($model, 'thumb');
 			$model->thumb_lg = CUploadedFile::getInstance($model, 'thumb_lg');
 			if($model->save()){
