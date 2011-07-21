@@ -84,19 +84,19 @@ $(function(){
 	
 	var extendThumbnail = function() {
 		var extThumb = $('.extend-thumb'); //.clone().appendTo('.our-work');
-		extThumb.children('img').attr({ src: baseUrl + '/images/thumbs/' + zeunic.portfolio.src });
+		extThumb.children('img').attr({ src: baseUrl + '/images/projects/thumbs/' + zeunic.portfolio.src });
 		
 		extThumb.css({ top: zeunic.portfolio.top, display: 'block', zIndex: 900 });
 		
 		switch( zeunic.portfolio.col ) {
 			case 0:
-				extThumb.css({ left: 0, width: 190 }).animate({ width: 590, opacity: 1 }, { queue: false });
+				extThumb.css({ left: 0, width: 190 }).animate({ width: 588, opacity: 1 }, { queue: false });
 				break;
 			case 1:
-				extThumb.css({ left: 190, width: 190 }).animate({ width: 590, left: 0, opacity: 1}, { queue: false });
+				extThumb.css({ left: 190, width: 190 }).animate({ width: 588, left: 0, opacity: 1}, { queue: false });
 				break;
 			case 2:
-				extThumb.css({ left: 400, width: 190 }).animate({ width: 590, opacity: 1, left: 0}, { queue: false });
+				extThumb.css({ left: 400, width: 190 }).animate({ width: 588, opacity: 1, left: 0}, { queue: false });
 				break;
 		}
 	}

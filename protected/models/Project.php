@@ -10,6 +10,8 @@
  * @property string $title
  * @property string $desc
  * @property string $link
+ * @property string $show
+ * @property string $type
  *
  * The followings are the available model relations:
  * @property Gallery[] $galleries
@@ -64,7 +66,7 @@ class Project extends CActiveRecord
 		// class name for the relations automatically generated below.
 		return array(
 			'galleries' => array(self::HAS_MANY, 'Gallery', 'projectID'),
-			'tags' => array(self::HAS_MANY, 'Tags', 'projectID'),
+			'tags' => array(self::HAS_MANY, 'Tag', 'projectID'),
 			'testimonials' => array(self::HAS_MANY, 'Testimonial', 'projectID'),
 			'videos' => array(self::HAS_MANY, 'Video', 'projectID'),
 		);
@@ -82,7 +84,8 @@ class Project extends CActiveRecord
 			'title' => 'Title',
 			'desc' => 'Description',
 			'link' => 'Link',
-			'show' => 'Show?'
+			'show' => 'Show?',
+			'type' => 'Type'
 		);
 	}
 

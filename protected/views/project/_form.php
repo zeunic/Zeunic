@@ -51,6 +51,12 @@
         <?php echo $form->checkBox($model,'show'); ?>
         <?php echo $form->error($model,'show'); ?>
     </div>
+
+	<div class="row">
+		<?php echo $form->labelEx($model,'type'); ?>
+		<?php echo $form->dropDownList($model,'type',array('web'=>'Web', 'mobile'=>'Mobile', 'brand'=>'Brand')); ?>
+		<?php echo $form->error($model,'type'); ?>
+	</div>
 	
 	</fieldset>
 	

@@ -107,8 +107,10 @@ class SiteController extends Controller
 	
 	public function actionPortfolio()
 	{
+		$projects = Project::model()->findAllByAttributes(array('show'=>1));
+	
 		$this->pageTitle = 'Zeunic - Our Work';
-		$this->render('portfolio');
+		$this->render('portfolio', array('projects'=>$projects));
 	}
 
 }

@@ -1,7 +1,7 @@
 <div class="view">
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('id')); ?>:</b>
-	<?php echo CHtml::link(CHtml::encode($data->id), array('view', 'id'=>$data->id)); ?>
+	<?php echo CHtml::encode($data->id); ?>
 	<br />
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('thumb')); ?>:</b>
@@ -26,6 +26,10 @@
 
 	<b><?php echo CHtml::encode($data->getAttributeLabel('show')); ?>:</b>
 	<?php echo CHtml::encode($data->show); ?>
+	<br />
+
+	<b><?php echo CHtml::encode($data->getAttributeLabel('type')); ?>:</b>
+	<?php echo CHtml::encode($data->type); ?>
 	<br />
 
 	<strong><?php echo CHtml::link('Edit', array('project/update/'.$data->id)); ?></strong>
