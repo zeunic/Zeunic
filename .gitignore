@@ -5,6 +5,9 @@ ehthumbs.db
 Icon?
 Thumbs.db
 
+# Blog Section #
+blog/*
+
 # Yii Files          #
 ######################
 *.swp
