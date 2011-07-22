@@ -230,7 +230,7 @@ form#contact {
 }
 
 form#contact h2 {
-	border-top: 1px solid #666;
+	border-top: 1px solid #666666;
 	font: bold 18px/40px "Droid Sans", sans-serif;
 	color: #213240;
 	margin: 0 -10px;
@@ -248,7 +248,7 @@ form#contact input {
 	padding: 0 10px;
 	background-color: rgba(0,0,0,.1);
 	border: none;
-	border-bottom: 1px dashed #6c8598;
+	border-bottom: 1px dashed #666666;
 	font-weight: bold;
 }
 
@@ -269,17 +269,17 @@ form#contact textarea {
 	line-height: 20px;
 	background-color: rgba(0,0,0,.1);
 	border: none;
-	border-bottom: 1px dashed #000;
+	border-bottom: 1px dashed #666666;
 	font-weight: normal;
 }
 
 form#contact .error {
-	border-bottom: 1px dashed #db0d59;
+	border-bottom: 1px dashed #666666;
 }
 
 form#contact #submit {
 	font: bold 20px/16px "Garamond", sans-serif;
-	color: #fff;
+	color: #eac70b;
 	width: 80px;
 	height: 80px;
 	padding: 0;
@@ -291,7 +291,7 @@ form#contact #submit {
 }
 
 form#contact #submit:hover {
-	color: #700e13;
+	color: #5b0a0e;
 }
 
 form#contact p.error {
