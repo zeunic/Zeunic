@@ -1,7 +1,12 @@
-<?php $this->beginWidget('application.components.NavWidget', array('page'=>4)); ?>
-<?php $this->endWidget(); ?>
-
+<?php 
+if(!$ajax){
+	$this->beginWidget('application.components.NavWidget', array('page'=>4));
+	$this->endWidget(); 
+}
+?>
+<? if(!$ajax): ?>
 <div id="main">
+<? endif; ?>
 	
 	<?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'login',
@@ -29,4 +34,7 @@
     </div>
 
 	<?php $this->endWidget(); ?>
+	
+<? if(!$ajax): ?>	
 </div>
+<? endif; ?>

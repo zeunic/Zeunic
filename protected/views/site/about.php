@@ -1,7 +1,13 @@
-<?php $this->beginWidget('application.components.NavWidget', array('page'=>1)); ?>
-<?php $this->endWidget(); ?>
+<? 
+if(!$ajax){
+	$this->beginWidget('application.components.NavWidget', array('page'=>1));
+	$this->endWidget();
+}
+?>
 
+<? if(!$ajax): ?>
 <div id="main">
+<? endif; ?>
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/about-us.css" />
 
@@ -74,6 +80,8 @@
 	</section>
 </article>
 
+<? if(!$ajax): ?>
 </div>
+<? endif; ?>
 
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>

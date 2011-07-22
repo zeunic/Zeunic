@@ -1,7 +1,12 @@
-<?php $this->beginWidget('application.components.NavWidget', array('page'=>3)); ?>
-<?php $this->endWidget(); ?>
-
+<?php 
+if(!$ajax){
+	$this->beginWidget('application.components.NavWidget', array('page'=>3));
+	$this->endWidget(); 
+}
+?>
+<? if(!$ajax): ?>
 <div id="main">
+<? endif; ?>
 	<?php $form=$this->beginWidget('CActiveForm', array(
     'id'=>'contact',
     'enableAjaxValidation'=>true,
@@ -52,4 +57,6 @@
 			<dd>zeunic.com/+</dd>
 		</dl>
 	</aside>
+<? if(!$ajax): ?>
 </div>
+<? endif; ?>

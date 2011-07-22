@@ -202,11 +202,6 @@ nav h1 {
 	text-align: right;
 }
 
-nav #logo img {
-	background: no-repeat url(../images/icons/logo_hover.png);
-	opacity: 0;
-}
-
 /* -----------------VERTICAL DIVIDER------------------ */
 
 #vertrule {

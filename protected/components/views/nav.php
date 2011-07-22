@@ -15,7 +15,7 @@
 				echo '<li id="'.$value[0].'"';
 				
 				if($key == $page){
-					echo 'class="active">'.$value[1].'</li>';
+					echo 'class="active">'.$anchor.'</li>';
 				} else {
 					echo '>'. $anchor .'</li>';
 				}

@@ -1,6 +1,12 @@
-<?php $this->beginWidget('application.components.NavWidget', array('page'=>0)); ?>
-<?php $this->endWidget(); ?>
-
+<?php 
+if(!$ajax){
+$this->beginWidget('application.components.NavWidget', array('page'=>0));
+$this->endWidget();
+}
+?>
+<? if(!$ajax): ?>
+<div id="main">
+<? endif; ?>
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/our-work.css" />
 
@@ -11,8 +17,6 @@
 		<li><a href="#" data-value="brand">Branding</a></li>
 		<li><input type="text" name="search" id="search" placeholder="Search..." /></li>
 </ul>
-
-<div id="main">
 
 <article>
 <section class="our-work">
@@ -35,9 +39,9 @@
 	</ul>
 </section>
 </article>
-
+<? if(!$ajax): ?>
 </div>
-
+<? endif; ?>
 <!-- page specific JS loads -->
 <script>
 	tags = <?php echo json_encode($tags);?>;

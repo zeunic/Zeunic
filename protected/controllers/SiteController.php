@@ -30,19 +30,29 @@ class SiteController extends Controller
 		// renders the view file 'protected/views/site/index.php'
 		// using the default layout 'protected/views/layouts/main.php'
 		$this->pageTitle = 'Zeunic';
-		$this->render('index');
+		$this->render('index', array('ajax'=>false));
 	}
 	
 	public function actionAbout()
 	{
 		$this->pageTitle = 'Zeunic - About Us';
-		$this->render('about');
+		$this->render('about', array('ajax'=>false));
+	}
+	
+	public function actionAboutAjax()
+	{
+		$this->renderPartial('about', array('ajax'=>true));
 	}
 	
 	public function actionBlog()
 	{
 		$this->pageTitle = 'Zeunic - Search';
-		$this->render('blog');
+		$this->render('blog', array('ajax'=>false));
+	}
+	
+	public function actionBlogAjax()
+	{
+		$this->renderPartial('blog', array('ajax'=>true));
 	}
 	
 	public function actionLogin()
@@ -76,7 +86,41 @@ class SiteController extends Controller
 				}
 			}
 		}
-		$this->render('login',array('model'=>$model, 'error'=>$error));
+		$this->render('login',array('model'=>$model, 'error'=>$error, 'ajax'=>false));
+	}
+	
+	public function actionLoginAjax()
+	{
+		//If Logged in redirect to correct administration page
+		if(!Yii::app()->user->isGuest){
+		    if(Yii::app()->user->type == 'super'){
+		    	$this->redirect(array('admin/index'));
+		    } else {
+		    	$this->redirect(array('client/index'));
+		    }
+	    }
+		
+		//Login		    
+		$this->pageTitle = 'Zeunic - Client Login';
+		$model = new LoginForm;
+		$error = '';
+		if(isset($_POST['LoginForm'])){
+			$model->attributes = $_POST['LoginForm'];
+			if($model->validate()){
+				$identity=new UserIdentity($model->attributes['username'],$model->attributes['password']);
+				if($identity->authenticate()){
+				    Yii::app()->user->login($identity);
+				    if(Yii::app()->user->type == 'super'){
+				    	$this->redirect(array('admin/index'));
+				    } else {
+				    	$this->redirect(array('client/index'));
+				    }
+				} else {
+					$error = 'Username/Password combination is incorrect';
+				}
+			}
+		}
+		$this->renderPartial('login', array('ajax'=>true, 'model'=>$model, 'error'=>$error));
 	}
 	
 	public function actionContact()
@@ -101,8 +145,16 @@ class SiteController extends Controller
 				$this->render('contact',array('model'=>$model));
 			}
 		} else {
-			$this->render('contact',array('model'=>$model));
+			$this->render('contact',array('model'=>$model, 'ajax'=>false));
 		}
+	}
+	
+	public function actionContactAjax()
+	{
+		$this->pageTitle = 'Zeunic - Contact Us';
+		//Handle form submission
+		$model = new ContactForm;
+		$this->renderPartial('contact', array('ajax'=>true, 'model'=>$model));
 	}
 	
 	public function actionPortfolio($id = NULL)
@@ -126,7 +178,30 @@ class SiteController extends Controller
 		
 	
 		$this->pageTitle = 'Zeunic - Our Work';
-		$this->render('portfolio', array('projects'=>$projects, 'tags'=>$tags));
+		$this->render('portfolio', array('projects'=>$projects, 'tags'=>$tags, 'ajax'=>false));
+	}
+	
+	public function actionPortfolioAjax($id = NULL)
+	{
+		if($id){
+			$project = Project::model()->findByPk($id);
+			$this->render('workdetail',array('project'=>$project));
+			endContent();
+		}
+		
+		$projects = Project::model()->findAllByAttributes(array('show'=>1));
+		$tagmodels = Tag::model()->findAll(array(
+				    'select'=>'t.tag',
+				    'distinct'=>true,
+				));
+		$tags = Array();		
+				
+		foreach($tagmodels as $key => $value){
+			$tags[] = $value->tag;
+		}
+		
+		$this->pageTitle = 'Zeunic - Our Work';
+		$this->renderPartial('portfolio', array('ajax'=>true, 'projects'=>$projects, 'tags'=>$tags));
 	}
 
 }
