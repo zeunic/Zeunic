@@ -225,13 +225,16 @@ form#contact {
 	-webkit-box-shadow: 0 0 9px rgba(0,0,0,.7);
 	box-shadow: 0 0 9px rgba(0,0,0,.7);
 	margin: 0 0 20px 0;
-	padding: 11px 20px 240px 20px;
+	padding: 0px 20px 240px 20px;
 	border-bottom: 1px solid #666666;
 }
 
 form#contact h2 {
+	border-top: 1px solid #666;
 	font: bold 18px/40px "Droid Sans", sans-serif;
 	color: #213240;
+	margin: 0 -10px;
+	padding: 11px 0 0 10px;
 }
 
 form#contact p {
