@@ -112,11 +112,14 @@ $(function(){
 	});
 	
 	var filterProjects = function(tag){
+		$('.portfolio_display li[data-type=search]').remove();
 		$.ajax({
 			url: baseUrl+'/index.php/site/getprojectsbytag/tag/'+tag,
 			cache: false,
 			success: function(response){
-				console.log(response);
+				$('.portfolio_display').append(response);
+				
+				$('.button-row a[data-value=search]').trigger('click');
 			}
 		});
 	};
