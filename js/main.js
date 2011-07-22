@@ -70,7 +70,8 @@ $(function(){
 	$('a').live('click', function(){
 		var that = $(this);
 		if(that.attr('data-external') != true){
-			var linkID = that.attr('id');
+			var linkID = that.parent().attr('id');
+			console.log(linkID);
 			var ajaxLink = that.attr('href');
 			if(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length) == '/'){
 				ajaxLink = ajaxLink.substring(0, ajaxLink.length-1);
@@ -82,7 +83,9 @@ $(function(){
 			  cache: false,
 			  success: function(html){
 			  	$('#main').animate({opacity:0}, 1000, function(){
-			  		$('#nav').find('.active').removeClass('active').parent().find('#'+linkID).addClass('active');
+			  		var nav = $('#nav');
+			  		nav.find('.active').removeClass('active');
+			  		nav.find('#'+linkID).addClass('active');
 			    	$('#main').html(html).animate({opacity:1}, 1000);
 			  	});
 			  }
