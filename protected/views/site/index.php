@@ -8,7 +8,7 @@ if(!$ajax){
 <div id="main">
 <? endif; ?>
 
-<h2>Testing Deployment Copy</h2>
+<h2>Wow. Really hope this persistence pays off.. permissions all set? I think so.</h2>
 
 <? if(!$ajax): ?>
 </div>
