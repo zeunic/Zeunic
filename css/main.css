@@ -254,10 +254,11 @@ form#contact input:focus, form#contact textarea:focus {
 
 form#contact textarea {
 	width: 530px;
-	height: 64px;
+	height: 44px;
 	display: block;
-	padding: 4px 10px 0 10px;
+	padding: 4px 10px 2px 10px;
 	margin-top: 5px;
+	margin-bottom: 6px;
 	line-height: 20px;
 	background-color: #ddd;
 	border: none;
