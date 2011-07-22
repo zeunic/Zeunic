@@ -18,26 +18,6 @@ $(function(){
 		username: "zeunic"
 	});
 	
-	$('textarea').autoResize({
-	    // Quite slow animation:
-	    animateDuration : 300,
-	    // More extra space:
-	    extraSpace : 20,
-	    limit: 999999999
-	}).bind('click', function(){
-		$(this).trigger('keyup');
-	});;
-	
-	$('#ContactForm_name').bind('blur', function(){
-		var name = $(this).val();
-		var sig = $('#signature');
-		if(name == ''){
-			sig.html('Thanks.').animate({height:30},300);
-		} else {
-			sig.animate({height:70}, 300).html('Thanks,<br />'+name);
-		}
-	});
-	
 	// Logo Flicker & Hover Animation
 	var logo = $('#logo');
 	logo.bind('mouseenter', function(){
@@ -87,12 +67,18 @@ $(function(){
 			  		var bodyHeight = $('#container').css('height');
 			  		container.css({height:bodyHeight});
 			  		var nav = $('#nav');
+			  		var main = $('#main');
 			  		nav.find('.active').removeClass('active');
 			  		nav.find('#'+linkID).addClass('active');
 			  		$('head title').text('Zeunic :: ' + linkID);
-			    	$('#main').html(html).animate({opacity:1}, 500);
+			    	main.html(html);
+			    	setTimeout(function(){
+			    		main.animate({opacity:1}, 500);
+			    	}, 500);
 			    	contentHeight = $('#content').css('height');
-			    	container.animate({height:contentHeight}, 1000);
+			    	container.animate({height:contentHeight}, 1000, 'easeInQuad', function(){
+			    		container.css({height:'auto'});
+			    	});
 			  	});
 			  }
 			});
