@@ -59,7 +59,7 @@ if(!$ajax){
 		<div class="minibio">
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/parker.png" alt="parker" />
 			<ul>
-				<li class="tweet">Serif and Sans-serif fonts play nice together, you just gotta lay down some ground rules first. <a href="fb.me/12jIDAl0K">fb.me/12jIDAl0K</a></li>
+				<li class="tweet">Serif and Sans-serif fonts play nice together, you just gotta lay down some ground rules first. <a href="fb.me/12jIDAl0K" data-external="true">fb.me/12jIDAl0K</a></li>
 				<li>Drives: Toyota</li>
 				<li>Dislikes: Then ending to Inception</li>
 				<li>Favorite Site: Adobe.com</li>
