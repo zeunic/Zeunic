@@ -23,6 +23,7 @@ $(function(){
 
 	// Filter Function when toggling between top 4 tag filters
 	$('.button-row a').bind('click', function(){
+		
 		$('.selected').toggleClass('selected'); // grab the selected filter, and turn it off.
 		
 		var that = $(this);
@@ -31,6 +32,11 @@ $(function(){
 		var filter = that.attr('data-value'),
 			dataList = $('#data')
 		;
+		
+		//remove searched elements
+		if (filter != 'search'){
+			$('#data li[data-type=search]').remove();
+		}
 		
 		// Gather elements from the dataList based on the filter type
 		// so that QuickSand can be used on the #portfolio_display
@@ -112,13 +118,12 @@ $(function(){
 	});
 	
 	var filterProjects = function(tag){
-		$('.portfolio_display li[data-type=search]').remove();
+		$('#data li[data-type=search]').remove();
 		$.ajax({
 			url: baseUrl+'/index.php/site/getprojectsbytag/tag/'+tag,
 			cache: false,
 			success: function(response){
-				$('.portfolio_display').append(response);
-				
+				$('#data').append(response);
 				$('.button-row a[data-value=search]').trigger('click');
 			}
 		});
