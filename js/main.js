@@ -83,11 +83,16 @@ $(function(){
 			  cache: false,
 			  success: function(html){
 			  	$('#main').animate({opacity:0}, 500, function(){
+			  		container = $('#container');
+			  		var bodyHeight = $('#container').css('height');
+			  		container.css({height:bodyHeight});
 			  		var nav = $('#nav');
 			  		nav.find('.active').removeClass('active');
 			  		nav.find('#'+linkID).addClass('active');
 			  		$('head title').text('Zeunic :: ' + linkID);
 			    	$('#main').html(html).animate({opacity:1}, 500);
+			    	contentHeight = $('#content').css('height');
+			    	container.animate({height:contentHeight}, 1000);
 			  	});
 			  }
 			});
