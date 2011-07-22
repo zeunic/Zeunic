@@ -33,6 +33,12 @@ class SiteController extends Controller
 		$this->render('index', array('ajax'=>false));
 	}
 	
+	public function actionIndexAjax()
+	{
+		$this->pageTitle = 'Zeunic';
+		$this->renderPartial('index', array('ajax'=>true));
+	}
+	
 	public function actionAbout()
 	{
 		$this->pageTitle = 'Zeunic - About Us';
@@ -41,17 +47,19 @@ class SiteController extends Controller
 	
 	public function actionAboutAjax()
 	{
+		$this->pageTitle = 'Zeunic - About Us';
 		$this->renderPartial('about', array('ajax'=>true));
 	}
 	
 	public function actionBlog()
 	{
-		$this->pageTitle = 'Zeunic - Search';
+		$this->pageTitle = 'Zeunic - Blog';
 		$this->render('blog', array('ajax'=>false));
 	}
 	
 	public function actionBlogAjax()
 	{
+		$this->pageTitle = 'Zeunic - Blog';
 		$this->renderPartial('blog', array('ajax'=>true));
 	}
 	

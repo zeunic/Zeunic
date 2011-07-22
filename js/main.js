@@ -67,7 +67,7 @@ $(function(){
 	$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 	
 	//AJAX Navigation
-	$('#nav li a').live('click', function(){
+	$('#nav a').live('click', function(){
 		var that = $(this);
 		if(that.attr('data-external') != true){
 			var linkID = that.parent().attr('id');
@@ -86,6 +86,7 @@ $(function(){
 			  		var nav = $('#nav');
 			  		nav.find('.active').removeClass('active');
 			  		nav.find('#'+linkID).addClass('active');
+			  		$('head title').text('Zeunic :: ' + linkID);
 			    	$('#main').html(html).animate({opacity:1}, 500);
 			  	});
 			  }
