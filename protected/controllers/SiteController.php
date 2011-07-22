@@ -211,5 +211,21 @@ class SiteController extends Controller
 		$this->pageTitle = 'Zeunic - Our Work';
 		$this->renderPartial('portfolio', array('ajax'=>true, 'projects'=>$projects, 'tags'=>$tags));
 	}
+	
+	public function actionGetProjectsByTag($tag)
+	{
+		$tags = Tag::model()->findAll(array(
+				    'select'=>'t.projectID',
+				    'condition'=>'tag=:tag',
+				    'params'=>array(':tag'=>$tag),
+				    'distinct'=>true,
+				));
+		$projects = array();
+		foreach($tags as $key => $tag){
+			$projects[] = $tag->projectID;
+		}
+		/* $projects = Project::model()-> */
+		echo print_r($projects);
+	}
 
 }
