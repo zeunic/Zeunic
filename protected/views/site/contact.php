@@ -26,7 +26,7 @@ if(!$ajax){
 			<span id="signature">Thanks.</span>
 		</p>
 		<p>
-			<input type="image" src="<?php echo Yii::app()->request->baseUrl; ?>/images/btn_contact.jpg" id="submit" />
+			<input type="submit" value="send" id="submit" />
 		</p>
 	<?php $this->endWidget(); ?>
 	

@@ -275,12 +275,20 @@ form#contact .error {
 }
 
 form#contact #submit {
-	width: 192px;
-	height: 36px;
-	box-shadow: 0 0 6px #888;
+	font: bold 20px/16px "Garamond", sans-serif;
+	color: #fff;
+	width: 80px;
+	height: 80px;
 	padding: 0;
+	margin: 70px 235px 0 235px;
 	float: right;
 	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+form#contact #submit:hover {
+	color: #700e13;
 }
 
 form#contact p.error {
