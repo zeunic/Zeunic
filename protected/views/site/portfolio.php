@@ -16,6 +16,7 @@ $this->endWidget();
 		<li><a href="#" data-value="web">Web</a></li>
 		<li><a href="#" data-value="mobile">Mobile</a></li>
 		<li><a href="#" data-value="brand">Branding</a></li>
+		<li><a href="#" data-value="search" style="display:none">Search</a></li>
 		<li><input type="text" name="search" id="search" placeholder="Search..." /></li>
 </ul>
 

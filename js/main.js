@@ -78,6 +78,7 @@ $(function(){
 			    	contentHeight = $('#content').css('height');
 			    	container.animate({height:contentHeight}, 1000, 'easeInQuad', function(){
 			    		container.css({height:'auto'});
+			    		$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 			    	});
 			  	});
 			  }

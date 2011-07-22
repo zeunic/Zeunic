@@ -105,7 +105,21 @@ $(function(){
 	
 	//AUTOCOMPLETE FUNCTIONALITY
 	$('#search').autocomplete({
-		source: tags
+		source: tags,
+		select: function(event, ui){
+			filterProjects(ui.item.value);
+		}
 	});
+	
+	var filterProjects = function(tag){
+		$.ajax({
+			url: baseUrl+'/index.php/site/getprojectsbytag/tag/'+tag,
+			cache: false,
+			success: function(response){
+				console.log(response);
+			}
+		});
+	};
+	
 
 });
