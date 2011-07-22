@@ -8,7 +8,7 @@ if(!$ajax){
 <div id="main">
 <? endif; ?>
 
-<h2>Testing Deployment Copy. PLEEEEEAAAASSSSEE. Work...LKJASDLKJASDLKJAS</h2>
+<h2>Testing Deployment Copy. PLEEEEEAAAASSSSEE. Work...God this might be so money.</h2>
 
 <? if(!$ajax): ?>
 </div>
