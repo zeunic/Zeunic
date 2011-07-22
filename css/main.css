@@ -332,37 +332,37 @@ form#contact p.error img {
 }
 
 #contact-address {
-	background: url(../images/address.png) top left no-repeat;
+	background: url(../images/icons/address.png) top left no-repeat;
 	padding-left: 20px;
 }
 
 #contact-phone {
-	background: url(../images/phone.png) top left no-repeat;
+	background: url(../images/icons/phone.png) top left no-repeat;
 	padding-left: 20px;
 }
 
 #contact-placeholder {
-	background: url(../images/phone.png) top left no-repeat;
+	background: url(../images/icons/phone.png) top left no-repeat;
 	padding-left: 20px;
 }
 
 #contact-email {
-	background: url(../images/email.png) top left no-repeat;
+	background: url(../images/icons/email.png) top left no-repeat;
 	padding-left: 20px;
 }
 
 #contact-twitter {
-	background: url(../images/twitter.png) top left no-repeat;
+	background: url(../images/icons/twitter.png) top left no-repeat;
 	padding-left: 20px;
 }
 
 #contact-gplus {
-	background: url(../images/gplus.png) top left no-repeat;
+	background: url(../images/icons/gplus.png) top left no-repeat;
 	padding-left: 20px;
 }
 
 #contact-facebook {
-	background: url(../images/facebook.png) top left no-repeat;
+	background: url(../images/icons/facebook.png) top left no-repeat;
 	padding-left: 20px;
 }
 
