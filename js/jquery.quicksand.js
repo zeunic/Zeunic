@@ -142,8 +142,10 @@ Github site: http://github.com/razorjack/quicksand
                 rawObj.style.position = 'absolute';
                 rawObj.style.margin = '0';
 
-                rawObj.style.top = (offsets[i].top - parseFloat(rawObj.style.marginTop) - correctionOffset.top + dy) + 'px';
+                rawObj.style.top = (offsets[i].top - parseFloat(rawObj.style.marginTop) - correctionOffset.top + dy - 33) + 'px';
                 rawObj.style.left = (offsets[i].left - parseFloat(rawObj.style.marginLeft) - correctionOffset.left + dx) + 'px';
+                
+               	console.log(rawObj.style.top);
             });
                     
             // create temporary container with destination collection
@@ -165,7 +167,7 @@ Github site: http://github.com/razorjack/quicksand
             
             rawDest.style.margin = '0';
             rawDest.style.position = 'absolute';
-            rawDest.style.top = offset.top - correctionOffset.top + 'px';
+            rawDest.style.top = offset.top - correctionOffset.top - 33 + 'px';
             rawDest.style.left = offset.left - correctionOffset.left + 'px';
             
             

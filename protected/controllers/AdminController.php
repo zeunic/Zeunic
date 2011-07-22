@@ -31,7 +31,17 @@ class AdminController extends Controller
 			$this->redirect(array('site/login'));
 		} else {
 			$this->pageTitle = 'Zeunic - Administration';
-			$this->render('index');
+			$this->render('index', array('ajax'=>false));
+		}
+	}
+	
+	public function actionIndexAjax()
+	{
+		if(Yii::app()->user->isGuest){
+			$this->redirect(array('site/login'));
+		} else {
+			$this->pageTitle = 'Zeunic - Administration';
+			$this->renderPartial('index', array('ajax'=>true));
 		}
 	}
 	

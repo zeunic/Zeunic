@@ -4,6 +4,10 @@ $this->beginWidget('application.components.NavWidget', array('page'=>0));
 $this->endWidget();
 }
 ?>
+<? if(!$ajax): ?>
+<div id="main">
+<? endif; ?>
+
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/our-work.css" />
 
@@ -14,11 +18,8 @@ $this->endWidget();
 		<li><a href="#" data-value="brand">Branding</a></li>
 		<li><input type="text" name="search" id="search" placeholder="Search..." /></li>
 </ul>
-<? if(!$ajax): ?>
-<div id="main">
-<? endif; ?>
 
-<article>
+<article id="portfolio-article">
 <section class="our-work">
 	
 	<div class="extend-thumb"><a href=""><img src="" width="590" height="120" /></a></div>
@@ -30,7 +31,7 @@ $this->endWidget();
 	<ul id="data" class="hidden">
 		<!-- this list is populated via the selected user choice, sorted, and then cloned into the display -->
 		<? foreach($projects as $key => $project): ?>
-			<li data-id="id-<? echo $key ?>" data-type="<? echo $project->type ?>">
+			<li data-id="id-<? echo ($key + 1) ?>" data-type="<? echo $project->type ?>">
 				<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio/<? echo $project->id ?>">
 					<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/projects/thumbs/<? echo $project->thumb ?>" data-extended="<? echo $project->thumb_lg ?>" />
 				</a>

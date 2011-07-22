@@ -11,8 +11,7 @@
  */
  
 .button-row {
- 	overflow: hidden;
- 	margin: 20px 0 0 320px;
+ 	margin: 0 0 0 -5px;
  	float: left;
  	width: 600px;
 }
@@ -28,7 +27,7 @@
 	width: 91px;
 	height: 20px;
 	text-indent: -99999px;
-	margin: 3px 4px 10px 5px;
+	margin: 3px 3px 10px 5px;
 	border-radius: 5px;
 	-webkit-transition: box-shadow 0.5s ease-in;
 	-moz-transition: box-shadow 0.5s ease-in;
@@ -76,8 +75,6 @@
 }
  
 .button-row li {
-	display: inline;
-	overflow: hidden;
 	float: left;
 }
 
@@ -92,7 +89,7 @@
 	padding: 2px 25px 2px 2px;
 	border: 1px solid #768ea3;
 	border-radius: 5px;
-	margin: 2px 2px 2px 0;
+	margin: 2px 2px 2px 7px;
 	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.1);
 	background: #ffffff right center url(../images/icons/search_input.png) no-repeat;
 }
@@ -125,15 +122,21 @@
 	display: none;
 }
 
+#portfolio-article {
+	float: left;
+	margin-bottom: 10px;
+}
+
 .our-work {
-	position: relative;
+
 }
  
 .portfolio_display {
 	width: 600px;
 	height: 360px;
-	margin: 10px 0 0 0;
+	margin: 0 0 0 0;
 	position: relative;
+	display: block;
 }
  
 .portfolio_display li {
@@ -161,5 +164,6 @@
 	background-color: red;
 	height: 118px;
 	opacity: 0;
+	margin-top: 36px;
 	border: 1px solid #768EA3;
 }
