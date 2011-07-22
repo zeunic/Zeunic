@@ -67,12 +67,13 @@ $(function(){
 	$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 	
 	//AJAX Navigation
-	$('a').live('click', function(){
+	/*
+$('#nav li').not('#admin').live('click', function(){
 		var that = $(this);
 		if(that.attr('data-external') != true){
-			var linkID = that.parent().attr('id');
+			var linkID = that.attr('id');
 			console.log(linkID);
-			var ajaxLink = that.attr('href');
+			var ajaxLink = that.children('a').attr('href');
 			if(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length) == '/'){
 				ajaxLink = ajaxLink.substring(0, ajaxLink.length-1);
 			}
@@ -82,17 +83,18 @@ $(function(){
 			  url: ajaxLink,
 			  cache: false,
 			  success: function(html){
-			  	$('#main').animate({opacity:0}, 1000, function(){
+			  	$('#main').animate({opacity:0}, 500, function(){
 			  		var nav = $('#nav');
 			  		nav.find('.active').removeClass('active');
 			  		nav.find('#'+linkID).addClass('active');
-			    	$('#main').html(html).animate({opacity:1}, 1000);
+			    	$('#main').html(html).animate({opacity:1}, 500);
 			  	});
 			  }
 			});
 			return false;
 		}
 	});
+*/
 	/*
 $('#nav').find('#about').live('click',function(){
 		$.ajax({
