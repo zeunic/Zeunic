@@ -258,9 +258,9 @@ form#contact input:focus, form#contact textarea:focus {
 
 form#contact textarea {
 	width: 530px;
-	height: 44px;
+	height: 40px;
 	display: block;
-	padding: 4px 10px 2px 10px;
+	padding: 4px 10px 6px 10px;
 	margin-top: 5px;
 	margin-bottom: 6px;
 	line-height: 20px;
