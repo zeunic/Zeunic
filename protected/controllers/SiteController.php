@@ -222,10 +222,9 @@ class SiteController extends Controller
 				));
 		$projects = array();
 		foreach($tags as $key => $tag){
-			$projects[] = $tag->projectID;
+			$projects[] = Project::model()->findByPk($tag->projectID);
 		}
-		/* $projects = Project::model()-> */
-		echo print_r($projects);
+		$this->renderPartial('_projectSearch', array('projects'=>$projects));
 	}
 
 }
