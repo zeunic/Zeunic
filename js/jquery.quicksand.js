@@ -167,7 +167,7 @@ Github site: http://github.com/razorjack/quicksand
             
             rawDest.style.margin = '0';
             rawDest.style.position = 'absolute';
-            rawDest.style.top = offset.top - correctionOffset.top - 33 + 'px';
+            rawDest.style.top = (offset.top - correctionOffset.top - 33) + 'px';
             rawDest.style.left = offset.left - correctionOffset.left + 'px';
             
             
