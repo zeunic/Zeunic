@@ -5,9 +5,56 @@
  *
  */
  
-#admin input[type="text"] {
+div#admin {
+	padding: 5px;
+}
+
+/*
+ * Login Page ------------------------------------------------- /
+ */
+
+#admin #login_form div.row {
+	float: left;
+	clear: none;
+	margin: 0 15px 0 0;
+}
+
+#admin p:nth-child(2)  {
+	margin-top: 40px;
+	font-size: 1.3em;
+	width: 340px;
+}
+ 
+#admin label {
+	width: 100px;
+	margin: 0 5px 0 0;
 	font-size: 1.2em;
-	background-color: silver;
-	border: 1px solid #555555;
-	padding: 2px;
+	font-weight: bold;
+	display: block;
+	color: #EC1559;
+} 
+
+#admin input[type="text"], #admin input[type="password"] {
+	font-size: 1.4em;
+	background-color: #E1E1E1;
+	border: 1px solid #BBBBBB;
+	padding: 4px;
+	box-shadow: 0 0 5px rgba(0,0,0,.1);
+}
+
+#admin #login_form .row.submit input[type="submit"] {
+	display: none;
+}
+
+#admin #login_form .row.submit a {
+	display: block;
+	width: 70px;
+	border: 1px solid white;
+	text-align: center;
+	background-color: #EC1559;
+	padding: 3px 0 3px 0;
+	color: white;
+	font-size: 1.2em;
+	font-weight: bold;
+	margin-top: 18px;
 }

@@ -83,7 +83,6 @@ var H = function (a) {
 			$.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?callback=?&screen_name='+options.username+'&count='+options.tweets,
 		        function(data) {
 		            $.each(data, function(i, tweet) {
-		            	console.log('yellow');
 		                if(typeof tweet.text == 'string') {
 		                    obj.text(tweet.text);
 		                    obj.siblings('cite').html(H(tweet.created_at)+' via '+tweet.source);
