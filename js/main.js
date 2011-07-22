@@ -69,24 +69,26 @@ $(function(){
 	//AJAX Navigation
 	$('a').live('click', function(){
 		var that = $(this);
-		var linkID = that.attr('id');
-		var ajaxLink = that.attr('href');
-		if(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length) == '/'){
-			ajaxLink = ajaxLink.substring(0, ajaxLink.length-1);
+		if(that.attr('data-external') != true){
+			var linkID = that.attr('id');
+			var ajaxLink = that.attr('href');
+			if(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length) == '/'){
+				ajaxLink = ajaxLink.substring(0, ajaxLink.length-1);
+			}
+			ajaxLink = ajaxLink + 'Ajax';
+			console.log(ajaxLink);
+			$.ajax({
+			  url: ajaxLink,
+			  cache: false,
+			  success: function(html){
+			  	$('#main').animate({opacity:0}, 1000, function(){
+			  		$('#nav').find('.active').removeClass('active').parent().find('#'+linkID).addClass('active');
+			    	$('#main').html(html).animate({opacity:1}, 1000);
+			  	});
+			  }
+			});
+			return false;
 		}
-		ajaxLink = ajaxLink + 'Ajax';
-		console.log(ajaxLink);
-		$.ajax({
-		  url: ajaxLink,
-		  cache: false,
-		  success: function(html){
-		  	$('#main').animate({opacity:0}, 1000, function(){
-		  		$('#nav').find('.active').removeClass('active').parent().find('#'+linkID).addClass('active');
-		    	$('#main').html(html).animate({opacity:1}, 1000);
-		  	});
-		  }
-		});
-		return false;
 	});
 	/*
 $('#nav').find('#about').live('click',function(){
