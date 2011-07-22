@@ -243,7 +243,7 @@ form#contact input {
 	width: 220px;
 	height: 30px;
 	padding: 0 10px;
-	background-color: #ddd;
+	background-color: rgba(0,0,0,.1);
 	border: none;
 	border-bottom: 1px dashed #6c8598;
 	font-weight: bold;
@@ -260,11 +260,11 @@ form#contact textarea {
 	width: 530px;
 	height: 40px;
 	display: block;
-	padding: 4px 10px 6px 10px;
+	padding: 4px 10px 4px 10px;
 	margin-top: 5px;
 	margin-bottom: 6px;
 	line-height: 20px;
-	background-color: #ddd;
+	background-color: rgba(0,0,0,.1);
 	border: none;
 	border-bottom: 1px dashed #000;
 	font-weight: normal;
@@ -275,12 +275,20 @@ form#contact .error {
 }
 
 form#contact #submit {
-	width: 192px;
-	height: 36px;
-	box-shadow: 0 0 6px #888;
+	font: bold 20px/16px "Garamond", sans-serif;
+	color: #fff;
+	width: 80px;
+	height: 80px;
 	padding: 0;
+	margin: 70px 235px 0 235px;
 	float: right;
 	border: none;
+	background: none;
+	cursor: pointer;
+}
+
+form#contact #submit:hover {
+	color: #700e13;
 }
 
 form#contact p.error {
