@@ -1,5 +1,9 @@
 /* -----------------GENERAL------------------ */
 
+#signature {
+	margin-top: 20px;
+}
+
 html {
 	font-family: "Droid Sans", sans-serif;
 	background-color: #171f24;
