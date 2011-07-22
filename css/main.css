@@ -220,10 +220,13 @@ nav h1 {
 
 form#contact {
 	width: 550px;
-	background: #d8e5ef top center url(../images/bg_contact.jpg) no-repeat;
-	box-shadow: 0 0 9px rgba(0,0,0,.2);
+	background: url(../images/bg_contact_top.png) left bottom no-repeat, url(../images/bg_contact_btm.png) left top repeat-y;
+	-moz-box-shadow: 0 0 9px rgba(0,0,0,.7);
+	-webkit-box-shadow: 0 0 9px rgba(0,0,0,.7);
+	box-shadow: 0 0 9px rgba(0,0,0,.7);
 	margin: 0 0 20px 0;
-	padding: 20px 20px 50px 20px;
+	padding: 11px 20px 240px 20px;
+	border-bottom: 1px solid #666666;
 }
 
 form#contact h2 {
@@ -240,27 +243,30 @@ form#contact input {
 	width: 220px;
 	height: 30px;
 	padding: 0 10px;
-	background-color: #c0d2e0;
+	background-color: #ddd;
 	border: none;
 	border-bottom: 1px dashed #6c8598;
 	font-weight: bold;
 }
 
 form#contact input:focus, form#contact textarea:focus {
-	box-shadow: 0 0 10px #1b598d;
-	border-bottom: 1px dashed #0eb2bd;
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,.6);
+	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.6);
+	box-shadow: 0 0 5px rgba(0,0,0,.6);
+	border-bottom: 1px dashed #000;
 }
 
 form#contact textarea {
 	width: 530px;
-	height: 30px;
+	height: 44px;
 	display: block;
-	padding: 10px 10px 0 10px;
+	padding: 4px 10px 2px 10px;
 	margin-top: 5px;
+	margin-bottom: 6px;
 	line-height: 20px;
-	background-color: #c0d2e0;
+	background-color: #ddd;
 	border: none;
-	border-bottom: 1px dashed #6c8598;
+	border-bottom: 1px dashed #000;
 	font-weight: normal;
 }
 
