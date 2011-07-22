@@ -67,13 +67,12 @@ $(function(){
 	$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 	
 	//AJAX Navigation
-	/*
-$('#nav li').not('#admin').live('click', function(){
+	$('#nav li a').live('click', function(){
 		var that = $(this);
 		if(that.attr('data-external') != true){
-			var linkID = that.attr('id');
+			var linkID = that.parent().attr('id');
 			console.log(linkID);
-			var ajaxLink = that.children('a').attr('href');
+			var ajaxLink = that.attr('href');
 			if(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length) == '/'){
 				ajaxLink = ajaxLink.substring(0, ajaxLink.length-1);
 			}
@@ -94,7 +93,6 @@ $('#nav li').not('#admin').live('click', function(){
 			return false;
 		}
 	});
-*/
 	/*
 $('#nav').find('#about').live('click',function(){
 		$.ajax({
