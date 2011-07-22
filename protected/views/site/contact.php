@@ -31,31 +31,27 @@ if(!$ajax){
 	<?php $this->endWidget(); ?>
 	
 	<aside class="contact-print">
-		<dl>
-			<dt>Mail</dt>
-			<dd><address>
+		<address id="contact-address">
 			Zeunic, LLC<br />
-			560 Twisting Pine Court, Longwood FL 322279
-			</address></dd>
-		</dl>
+			560 Twisting Pine Court<br />
+			Longwood FL 322279
+		</address>
 	</aside>
 	
 	<aside class="contact-media">
-		<dl>
-			<dt>Phone</dt>
-			<dd>407-615-0794</dd>
-			<dt>Email</dt>
-			<dd>social@zeunic.com</dd>
-		</dl>
+		<ul>
+			<li id="contact-phone"><a href="#">407-615-0794</a></li>
+			<li id="contact-placeholder"><a href="#">"placeholder"</a></li>
+			<li id="contact-email"><a href="#">social@zeunic.com</a></li>
+		</ul>
 	</aside>
 	
 	<aside class="contact-social">
-		<dl>
-			<dt>Twitter</dt>
-			<dd>twitter.com/zeunic</dd>
-			<dt>Google+</dt>
-			<dd>zeunic.com/+</dd>
-		</dl>
+		<ul>
+			<li id="contact-twitter"><a href="http://www.twitter.com/zeunic">twitter.com/zeunic</a></li>
+			<li id="contact-gplus"><a href="http://www.google.com/plus">zeunic.com/+</a></li>
+			<li id="contact-facebook"><a href="http://www.facebook.com/zeunic">facebook.com/zeunic</a></li>
+		</ul>
 	</aside>
 <? if(!$ajax): ?>
 </div>

@@ -310,13 +310,57 @@ form#contact p.error img {
 	width: 190px;
 	float: left;
 	font-size: 1.4em;
-	margin: 0 0 20px 0;
-	border-top: 1px solid #777777;
+	color: #333;
+	margin: 0 0 15px 0;
+	border-top: 1px solid #666666;
 	padding: 5px 0 0 0;
+}
+
+.contact-print a, .contact-media a, .contact-social a {
+	color: #333;
+}
+
+.contact-print a:hover, .contact-media a:hover, .contact-social a:hover {
+	color: #ec1559;
 }
 
 .contact-print, .contact-media {
 	margin-right: 10px;
+}
+
+#contact-address {
+	background: url(../images/address.png) top left no-repeat;
+	padding-left: 20px;
+}
+
+#contact-phone {
+	background: url(../images/phone.png) top left no-repeat;
+	padding-left: 20px;
+}
+
+#contact-placeholder {
+	background: url(../images/phone.png) top left no-repeat;
+	padding-left: 20px;
+}
+
+#contact-email {
+	background: url(../images/email.png) top left no-repeat;
+	padding-left: 20px;
+}
+
+#contact-twitter {
+	background: url(../images/twitter.png) top left no-repeat;
+	padding-left: 20px;
+}
+
+#contact-gplus {
+	background: url(../images/gplus.png) top left no-repeat;
+	padding-left: 20px;
+}
+
+#contact-facebook {
+	background: url(../images/facebook.png) top left no-repeat;
+	padding-left: 20px;
 }
 
 
