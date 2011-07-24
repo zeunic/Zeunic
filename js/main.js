@@ -50,8 +50,11 @@ $(function(){
 	$('a').not('a[href*="localhost"]').not('a[href^="/"]').attr('target', 'new');
 	
 	//AJAX Navigation
-	$('a[href*="localhost"], a[href^="/"]').not('a[href*="index.php/project"], a[href*="index.php/user"]').live('click', function(){
+	$('a[href*="localhost"], a[href^="/"]').live('click', function(){
 		var that = $(this);
+		if(that.parents('#admin').length > 0){
+			return true;
+		}
 		var linkID = that.parent().attr('id');
 		console.log(linkID);
 		var ajaxLink = that.attr('href');
