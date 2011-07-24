@@ -1,10 +1,16 @@
-<?php $this->beginWidget('application.components.NavWidget', array('page'=>0)); ?>
-<?php $this->endWidget(); ?>
+<?php 
+if(!$ajax){
+	$this->beginWidget('application.components.NavWidget', array('page'=>0));
+	$this->endWidget(); 
+}
+?>
 
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/work-detail.css" />
 
+<? if(!$ajax): ?>
 <div id="main">
+<? endif; ?>
 	<article id="work-detail">
 		<nav><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio">< Back</a></nav>
 		<section>
@@ -37,4 +43,6 @@
 			</ul>
 		</section>
 	</article>
+<? if(!$ajax): ?>
 </div>
+<? endif; ?>

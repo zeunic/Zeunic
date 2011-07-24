@@ -186,47 +186,47 @@ class SiteController extends Controller
 	{
 		if($id){
 			$project = Project::model()->findByPk($id);
-			$this->render('workdetail',array('project'=>$project));
+			$this->render('workdetail',array('project'=>$project, 'ajax'=>false));
 			endContent();
-		}
+		} else {
 		
-		$projects = Project::model()->findAllByAttributes(array('show'=>1));
-		$tagmodels = Tag::model()->findAll(array(
-				    'select'=>'t.tag',
-				    'distinct'=>true,
-				));
-		$tags = Array();		
-				
-		foreach($tagmodels as $key => $value){
-			$tags[] = $value->tag;
-		}
+			$projects = Project::model()->findAllByAttributes(array('show'=>1));
+			$tagmodels = Tag::model()->findAll(array(
+						'select'=>'t.tag',
+						'distinct'=>true,
+					));
+			$tags = Array();		
+					
+			foreach($tagmodels as $key => $value){
+				$tags[] = $value->tag;
+			}
+			
 		
-	
-		$this->pageTitle = 'Zeunic - Our Work';
-		$this->render('portfolio', array('projects'=>$projects, 'tags'=>$tags, 'ajax'=>false));
+			$this->pageTitle = 'Zeunic - Our Work';
+			$this->render('portfolio', array('projects'=>$projects, 'tags'=>$tags, 'ajax'=>false));
+		}
 	}
 	
 	public function actionPortfolioAjax($id = NULL)
 	{
 		if($id){
 			$project = Project::model()->findByPk($id);
-			$this->render('workdetail',array('project'=>$project));
-			endContent();
+			$this->renderPartial('workdetail',array('project'=>$project, 'ajax'=>true));
+		} else {
+			$projects = Project::model()->findAllByAttributes(array('show'=>1));
+			$tagmodels = Tag::model()->findAll(array(
+						'select'=>'t.tag',
+						'distinct'=>true,
+					));
+			$tags = Array();		
+					
+			foreach($tagmodels as $key => $value){
+				$tags[] = $value->tag;
+			}
+			
+			$this->pageTitle = 'Zeunic - Our Work';
+			$this->renderPartial('portfolio', array('ajax'=>true, 'projects'=>$projects, 'tags'=>$tags));
 		}
-		
-		$projects = Project::model()->findAllByAttributes(array('show'=>1));
-		$tagmodels = Tag::model()->findAll(array(
-				    'select'=>'t.tag',
-				    'distinct'=>true,
-				));
-		$tags = Array();		
-				
-		foreach($tagmodels as $key => $value){
-			$tags[] = $value->tag;
-		}
-		
-		$this->pageTitle = 'Zeunic - Our Work';
-		$this->renderPartial('portfolio', array('ajax'=>true, 'projects'=>$projects, 'tags'=>$tags));
 	}
 	
 	public function actionGetProjectsByTag($tag)

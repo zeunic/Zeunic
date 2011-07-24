@@ -46,60 +46,60 @@ $(function(){
 	// Navigation StickyFloat
 	$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 	
+	//Open external links in a new browser window
+	$('a').not('a[href*="localhost"]').not('a[href^="/"]').attr('target', 'new');
+	
 	//AJAX Navigation
-	$('#nav a').live('click', function(){
+	$('a[href*="localhost"], a[href^="/"]').live('click', function(){
 		var that = $(this);
-		if(that.attr('data-external') != true){
-			var linkID = that.parent().attr('id');
-			console.log(linkID);
-			var ajaxLink = that.attr('href');
-			if(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length) == '/'){
-				ajaxLink = ajaxLink.substring(0, ajaxLink.length-1);
-			}
-			ajaxLink = ajaxLink + 'Ajax';
-			console.log(ajaxLink);
-			$.ajax({
-			  url: ajaxLink,
-			  cache: false,
-			  success: function(html){
-			  	$('#main').animate({opacity:0}, 500, function(){
-			  		container = $('#container');
-			  		var bodyHeight = $('#container').css('height');
-			  		container.css({height:bodyHeight});
-			  		var nav = $('#nav');
-			  		var main = $('#main');
-			  		nav.find('.active').removeClass('active');
-			  		nav.find('#'+linkID).addClass('active');
-			  		$('head title').text('Zeunic :: ' + linkID);
-			    	main.html(html);
-			    	setTimeout(function(){
-			    		main.animate({opacity:1}, 500);
-			    	}, 500);
-			    	contentHeight = $('#content').css('height');
-			    	container.animate({height:contentHeight}, 1000, 'easeInOutQuad', function(){
-			    		container.css({height:'auto'});
-			    		$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
-			    	});
-			  	});
-			  }
-			});
-			return false;
+		var linkID = that.parent().attr('id');
+		console.log(linkID);
+		var ajaxLink = that.attr('href');
+		if(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length) == '/'){
+			ajaxLink = ajaxLink.substring(0, ajaxLink.length-1);
 		}
-	});
-	/*
-$('#nav').find('#about').live('click',function(){
+		if(Number(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length))){
+			//GENERATE ID AJAX LINK
+			slashIndex = ajaxLink.lastIndexOf('/');
+			id = ajaxLink.substring(slashIndex, ajaxLink.length);
+			ajaxLink = ajaxLink.substring(0, slashIndex) + 'Ajax' + id;
+		} else {
+			//GENERATE NORMAL AJAX LINK
+			ajaxLink = ajaxLink + 'Ajax';
+		}
 		$.ajax({
-		  url: baseUrl + "/index.php/site/aboutAjax",
+		  url: ajaxLink,
 		  cache: false,
 		  success: function(html){
-		  	$('#main').animate({opacity:0}, 1000, function(){
-		  		$('#nav').find('.active').removeClass('active').parent().find('#about').addClass('active');
-		    	$('#main').html(html).animate({opacity:1}, 1000);
-		  	});
+			$('#main').animate({opacity:0, queue:false}, 500, function(){
+				container = $('#container');
+				var bodyHeight = $('#container').css('height');
+				container.css({height:bodyHeight});
+				var nav = $('#nav');
+				var main = $('#main');
+				nav.find('.active').removeClass('active');
+				if(linkID){
+					nav.find('#'+linkID).addClass('active');
+				} else {
+					nav.find('#portfolio').addClass('active');
+				}
+				var h1 = $('#nav').find('h1').text();
+				$('head title').text('Zeunic :: ' + h1);
+				main.html(html);
+				//Open external links in a new browser window
+				$('a').not('a[href*="localhost"]').not('a[href^="/"]').attr('target', 'new');
+				setTimeout(function(){
+					main.animate({opacity:1,queue:false}, 500);
+				}, 500);
+				contentHeight = $('#content').css('height');
+				container.animate({height:contentHeight}, 1000, 'easeInOutQuad', function(){
+					container.css({height:'auto'});
+					$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
+				});
+			});
 		  }
 		});
 		return false;
 	});
-*/
 	
 });
