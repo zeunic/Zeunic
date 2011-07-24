@@ -187,7 +187,6 @@ class SiteController extends Controller
 		if($id){
 			$project = Project::model()->findByPk($id);
 			$this->render('workdetail',array('project'=>$project, 'ajax'=>false));
-			endContent();
 		} else {
 		
 			$projects = Project::model()->findAllByAttributes(array('show'=>1));
