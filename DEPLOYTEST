@@ -1,3 +1,1 @@
-Checking my ssh access.
-...Pushing + Post Update hooks?
-Update hook runs, just problems with chmod
+Ok, posting ability with git@ and post-hook works. Permissions seem to break the server?
