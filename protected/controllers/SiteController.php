@@ -162,6 +162,23 @@ class SiteController extends Controller
 		$this->pageTitle = 'Zeunic - Contact Us';
 		//Handle form submission
 		$model = new ContactForm;
+		if(isset($_POST['ContactForm'])){
+		    $model->attributes=$_POST['ContactForm'];
+		    if($model->validate()){
+		    	$attributes = $model->attributes;
+		    	$message = $attributes['name'].'\n\n'.$attributes['body'];
+            	$to      = 'joe@zeunic.com';
+				$subject = 'Zeunic Contact Form';
+				$headers = 'From: web@zeunic.com' . "\r\n" .
+				    'Reply-To: '.$attributes['email'].''."\r\n" .
+				    'X-Mailer: PHP/' . phpversion();
+				
+				mail($to, $subject, $message, $headers);
+				$this->render('contactSuccess');
+            } else {
+				$this->render('contact',array('model'=>$model, 'ajax'=>false));
+			}
+		} 
 		$this->renderPartial('contact', array('ajax'=>true, 'model'=>$model));
 	}
 	
