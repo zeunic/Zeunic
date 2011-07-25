@@ -49,14 +49,13 @@ $(function(){
 	//Open external links in a new browser window
 	$('a').not('a[href*="localhost"]').not('a[href^="/"]').attr('target', 'new');
 	
-	//AJAX Navigation
+	//Dynamic AJAX Navigation
 	$('a[href*="localhost"], a[href^="/"]').live('click', function(){
 		var that = $(this);
 		if(that.parents('#admin').length > 0){
 			return true;
 		}
 		var linkID = that.parent().attr('id');
-		console.log(linkID);
 		var ajaxLink = that.attr('href');
 		if(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length) == '/'){
 			ajaxLink = ajaxLink.substring(0, ajaxLink.length-1);
@@ -79,7 +78,7 @@ $(function(){
 				var bodyHeight = $('#container').css('height');
 				container.css({height:bodyHeight});
 				var nav = $('#nav');
-				var main = $('#main');
+				var main = $(this);
 				nav.find('.active').removeClass('active');
 				if(linkID){
 					nav.find('#'+linkID).addClass('active');

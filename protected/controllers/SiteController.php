@@ -174,12 +174,13 @@ class SiteController extends Controller
 				    'X-Mailer: PHP/' . phpversion();
 				
 				mail($to, $subject, $message, $headers);
-				$this->render('contactSuccess');
+				$this->renderPartial('contactSuccess', array('ajax'=>true));
             } else {
-				$this->render('contact',array('model'=>$model, 'ajax'=>false));
+				$this->renderPartial('contact', array('ajax'=>true, 'model'=>$model));
 			}
-		} 
-		$this->renderPartial('contact', array('ajax'=>true, 'model'=>$model));
+		} else {
+			$this->renderPartial('contact', array('ajax'=>true, 'model'=>$model));
+		}
 	}
 	
 	public function actionPortfolio($id = NULL)

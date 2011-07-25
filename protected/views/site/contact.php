@@ -8,7 +8,7 @@ if(!$ajax){
 <div id="main">
 <? endif; ?>
 	<?php $form=$this->beginWidget('CActiveForm', array(
-    'id'=>'contact',
+    'id'=>'contactform',
     'enableAjaxValidation'=>true,
     'enableClientValidation'=>true,
 )); ?>
@@ -58,3 +58,4 @@ if(!$ajax){
 <? endif; ?>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autoresize.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/contact.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.curve.js"></script>

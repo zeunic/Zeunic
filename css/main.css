@@ -219,7 +219,7 @@ nav h1 {
 
 /* -----------------CONTACT------------------ */
 
-form#contact {
+form#contactform {
 	width: 550px;
 	background: url(../images/bg_contact_top.png) left bottom no-repeat, url(../images/bg_contact_btm.png) left top repeat-y;
 	-moz-box-shadow: 0 0 9px rgba(0,0,0,.7);
@@ -230,7 +230,7 @@ form#contact {
 	border-bottom: 1px solid #666666;
 }
 
-form#contact h2 {
+form#contactform h2 {
 	border-top: 1px solid #666666;
 	font: bold 18px/40px "Droid Sans", sans-serif;
 	color: #213240;
@@ -238,12 +238,12 @@ form#contact h2 {
 	padding: 11px 0 0 10px;
 }
 
-form#contact p {
+form#contactform p {
 	font: 15px/40px "Droid Sans", sans-serif;
 	color: #213240;
 }
 
-form#contact input {
+form#contactform input {
 	width: 220px;
 	height: 30px;
 	padding: 0 10px;
@@ -253,14 +253,14 @@ form#contact input {
 	font-weight: bold;
 }
 
-form#contact input:focus, form#contact textarea:focus {
+form#contactform input:focus, form#contactform textarea:focus {
 	-moz-box-shadow: 0 0 5px rgba(0,0,0,.6);
 	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.6);
 	box-shadow: 0 0 5px rgba(0,0,0,.6);
 	border-bottom: 1px dashed #000;
 }
 
-form#contact textarea {
+form#contactform textarea {
 	width: 530px;
 	height: 40px;
 	display: block;
@@ -274,11 +274,11 @@ form#contact textarea {
 	font-weight: normal;
 }
 
-form#contact .error {
+form#contactform .error {
 	border-bottom: 1px dashed #666666;
 }
 
-form#contact #submit {
+form#contactform #submit {
 	font: bold 20px/16px "Garamond", sans-serif;
 	color: #eac70b;
 	width: 80px;
@@ -291,11 +291,11 @@ form#contact #submit {
 	cursor: pointer;
 }
 
-form#contact #submit:hover {
+form#contactform #submit:hover {
 	color: #5b0a0e;
 }
 
-form#contact p.error {
+form#contactform p.error {
 	border: none;
 	font: bold 12px/16px "Droid Sans", sans-serif;
 	color: #de80a8;
@@ -303,9 +303,10 @@ form#contact p.error {
 	text-align: right;
 	width: 550px;
 	margin-right: 5px;
+	margin-top: 10px;
 }
 
-form#contact p.error img {
+form#contactform p.error img {
 	margin-left: 5px;
 	float: right;
 }
