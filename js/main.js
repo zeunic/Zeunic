@@ -69,6 +69,12 @@ $(function(){
 			//GENERATE NORMAL AJAX LINK
 			ajaxLink = ajaxLink + 'Ajax';
 		}
+		
+		// loader gif init
+		$('#nav').append('<div class="loader">loading...</div>');
+		var position = $('#nav h1').position();
+		$('.loader').css({ top: position.top+45, left: position.left+50 });
+		
 		$.ajax({
 		  url: ajaxLink,
 		  cache: false,
@@ -110,6 +116,8 @@ $(function(){
 					container.css({height:'auto'});
 					$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 				});
+				
+				$('.loader').remove();
 			});
 		  }
 		});

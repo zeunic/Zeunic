@@ -207,6 +207,16 @@ nav h1 {
 	text-align: right;
 }
 
+#nav .loader {
+	width: 34px;
+	height: 18px;
+	text-indent: -100px;
+	overflow: hidden;
+	background: center url(../images/loader.gif) no-repeat;
+	position: absolute;
+	opacity: .3;
+}
+
 /* -----------------VERTICAL DIVIDER------------------ */
 
 #vertrule {
