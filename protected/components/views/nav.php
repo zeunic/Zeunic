@@ -3,7 +3,7 @@
 		<a id="logo" href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/index">
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/logo_hover.png" alt="Zeunic" width="250" height="80" /> 
 		</a>
-		<ul>
+		<ul id="main-nav">
 		<? 
 			$base = Yii::app()->request->baseUrl;
 			foreach($pages as $key => $value){
