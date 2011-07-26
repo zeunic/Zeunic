@@ -14,17 +14,9 @@ body {
 	font: 62.5%/2em "Droid Sans", Helvetica, sans-serif;
 }
 
-a:link, a:active {
+a:link, a:active, a:visited, a:hover {
 	color: #EC1559;
 	text-decoration: none;
-}
-
-a:visited {
-	color: #B20C5E;
-}
-
-a:hover {
-	color: #EC5A32;
 }
 
 #container {

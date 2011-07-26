@@ -46,6 +46,13 @@ $(function(){
 	// Navigation StickyFloat
 	$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 	
+	//Fade in hover class
+	$('a').live('mouseover',function(){
+		$(this).animate({color:'#B90226'}, 1000).bind('mouseleave', function(){
+			$(this).animate({color:'#EC1559'}, 1000);
+		});
+	});
+	
 	//Open external links in a new browser window
 	$('a').not('a[href*="localhost"]').not('a[href^="/"]').attr('target', 'new');
 	
