@@ -76,6 +76,12 @@ $(function(){
 			//GENERATE NORMAL AJAX LINK
 			ajaxLink = ajaxLink + 'Ajax';
 		}
+		
+		// loader gif init
+		$('#nav').append('<div class="loader">loading...</div>');
+		var position = $('#nav h1').position();
+		$('.loader').css({ top: position.top+45, left: position.left+50 });
+		
 		$.ajax({
 		  url: ajaxLink,
 		  cache: false,
@@ -86,12 +92,24 @@ $(function(){
 				container.css({height:bodyHeight});
 				var nav = $('#nav');
 				var main = $(this);
+				
+				// apparently you're doing some voodoo active class toggle shit here
+				// this definitely confuses me
 				nav.find('.active').removeClass('active');
 				if(linkID){
 					nav.find('#'+linkID).addClass('active');
 				} else {
 					nav.find('#portfolio').addClass('active');
 				}
+				
+				// sort the #main-nav ul to have the active class last now
+				// animations not included, don't know if this is the way I should be doing this
+				// in order to support those effectively or not.
+				var activeLink = $('.active').clone();
+				$('.active').remove();
+				$('#main-nav').append(activeLink);
+				$('#nav').find('h1').text(activeLink.find('a').attr('title'));
+				
 				var h1 = $('#nav').find('h1').text();
 				$('head title').text('Zeunic :: ' + h1);
 				main.html(html);
@@ -105,6 +123,8 @@ $(function(){
 					container.css({height:'auto'});
 					$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 				});
+				
+				$('.loader').remove();
 			});
 		  }
 		});
