@@ -67,7 +67,8 @@ $(function(){
 		if(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length) == '/'){
 			ajaxLink = ajaxLink.substring(0, ajaxLink.length-1);
 		}
-		if(Number(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length))){
+		console.log(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length));
+		if(Number(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length)) || Number(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length)) == 0){
 			//GENERATE ID AJAX LINK
 			slashIndex = ajaxLink.lastIndexOf('/');
 			id = ajaxLink.substring(slashIndex, ajaxLink.length);
@@ -76,6 +77,7 @@ $(function(){
 			//GENERATE NORMAL AJAX LINK
 			ajaxLink = ajaxLink + 'Ajax';
 		}
+		console.log(ajaxLink);
 		
 		// loader gif init
 		$('#nav').append('<div class="loader">loading...</div>');

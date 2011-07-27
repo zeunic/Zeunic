@@ -1,6 +1,4 @@
 <?php
-Yii::import('application.vendors.*');
-require_once('imageupload.php');
 
 class ProjectController extends Controller
 {
@@ -29,7 +27,7 @@ class ProjectController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('create','update', 'delete', 'index', 'deletegallery', 'deletevideo', 'deletetag', 'deletetestimonial'),
+				'actions'=>array('create','update', 'delete', 'index', 'deletegallery', 'deletevideo', 'deletetag', 'deletetestimonial', 'savethumb'),
 				'users'=>array('@'),
 				'expression'=>'Yii::app()->user->type == "super"'
 			),
@@ -77,11 +75,16 @@ class ProjectController extends Controller
 	            //Save images to Gallery table
 	            $images = CUploadedFile::getInstances($galleryModel, 'image');
 				$imageDir = '/images/projects/gallery/';
+				$newImages = Array();
 	            foreach($images as $key => $value){
 	            	$galleryImage = new Gallery;
 	            	$uid = uniqid();
 	            	$file= $baseURL . $imageDir . $id . '_' . $uid . '.' . $value->extensionName;
 	            	$value->saveAs($file);
+	            	$image = Yii::app()->image->load($file);
+	            	$image->resize(960, 550)->quality(100);
+	            	$image->save();
+	            	$newImages[] = $id . '_' . $uid . '.' . $value->extensionName;
 	            	$galleryImage->image = $id . '_' . $uid . '.' . $value->extensionName;
 		            $galleryImage->projectID = $id;
 		            $galleryImage->save();
@@ -123,8 +126,9 @@ class ProjectController extends Controller
 		            	$testimonial->save();
 	            	}
 	            }
-	            if(count($images) > 0){
-	            	$this->redirect(array('cropimages'));
+	            if(count($newImages) > 0){
+	            	$this->render('jcrop', array('images'=>$newImages, 'form'=>false));
+	            	endContent();
 	            } else {
 					$this->redirect(array('index'));
 				}
@@ -201,6 +205,10 @@ class ProjectController extends Controller
 	            	$uid = uniqid();
 	            	$file= $baseURL . $imageDir . $id . '_' . $uid . '.' . $value->extensionName;
 	            	$value->saveAs($file);
+	            	$image = Yii::app()->image->load($file);
+	            	$image->resize(960, 550)->quality(100);
+	            	$image->save();
+	            	$newImages[] = $id . '_' . $uid . '.' . $value->extensionName;
 	            	$galleryImage->image = $id . '_' . $uid . '.' . $value->extensionName;
 		            $galleryImage->projectID = $id;
 		            $galleryImage->save();
@@ -244,8 +252,12 @@ class ProjectController extends Controller
 		            	$testimonial->save();
 	            	}
 	            }
-	            
-				$this->redirect(array('index'));
+	            if(count($newImages) > 0){
+	            	$this->render('jcrop', array('images'=>$newImages, 'form'=>false));
+	            	endContent();
+	            } else {
+					$this->redirect(array('index'));
+				}
 			}
 		}
 
@@ -260,6 +272,27 @@ class ProjectController extends Controller
 			'testimonials'=>$testimonials,
 			'tags'=>$tags,
 		));
+	}
+	
+	public function actionSavethumb(){
+		if(isset($_POST['src'])){
+			$targ_w = 590;
+			$targ_h = 180;
+			$jpeg_quality = 100;
+			
+			$src = $_POST['src'];
+			$img_r = imagecreatefrompng($src);
+			$dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
+			echo 'top: '.$_POST['top'].' width: '.$_POST['width'];
+			imagecopyresampled($dst_r,$img_r,0,0,$_POST['top'],$_POST['left'],
+				$targ_w,$targ_h,$_POST['width'],$_POST['height']);
+			
+			$baseURL = dirname(Yii::app()->request->scriptFile);
+			$output_filename = $baseURL.'/images/projects/gallery/'.$_POST['filename'].'_thumb'.$_POST['fileext'];
+			
+			//imagepng($dst_r, $output_filename, $jpeg_quality);
+			echo 'success';
+		} else echo 'fail';
 	}
 
 	/**
