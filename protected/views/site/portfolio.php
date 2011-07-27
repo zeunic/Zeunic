@@ -47,6 +47,12 @@ $this->endWidget();
 <!-- page specific JS loads -->
 <script type="text/javascript">
 	tags = <?php echo json_encode($tags);?>;
+	$(function(){
+		if(<?php echo (isset($tag))? 'true' : 'false'; ?>) {
+			console.log('filtering tags...');
+			filterProjects(<?php echo (isset($tag))? '\''+$tag+'\'': '\'web\''; ?>)
+		}
+	});
 </script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.quicksand.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>

@@ -4,6 +4,21 @@
  * Author: Zeunic
  *
  */
+ 
+
+// Filter Quicksand list by custom tags	
+var filterProjects = function(tag){
+	alert('filtering by: ' + tag);
+	$('#data li[data-type=search]').remove();
+	$.ajax({
+		url: baseUrl+'/index.php/site/getprojectsbytag/tag/'+tag,
+		cache: false,
+		success: function(response){
+			$('#data').append(response);
+			$('.button-row a[data-value=search]').trigger('click');
+		}
+	});
+};
 
 
 $(function(){
@@ -118,18 +133,4 @@ $(function(){
 			filterProjects(ui.item.value);
 		}
 	});
-	
-	var filterProjects = function(tag){
-		$('#data li[data-type=search]').remove();
-		$.ajax({
-			url: baseUrl+'/index.php/site/getprojectsbytag/tag/'+tag,
-			cache: false,
-			success: function(response){
-				$('#data').append(response);
-				$('.button-row a[data-value=search]').trigger('click');
-			}
-		});
-	};
-	
-
 });
