@@ -47,7 +47,6 @@ $this->endWidget();
 <!-- page specific JS loads -->
 <script type="text/javascript">
 var filterProjects = function(tag){
-	alert('filtering by: ' + tag);
 	$('#data li[data-type=search]').remove();
 	$.ajax({
 		url: baseUrl+'/index.php/site/getprojectsbytag/tag/'+tag,
@@ -63,7 +62,7 @@ var filterProjects = function(tag){
 		tag = <?php echo json_encode($tag);?>;
 	<? endif; ?>
 	$(function(){
-		if(<?php echo (isset($tag))? 'true' : 'false'; ?>) {
+		if(typeof(tag) != "undefined" && tag !== null) {
 			filterProjects(tag);
 		}
 	});
