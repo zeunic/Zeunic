@@ -59,7 +59,10 @@ if(!$ajax){
 				<? foreach($project->testimonials as $key => $test): ?>
 					<li>
 						<div class="even">
-							<q><? echo "In reality, we couldn't have been any happier with zeunic" ?></q>
+							<q><? 
+								preg_match('/<pull>(.+?)<\/pull>/', $test->testimonial, $matches);
+								echo $matches[0];
+							?></q>
 							<p><? echo $test->testimonial ?>
 							<cite>- <? echo $test->author ?>, <strong><? echo $test->authorTitle ?></strong></cite>
 							</p>
