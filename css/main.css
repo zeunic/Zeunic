@@ -147,6 +147,7 @@ nav ul {
 	width: 150px;
 	overflow: hidden;
 	float: left;
+	background: center left url(../images/icons/nav_active.png) no-repeat;
 }
 
 nav li a {
@@ -164,7 +165,7 @@ nav ul li {
 	float: left;
 }
 
-nav ul li:hover {
+nav ul li:hover, nav ul li.active {
 	background: url(../images/icons/nav_hover.png) no-repeat;
 }
 
@@ -190,13 +191,6 @@ li#admin {
 
 #portfolio {
 	background-position: -120px 0;
-}
-
-nav .active, nav ul li.active:hover {
-	background: url(../images/icons/nav_active.png) no-repeat;
-	-moz-box-shadow: 0 4px 7px #ced9e1;
-	-webkit-box-shadow: 0 4px 7px #ced9e1;
-	box-shadow: 0 4px 4px #ced9e1;
 }
 
 nav h1 {
