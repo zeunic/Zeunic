@@ -2,26 +2,31 @@ zeunic = {};
 zeunic.logo = {};
 
 $(function(){ 
+
+	$('footer').find('q').tweets({
+		tweets: 1,
+		username: "zeunic"
+	});
+
 	// nav links functionality
 	var navLinks = $('nav li a'),
 		navContainer = $('#main-nav'),
 		nav = $('#nav');
 		
 	navContainer.css({ backgroundPosition: '-40px 0px' });
+	
+	$('nav a#logo').bind('click', function(){
+		navContainer.animate({ backgroundPosition: '-40px 0' });
+	});
 
 	navLinks.bind('mouseenter', function(){
 		$('nav h1').text( $(this).attr('title') );
 	});
 	
 	navLinks.bind('mouseleave', function(){
-		var def = $('#nav').find('a.active').text();
+		var def = $('#nav').find('.active a').text();
 		def = (!def)? 'welcome' : def;
 		$('nav h1').text( def );
-	});
-
-	$('footer').find('q').tweets({
-		tweets: 1,
-		username: "zeunic"
 	});
 	
 	navLinks.bind('click', function(){
@@ -30,11 +35,7 @@ $(function(){
 			pos =  (parent.position().left - 38) + 'px 0px';
 		nav.find('.active').removeClass('active');
 		parent.addClass('active');
-		console.log(pos);
-		console.log(navContainer);
-		console.log(navContainer.css('background-position'));
 		navContainer.animate({ 'background-position' : pos });
-		
 	});
 	
 	// Logo Flicker & Hover Animation
