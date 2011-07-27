@@ -17,7 +17,7 @@ $this->endWidget();
 		<li><a href="#" data-value="mobile">Mobile</a></li>
 		<li><a href="#" data-value="brand">Branding</a></li>
 		<li><a href="#" data-value="search" style="display:none">Search</a></li>
-		<li><input type="text" name="search" <? echo (isset($tag)) ? 'value="'.$tag.'"' : '' ?> id="search" placeholder="Search..." /></li>
+		<li id="lastbutton-row"><input type="text" name="search" <? echo (isset($tag)) ? 'value="'.$tag.'"' : '' ?> id="search" placeholder="Search..." /><a id="searchbutton" href="#">Search</a></li>
 </ul>
 
 <article id="portfolio-article">
@@ -45,18 +45,10 @@ $this->endWidget();
 </div>
 <? endif; ?>
 <!-- page specific JS loads -->
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.quicksand.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/our-work.js"></script>
 <script type="text/javascript">
-var filterProjects = function(tag){
-	$('#data li[data-type=search]').remove();
-	$.ajax({
-		url: baseUrl+'/index.php/site/getprojectsbytag/tag/'+tag,
-		cache: false,
-		success: function(response){
-			$('#data').append(response);
-			$('.button-row a[data-value=search]').trigger('click');
-		}
-	});
-};
 	tags = <?php echo json_encode($tags);?>;
 	<? if(isset($tag)): ?>
 		tag = <?php echo json_encode($tag);?>;
@@ -67,6 +59,3 @@ var filterProjects = function(tag){
 		}
 	});
 </script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.quicksand.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/our-work.js"></script>

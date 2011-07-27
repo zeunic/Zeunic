@@ -76,6 +76,7 @@
  
 .button-row li {
 	float: left;
+	position: relative;
 }
 
 /*
@@ -111,6 +112,25 @@
 	padding: 3px 0 2px 10px;
 	text-decoration: underline;
 	cursor: pointer;
+}
+
+#searchbutton {
+	display: block;
+	text-indent: -9999px;
+	width: 25px;
+	height: 22px;
+	position: absolute;
+	z-index: 99;
+	right: 0;
+	top: 0;
+	background: none;
+	-webkit-box-shadow: 0;
+	-moz-box-shadow: 0;
+}
+
+.button-row a#searchbutton:hover {
+	-webkit-box-shadow: none;
+	-moz-box-shadow: none;
 }
 
 
