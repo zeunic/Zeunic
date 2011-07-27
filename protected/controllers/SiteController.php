@@ -225,7 +225,12 @@ class SiteController extends Controller
 			}
 			
 			$this->pageTitle = 'Zeunic - Our Work';
-			$this->renderPartial('portfolio', array('ajax'=>true, 'projects'=>$projects, 'tags'=>$tags));
+			if(isset($_GET['tag'])){
+				$tag = $_GET['tag'];
+				$this->renderPartial('portfolio', array('ajax'=>true, 'projects'=>$projects, 'tags'=>$tags, 'tag'=>$tag));
+			} else {
+				$this->renderPartial('portfolio', array('ajax'=>true, 'projects'=>$projects, 'tags'=>$tags));
+			}
 		}
 	}
 	

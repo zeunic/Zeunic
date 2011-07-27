@@ -72,22 +72,27 @@ $(function(){
 	
 	//Open external links in a new browser window
 	$('a').not('a[href*="localhost"]').not('a[href^="/"]').attr('target', 'new');
+	
 	//Dynamic AJAX Navigation
 	$('a[href*="localhost"], a[href^="/"]').live('click', function(){
 		var that = $(this);
+		//Don't use AJAX for admin links
 		if(that.parents('#admin').length > 0){
 			return true;
 		}
+		//Don't use AJAX for pretty photo links
 		if(that.attr('rel') == 'prettyPhoto[gallery]'){
 			$("a[rel^='prettyPhoto']").prettyPhoto();
 			return false;
 		}
+		//Grab current HREF
 		var ajaxLink = that.attr('href');
+		//If it ends with a /, get rid of it
 		if(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length) == '/'){
 			ajaxLink = ajaxLink.substring(0, ajaxLink.length-1);
 		}
-		console.log(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length));
-		if(Number(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length)) || Number(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length)) == 0){
+		//If it ends in a number, the number is an ID so Ajax must be placed before the last slash OR if the link has a ?, same thing goes NOTE: make sure to pass variables with a / before the ? in order to properly add the Ajax text
+		if(Number(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length)) || Number(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length)) == 0 || ajaxLink.lastIndexOf('?') > 0){
 			//GENERATE ID AJAX LINK
 			slashIndex = ajaxLink.lastIndexOf('/');
 			id = ajaxLink.substring(slashIndex, ajaxLink.length);

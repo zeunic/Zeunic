@@ -17,7 +17,7 @@ $this->endWidget();
 		<li><a href="#" data-value="mobile">Mobile</a></li>
 		<li><a href="#" data-value="brand">Branding</a></li>
 		<li><a href="#" data-value="search" style="display:none">Search</a></li>
-		<li><input type="text" name="search" id="search" placeholder="Search..." /></li>
+		<li><input type="text" name="search" <? echo (isset($tag)) ? 'value="'.$tag.'"' : '' ?> id="search" placeholder="Search..." /></li>
 </ul>
 
 <article id="portfolio-article">
@@ -45,7 +45,7 @@ $this->endWidget();
 </div>
 <? endif; ?>
 <!-- page specific JS loads -->
-<script>
+<script type="text/javascript">
 	tags = <?php echo json_encode($tags);?>;
 </script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.quicksand.js"></script>

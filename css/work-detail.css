@@ -87,6 +87,8 @@ section#gallery .utils {
 
 #main #project-details+section ul li {
 	list-style: inside none;
+	background-color: #cfd8df;
+	border-radius: 0 5px;
 }
 
 #project-tags a {
@@ -95,7 +97,6 @@ section#gallery .utils {
 	width: 150px;
 	padding: 5px;
 	margin-bottom: 3px;
-	background-color: #cfd8df;
 	display:block;
 }
 
