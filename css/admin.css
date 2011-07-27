@@ -55,17 +55,22 @@ div#admin {
 	margin-bottom: 10px;
 }
 
-#admin #login_form .row.submit a {
+#admin #login_form .row.submit a, #admin .link-button {
 	display: block;
 	width: 70px;
 	border: 1px solid white;
 	text-align: center;
 	background-color: #EC1559;
 	padding: 3px 0 3px 0;
-	color: white;
+	color: #FFFFFF;
 	font-size: 1.2em;
 	font-weight: bold;
 	margin-top: 18px;
+}
+
+#admin .link-button {
+	display: inline;
+	padding: 5px 10px;
 }
 
 #admin fieldset {

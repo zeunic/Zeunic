@@ -27,7 +27,7 @@ class ProjectController extends Controller
 	{
 		return array(
 			array('allow',
-				'actions'=>array('create','update', 'delete', 'index', 'deletegallery', 'deletevideo', 'deletetag', 'deletetestimonial', 'savethumb'),
+				'actions'=>array('create','update', 'confirm', 'delete', 'index', 'deletegallery', 'deletevideo', 'deletetag', 'deletetestimonial', 'savethumb'),
 				'users'=>array('@'),
 				'expression'=>'Yii::app()->user->type == "super"'
 			),
@@ -318,6 +318,16 @@ class ProjectController extends Controller
 		$this->render('index',array(
 			'dataProvider'=>$dataProvider,
 		));
+	}
+	
+	/**
+	 * Confirms deletion a given model ID.
+	 * @param integer $id the ID of the model to be deleted
+	 */
+	public function actionConfirm($id)
+	{
+		$this->render('confirm',array('id'=>$id));
+		//$this->redirect(array('index'));
 	}
 
 	/**
