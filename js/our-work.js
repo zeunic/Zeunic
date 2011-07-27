@@ -4,10 +4,19 @@
  * Author: Zeunic
  *
  */
- 
 
 // Filter Quicksand list by custom tags	
-
+filterProjects = function(tag){
+	$('#data li[data-type=search]').remove();
+	$.ajax({
+		url: baseUrl+'/index.php/site/getprojectsbytag/tag/'+tag,
+		cache: false,
+		success: function(response){
+			$('#data').append(response);
+			$('.button-row a[data-value=search]').trigger('click');
+		}
+	});
+};
 
 $(function(){
 
@@ -25,7 +34,7 @@ $(function(){
 	};
 
 	// Filter Function when toggling between top 4 tag filters
-	$('.button-row a').bind('click', function(){
+	$('.button-row a').not('#searchbutton').bind('click', function(){
 		
 		$('.selected').toggleClass('selected'); // grab the selected filter, and turn it off.
 		
@@ -54,6 +63,11 @@ $(function(){
 		// add in AJAX calls to repopulate #data
 		
 		return false;
+	});
+	
+	//Searchbutton onClick event
+	$('#searchbutton').bind('click', function(){
+		filterProjects($(this).siblings('input').val());
 	});
 	
 	// Hover event binding
