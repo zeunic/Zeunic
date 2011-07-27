@@ -7,6 +7,7 @@ if(!$ajax){
 
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/work-detail.css" />
+<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/prettyPhoto.css" />
 
 <? if(!$ajax): ?>
 <div id="main">
@@ -29,7 +30,7 @@ if(!$ajax){
 				$fileext = $file[1];
 				$thumb = $filename.'_thumb.'.$fileext;
 				?>
-				<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/projects/gallery/<? echo $thumb ?>" alt="<? $project->title ?> Image" rel="prettyPhoto[gallery]" /></li>
+				<li><a href="<? echo Yii::app()->request->baseUrl.'/images/projects/gallery/'.$image->image ?>" rel="prettyPhoto[gallery]"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/projects/gallery/<? echo $thumb ?>" alt="<? echo $project->title ?>"  /></a></li>
 				<? endforeach; ?>
 			</ul>
 			<div class="utils">
@@ -47,7 +48,7 @@ if(!$ajax){
 			<h2>| Tags</h2>
 			<ul>
 				<? foreach($project->tags as $key => $tag): ?>
-					<li><p><a href=""><? echo $tag->tag ?></a></p></li>
+					<li><a href="#"><? echo $tag->tag ?></a></li>
 				<? endforeach; ?>
 			</ul>
 		</section>
@@ -72,4 +73,5 @@ if(!$ajax){
 <? endif; ?>
 <!-- page specific JS loads -->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.zSlide.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.prettyPhoto.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/work-detail.js"></script>

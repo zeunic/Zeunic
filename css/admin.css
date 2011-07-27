@@ -9,6 +9,11 @@ div#admin {
 	padding: 5px;
 }
 
+#admin h1 {
+	font: 23px "Droid Sans", sans-serif;
+	margin-bottom: 10px;
+}
+
 /*
  * Login Page ------------------------------------------------- /
  */
@@ -26,7 +31,7 @@ div#admin {
 }
  
 #admin label {
-	width: 100px;
+	width: 590px;
 	margin: 0 5px 0 0;
 	font-size: 1.2em;
 	font-weight: bold;
@@ -34,7 +39,7 @@ div#admin {
 	color: #EC1559;
 } 
 
-#admin input[type="text"], #admin input[type="password"] {
+#admin input[type="text"], #admin input[type="password"], #admin textarea {
 	font-size: 1.4em;
 	background-color: #E1E1E1;
 	border: 1px solid #BBBBBB;
@@ -44,6 +49,10 @@ div#admin {
 
 #admin #login_form .row.submit input[type="submit"] {
 	display: none;
+}
+
+#admin .row {
+	margin-bottom: 10px;
 }
 
 #admin #login_form .row.submit a {
@@ -57,4 +66,38 @@ div#admin {
 	font-size: 1.2em;
 	font-weight: bold;
 	margin-top: 18px;
+}
+
+#admin fieldset {
+	border: 1px solid grey;
+	padding: 20px;
+	width: 540px;
+	margin: 10px 0;
+}
+
+#admin legend {
+	font: 17px "Droid Sans", sans-serif;
+	color: #2a4052;
+}
+
+#admin fieldset img {
+	width: 530px;
+}
+
+#admin fieldset li {
+	margin-bottom: 10px;
+}
+
+/* Project Index */
+
+#admin table {
+	width: 590px;
+}
+
+#admin th {
+	font-weight: bold;
+}
+
+#admin tr:hover {
+	background-color: #FFF;
 }

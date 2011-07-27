@@ -13,35 +13,36 @@
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'title'); ?>
-		<br />
 		<?php echo $form->textField($model,'title',array('size'=>50,'maxlength'=>50)); ?>
 		<?php echo $form->error($model,'title'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'desc'); ?>
-		<br />
 		<?php echo $form->textArea($model,'desc',array('rows'=>6, 'cols'=>50)); ?>
 		<?php echo $form->error($model,'desc'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'thumb'); ?>
-		<br />
+		<? if(!$model->isNewRecord): ?>
+			<label>Leave blank to use current thumbnail</label>
+		<? endif; ?>
 		<?php echo $form->fileField($model,'thumb',array('size'=>30,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'thumb'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'thumb_lg'); ?>
-		<br />
+		<? if(!$model->isNewRecord): ?>
+			<label>Leave blank to use current thumbnail</label>
+		<? endif; ?>
 		<?php echo $form->fileField($model,'thumb_lg',array('size'=>30,'maxlength'=>30)); ?>
 		<?php echo $form->error($model,'thumb_lg'); ?>
 	</div>
 
 	<div class="row">
 		<?php echo $form->labelEx($model,'link'); ?>
-		<br />
 		<?php echo $form->textField($model,'link',array('size'=>60,'maxlength'=>100)); ?>
 		<?php echo $form->error($model,'link'); ?>
 	</div>
@@ -70,8 +71,12 @@
 	
 	<div class="row">
 		<ul>
-		<? foreach($images as $key => $value): ?>
-			<li><img alt="Project Gallery Image" src="<? echo Yii::app()->request->baseUrl ?>/images/projects/gallery/<? echo $value->image ?>"/><br />
+		<? foreach($images as $key => $value):
+			$file = explode('.',$value->image); 
+			$filename = $file[0];
+			$fileext = $file[1];
+			$thumb = $filename.'_thumb.'.$fileext; ?>
+			<li><img alt="Project Gallery Image" src="<? echo Yii::app()->request->baseUrl ?>/images/projects/gallery/<? echo $thumb ?>"/><br />
 					<? echo CHtml::link('delete', array('project/deletegallery', 'id'=>$value->id)); ?>
 			</li>
 		<? endforeach; ?>
@@ -81,7 +86,7 @@
 	<? endif; ?>
 
     <div class="row">
-        <?php echo $form->labelEx($galleryModel,'image'); ?><br />
+        <?php echo $form->labelEx($galleryModel,'image'); ?>
         <?php echo $form->fileField($galleryModel,'image',array('size'=>50,'maxlength'=>50, 'name'=>'Gallery[image][0]')); ?>
         <?php echo $form->error($galleryModel,'image'); ?>
     </div>
@@ -107,8 +112,8 @@
 	<? endif; ?>
 	
 	<div class="row">
-        <?php echo $form->labelEx($videoModel,'video'); ?><br />
-        <?php echo $form->fileField($videoModel,'video',array('size'=>50,'maxlength'=>50, 'name'=>'Video[video][0]')); ?>
+        <?php echo $form->labelEx($videoModel,'video'); ?>
+        <?php echo $form->textArea($videoModel,'video',array('size'=>1000,'maxlength'=>1000, 'name'=>'Video[video][0]')); ?>
         <?php echo $form->error($videoModel,'video'); ?>
     </div>
 	
@@ -133,7 +138,7 @@
 	<? endif; ?>
 
     <div class="row">
-        <?php echo $form->labelEx($tagModel,'tag'); ?><br />
+        <?php echo $form->labelEx($tagModel,'tag'); ?>
         <?php echo $form->textField($tagModel,'tag'); ?>
         <?php echo $form->error($tagModel,'tag'); ?>
     </div>
@@ -159,19 +164,19 @@
 	<? endif; ?>
     
     <div class="row">
-        <?php echo $form->labelEx($testimonialModel,'testimonial'); ?><br />
+        <?php echo $form->labelEx($testimonialModel,'testimonial'); ?>
         <?php echo $form->textArea($testimonialModel,'testimonial',array('rows'=>6, 'cols'=>50, 'name'=>'Testimonial[testimonial][0]')); ?>
         <?php echo $form->error($testimonialModel,'testimonial'); ?>
     </div>
 
     <div class="row">
-        <?php echo $form->labelEx($testimonialModel,'author'); ?><br />
+        <?php echo $form->labelEx($testimonialModel,'author'); ?>
         <?php echo $form->textField($testimonialModel,'author',array('size'=>40,'maxlength'=>40, 'name'=>'Testimonial[author][0]')); ?>
         <?php echo $form->error($testimonialModel,'author'); ?>
     </div>
 
     <div class="row">
-        <?php echo $form->labelEx($testimonialModel,'authorTitle'); ?><br />
+        <?php echo $form->labelEx($testimonialModel,'authorTitle'); ?>
         <?php echo $form->textField($testimonialModel,'authorTitle',array('size'=>40,'maxlength'=>40, 'name'=>'Testimonial[authorTitle][0]')); ?>
         <?php echo $form->error($testimonialModel,'authorTitle'); ?>
     </div>

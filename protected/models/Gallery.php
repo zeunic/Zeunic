@@ -77,7 +77,7 @@ public function insert($pID, $image)
 		return array(
 			'id' => 'ID',
 			'projectID' => 'Project',
-			'image' => 'Image',
+			'image' => 'Add Image',
 		);
 	}
 

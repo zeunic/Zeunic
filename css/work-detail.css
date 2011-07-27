@@ -28,7 +28,7 @@
 }
 
 #work-detail #project_link {
-	margin: 0 0 0 17px;
+	margin: 0 0 0 14px;
 }
 
 #work-detail p {
@@ -86,7 +86,21 @@ section#gallery .utils {
 }
 
 #main #project-details+section ul li {
-	list-style: inside square;
+	list-style: inside none;
+}
+
+#project-tags a {
+	font: 12px "Droid Sans", sans-serif; 
+	color: #2a4052;
+	width: 150px;
+	padding: 5px;
+	margin-bottom: 3px;
+	background-color: #cfd8df;
+	display:block;
+}
+
+#project-tags a:hover {
+	text-decoration: underline;
 }
 
 #project-testimonials {

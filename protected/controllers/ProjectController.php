@@ -126,22 +126,22 @@ class ProjectController extends Controller
 		            	$testimonial->save();
 	            	}
 	            }
-	            if(count($newImages) > 0){
+	            if(isset($newImages) && count($newImages) > 0){
 	            	$this->render('jcrop', array('images'=>$newImages, 'form'=>false));
-	            	endContent();
 	            } else {
 					$this->redirect(array('index'));
 				}
 			}
-		}
+		} else {
 
-		$this->render('create',array(
-			'model'=>$model,
-			'galleryModel'=>$galleryModel,
-			'tagModel'=>$tagModel,
-			'testimonialModel'=>$testimonialModel,
-			'videoModel'=>$videoModel,
-		));
+			$this->render('create',array(
+				'model'=>$model,
+				'galleryModel'=>$galleryModel,
+				'tagModel'=>$tagModel,
+				'testimonialModel'=>$testimonialModel,
+				'videoModel'=>$videoModel,
+			));
+		}
 	}
 
 	/**
@@ -252,47 +252,61 @@ class ProjectController extends Controller
 		            	$testimonial->save();
 	            	}
 	            }
-	            if(count($newImages) > 0){
+	            if(isset($newImages) && count($newImages) > 0){
 	            	$this->render('jcrop', array('images'=>$newImages, 'form'=>false));
-	            	endContent();
 	            } else {
 					$this->redirect(array('index'));
 				}
 			}
-		}
+		} else {
 
-		$this->render('update',array(
-			'model'=>$model,
-			'galleryModel'=>$galleryModel,
-			'images'=>$images,
-			'tagModel'=>$tagModel,
-			'testimonialModel'=>$testimonialModel,
-			'videoModel'=>$videoModel,
-			'videos'=>$videos,
-			'testimonials'=>$testimonials,
-			'tags'=>$tags,
-		));
+			$this->render('update',array(
+				'model'=>$model,
+				'galleryModel'=>$galleryModel,
+				'images'=>$images,
+				'tagModel'=>$tagModel,
+				'testimonialModel'=>$testimonialModel,
+				'videoModel'=>$videoModel,
+				'videos'=>$videos,
+				'testimonials'=>$testimonials,
+				'tags'=>$tags,
+			));
+		}
 	}
 	
 	public function actionSavethumb(){
 		if(isset($_POST['src'])){
 			$targ_w = 590;
 			$targ_h = 180;
-			$jpeg_quality = 9;
 			
 			$src = $_POST['src'];
-			$img_r = imagecreatefrompng($src);
-			$dst_r = @ImageCreateTrueColor( $targ_w, $targ_h );
-			echo 'top: '.$_POST['top'].' width: '.$_POST['width'];
-			imagecopyresampled($dst_r,$img_r,0,0,$_POST['left'],$_POST['top'],
-				$targ_w,$targ_h,$_POST['width'],$_POST['height']);
+			if($_POST['fileext'] == '.png'){
+				$quality = 9;
+				$img_r = imagecreatefrompng($src);
+				$dst_r = @ImageCreateTrueColor( $targ_w, $targ_h );
+				echo 'top: '.$_POST['top'].' width: '.$_POST['width'];
+				imagecopyresampled($dst_r,$img_r,0,0,$_POST['left'],$_POST['top'],
+					$targ_w,$targ_h,$_POST['width'],$_POST['height']);
+				
+				$baseURL = dirname(Yii::app()->request->scriptFile);
+				$output_filename = $baseURL.'/images/projects/gallery/'.$_POST['filename'].'_thumb'.$_POST['fileext'];
+				
+				imagepng($dst_r, $output_filename, $quality);
+			} else {
+				$quality = 100;
+				$img_r = imagecreatefromjpeg($src);
+				$dst_r = @ImageCreateTrueColor( $targ_w, $targ_h );
+				echo 'top: '.$_POST['top'].' width: '.$_POST['width'];
+				imagecopyresampled($dst_r,$img_r,0,0,$_POST['left'],$_POST['top'],
+					$targ_w,$targ_h,$_POST['width'],$_POST['height']);
+				
+				$baseURL = dirname(Yii::app()->request->scriptFile);
+				$output_filename = $baseURL.'/images/projects/gallery/'.$_POST['filename'].'_thumb'.$_POST['fileext'];
+				
+				imagejpeg($dst_r, $output_filename, $quality);
 			
-			$baseURL = dirname(Yii::app()->request->scriptFile);
-			$output_filename = $baseURL.'/images/projects/gallery/'.$_POST['filename'].'_thumb'.$_POST['fileext'];
-			
-			imagepng($dst_r, $output_filename, $jpeg_quality);
-			echo 'success';
-		} else echo 'fail';
+			}
+		}
 	}
 
 	/**

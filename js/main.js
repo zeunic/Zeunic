@@ -69,20 +69,18 @@ $(function(){
 	$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 	
 	//Fade in hover class
-	$('a').live('mouseover',function(){
-		$(this).animate({color:'#B90226'}, 1000).bind('mouseleave', function(){
-			$(this).animate({color:'#EC1559'}, 1000);
-		});
-	});
 	
 	//Open external links in a new browser window
 	$('a').not('a[href*="localhost"]').not('a[href^="/"]').attr('target', 'new');
-	
 	//Dynamic AJAX Navigation
 	$('a[href*="localhost"], a[href^="/"]').live('click', function(){
 		var that = $(this);
 		if(that.parents('#admin').length > 0){
 			return true;
+		}
+		if(that.attr('rel') == 'prettyPhoto[gallery]'){
+			$("a[rel^='prettyPhoto']").prettyPhoto();
+			return false;
 		}
 		var ajaxLink = that.attr('href');
 		if(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length) == '/'){

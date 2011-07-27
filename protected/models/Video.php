@@ -40,7 +40,7 @@ class Video extends CActiveRecord
 		return array(
 			array('projectID', 'required'),
 			array('projectID', 'length', 'max'=>11),
-			array('video', 'length', 'max'=>50),
+			array('video', 'length', 'max'=>1000),
 			// The following rule is used by search().
 			// Please remove those attributes that should not be searched.
 			array('id, projectID, video', 'safe', 'on'=>'search'),
@@ -67,7 +67,7 @@ class Video extends CActiveRecord
 		return array(
 			'id' => 'ID',
 			'projectID' => 'Project',
-			'video' => 'Video',
+			'video' => 'Add Video (Use embed tag)',
 		);
 	}
 
