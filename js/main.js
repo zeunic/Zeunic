@@ -17,6 +17,8 @@ $(function(){
 	
 	$('nav a#logo').bind('click', function(){
 		navContainer.animate({ backgroundPosition: '-40px 0' });
+		nav.find('.active').removeClass('active');
+		nav.find('h1').text('welcome');
 	});
 
 	navLinks.bind('mouseenter', function(){
