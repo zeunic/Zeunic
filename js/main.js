@@ -3,19 +3,41 @@ zeunic.logo = {};
 
 $(function(){ 
 
-	$('nav li a').bind('mouseenter', function(){
-		$('nav h1').text( $(this).attr('title') );
-	});
-	
-	$('nav li a').bind('mouseleave', function(){
-		var def = $('#nav').find('.active').text();
-		def = (!def)? 'welcome' : def;
-		$('nav h1').text( def );
-	});
-
 	$('footer').find('q').tweets({
 		tweets: 1,
 		username: "zeunic"
+	});
+
+	// nav links functionality
+	var navLinks = $('nav li a'),
+		navContainer = $('#main-nav'),
+		nav = $('#nav');
+		
+	navContainer.css({ backgroundPosition: '-40px 0px' });
+	
+	$('nav a#logo').bind('click', function(){
+		navContainer.animate({ backgroundPosition: '-40px 0' });
+		nav.find('.active').removeClass('active');
+		nav.find('h1').text('welcome');
+	});
+
+	navLinks.bind('mouseenter', function(){
+		$('nav h1').text( $(this).attr('title') );
+	});
+	
+	navLinks.bind('mouseleave', function(){
+		var def = $('#nav').find('.active a').text();
+		def = (!def)? 'welcome' : def;
+		$('nav h1').text( def );
+	});
+	
+	navLinks.bind('click', function(){
+		var that = $(this),
+			parent = that.parent(),
+			pos =  (parent.position().left - 38) + 'px 0px';
+		nav.find('.active').removeClass('active');
+		parent.addClass('active');
+		navContainer.animate({ 'background-position' : pos });
 	});
 	
 	// Logo Flicker & Hover Animation
@@ -62,7 +84,6 @@ $(function(){
 		if(that.parents('#admin').length > 0){
 			return true;
 		}
-		var linkID = that.parent().attr('id');
 		var ajaxLink = that.attr('href');
 		if(ajaxLink.substring(ajaxLink.length-1, ajaxLink.length) == '/'){
 			ajaxLink = ajaxLink.substring(0, ajaxLink.length-1);
@@ -92,25 +113,7 @@ $(function(){
 				container = $('#container');
 				var bodyHeight = $('#container').css('height');
 				container.css({height:bodyHeight});
-				var nav = $('#nav');
 				var main = $(this);
-				
-				// apparently you're doing some voodoo active class toggle shit here
-				// this definitely confuses me
-				nav.find('.active').removeClass('active');
-				if(linkID){
-					nav.find('#'+linkID).addClass('active');
-				} else {
-					nav.find('#portfolio').addClass('active');
-				}
-				
-				// sort the #main-nav ul to have the active class last now
-				// animations not included, don't know if this is the way I should be doing this
-				// in order to support those effectively or not.
-				var activeLink = $('.active').clone();
-				$('.active').remove();
-				$('#main-nav').append(activeLink);
-				$('#nav').find('h1').text(activeLink.find('a').attr('title'));
 				
 				var h1 = $('#nav').find('h1').text();
 				$('head title').text('Zeunic :: ' + h1);

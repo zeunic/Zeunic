@@ -278,19 +278,19 @@ class ProjectController extends Controller
 		if(isset($_POST['src'])){
 			$targ_w = 590;
 			$targ_h = 180;
-			$jpeg_quality = 100;
+			$jpeg_quality = 9;
 			
 			$src = $_POST['src'];
 			$img_r = imagecreatefrompng($src);
-			$dst_r = ImageCreateTrueColor( $targ_w, $targ_h );
+			$dst_r = @ImageCreateTrueColor( $targ_w, $targ_h );
 			echo 'top: '.$_POST['top'].' width: '.$_POST['width'];
-			imagecopyresampled($dst_r,$img_r,0,0,$_POST['top'],$_POST['left'],
+			imagecopyresampled($dst_r,$img_r,0,0,$_POST['left'],$_POST['top'],
 				$targ_w,$targ_h,$_POST['width'],$_POST['height']);
 			
 			$baseURL = dirname(Yii::app()->request->scriptFile);
 			$output_filename = $baseURL.'/images/projects/gallery/'.$_POST['filename'].'_thumb'.$_POST['fileext'];
 			
-			//imagepng($dst_r, $output_filename, $jpeg_quality);
+			imagepng($dst_r, $output_filename, $jpeg_quality);
 			echo 'success';
 		} else echo 'fail';
 	}

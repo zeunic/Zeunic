@@ -1,7 +1,5 @@
-<?php $this->beginWidget('application.components.NavWidget', array('page'=>4)); ?>
-<?php $this->endWidget(); ?>
-	
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/jquery.Jcrop.css" />
+	<a href="<? echo Yii::app()->request->baseUrl.'/index.php/project/index' ?>">< Back</a>
 		<h1>JCrop Images</h1>
 		<ul>
 		<? foreach($images as $key => $image): ?>

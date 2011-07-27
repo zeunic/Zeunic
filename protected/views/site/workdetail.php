@@ -23,7 +23,13 @@ if(!$ajax){
 				<? // place the video li here // ?>
 			
 				<? foreach($project->galleries as $key => $image): ?>
-				<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/projects/gallery/<? echo $image->image ?>" alt="<? $project->title ?> Image" /></li>
+				<? 
+				$file = explode('.',$image->image); 
+				$filename = $file[0];
+				$fileext = $file[1];
+				$thumb = $filename.'_thumb.'.$fileext;
+				?>
+				<li><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/projects/gallery/<? echo $thumb ?>" alt="<? $project->title ?> Image" rel="prettyPhoto[gallery]" /></li>
 				<? endforeach; ?>
 			</ul>
 			<div class="utils">
