@@ -1,14 +1,17 @@
 # OS generated files #
 ######################
-.DS_Store?
+.DS_Store
 ehthumbs.db
 Thumbs.db
 
-# Blog Section #
+# Local vs Dev Conflicts with Auto Pushing #
 blog/*
+assets/*
+images/projects/*
+index.php
+protected/config/*
+protected/runtime/*
 
-# images #
-protected/images/projects/*
 
 # Yii Files          #
 ######################
@@ -16,10 +19,5 @@ protected/images/projects/*
 .buildpath
 .project
 .settings
-assets/*
-protected/runtime/*
 protected/data/*.db
 protected/tests/report/*
-index.php
-protected/config/main.php
-
