@@ -62,9 +62,9 @@ if(!$ajax){
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/parker.png" alt="parker" />
 			<ul>
 				<li class="tweet">Serif and Sans-serif fonts play nice together, you just gotta lay down some ground rules first. <a href="fb.me/12jIDAl0K" data-external="true">fb.me/12jIDAl0K</a></li>
-				<li>Drives: Toyota</li>
-				<li>Dislikes: Then ending to Inception</li>
-				<li>Favorite Site: Adobe.com</li>
+				<li>Passions: <strong>Design, art and strong concept</strong></li>
+				<li>Enjoys: <strong>Lifehacking to the extreme</strong></li>
+				<li>Would spend his final hour: <strong>Playing Halo Reach</strong></li>
 			</ul>
 			<p>The name would be Parker. The game is design. The tools of my trade are my eyes. People's creativity comes from their eye; a creative eye supplements the creative mind. In my world, it's all about grabbing people by the collar, pulling them in and immersing them in the meaningful aesthetics of my work.</p>
 		</div>
