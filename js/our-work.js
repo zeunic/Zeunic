@@ -22,7 +22,6 @@ $(function(){
 
 	// Definte Portfolio Display list, Fill it with data from #data li list (populated later from DB)
 	var portfolioDisplay = $('.portfolio_display');
-	$('.portfolio_display').quicksand( $('#data li') );
 	
 	//Quicksand Preferences
 	var $preferences = {
@@ -32,6 +31,8 @@ $(function(){
 		, attribute: 'data-id'
 		, useScaling: true
 	};
+	
+	portfolioDisplay.quicksand( $('#data li'), $preferences );
 
 	// Filter Function when toggling between top 4 tag filters
 	$('.button-row a').not('#searchbutton').bind('click', function(){
@@ -122,6 +123,8 @@ $(function(){
 				that.animate({opacity: 0, width: 0, left: 590},300);
 				break;
 		}
+		
+		zeunic.portfolio = {};
 		// $(this).animate({ opacity: 0, width: 0 }, 300);
 	});
 	

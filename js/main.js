@@ -101,7 +101,6 @@ $(function(){
 			//GENERATE NORMAL AJAX LINK
 			ajaxLink = ajaxLink + 'Ajax';
 		}
-		console.log(ajaxLink);
 		
 		// loader gif init
 		$('#nav').append('<div class="loader">loading...</div>');
@@ -114,8 +113,11 @@ $(function(){
 		  success: function(html){
 			$('#main').animate({opacity:0, queue:false}, 500, function(){
 				container = $('#container');
+				
 				var bodyHeight = $('#container').css('height');
+				
 				container.css({height:bodyHeight});
+				
 				var main = $(this);
 				
 				var h1 = $('#nav').find('h1').text();
@@ -127,6 +129,7 @@ $(function(){
 					main.animate({opacity:1,queue:false}, 500);
 				}, 500);
 				contentHeight = $('#content').css('height');
+				
 				container.animate({height:contentHeight}, 1000, 'easeInOutQuad', function(){
 					container.css({height:'auto'});
 					$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
