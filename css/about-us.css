@@ -24,18 +24,16 @@
 	margin: 5px 20px 0 5px;
 }
 
-#about_us h2 {
-	font-size: 1.8em;
-	margin: 20px 0 20px 0;
-	font-weight: bold;
-	padding: 4px 0;
-	border-bottom: 1px dashed #777777;
+#about_us section:first-child {
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+	background: bottom center url(../images/horiz_rule.png) no-repeat;
 }
 
 .minibio h3 {
 	font-size: 1.6em;
 	font-weight: bold;
-	margin: 0 0 10px 3px;
+	margin: 0 0 10px 0;
 }
 
 .minibio h3 span {
@@ -51,11 +49,13 @@
 .minibio {
 	overflow: hidden;
 	margin: 0 0 40px 0;
+	border-left: 3px solid #999;
+	padding: 0 0 0 10px;
 }
 
 .minibio ul {
 	float: left;
-	width: 380px;
+	width: 367px;
 	height: 120px;
 	font-size: 1.2em;
 }

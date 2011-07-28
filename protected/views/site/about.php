@@ -13,7 +13,6 @@ if(!$ajax){
 
 <article id="about_us">
 	<section>
-	
 	<img class="header" src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/header.png" alt="About Zeunic" />
 	
 	<h1>&#8220;We're about the details. <em>Your details.</em>&#8221;</h1>
@@ -22,8 +21,6 @@ if(!$ajax){
 
 	<p>Have you ever noticed how much nicer a glass of tea looks served with a mint leaf? Or that feeling of relief when you thought you lost everything only to find out the web application was saving your work for you? What about when you fell completely in love with a particular brand, not because of what it does or how it does it, but because of how it made you feel?</p>
 
-	<!--<p><strong>We create projects that revolve around the flourish of the details.</strong></p> -->
-
 	<p><strong>Zeunic is about creativity and vision meeting the effective simplicity of the smallest details.</strong></p>
 	<p>The greatest web application in the world will not work without the little things that make make it a great experience, nor would the smallest details matter without a vision to make them a part of the greater whole.</p>
 
@@ -31,7 +28,7 @@ if(!$ajax){
 	</section>
 	
 	<section>
-		<h2>Meet the Team</h2>
+		<!-- <h2>Meet the Team</h2> -->
 		
 		<div class="minibio">
 			<h3>Stephen Rivas JR <span>| Project Manager</span></h3>
@@ -42,7 +39,7 @@ if(!$ajax){
 				<li>Super Power: <strong>Teleporting.</strong></li>
 				<li>Proud Father: <strong>Yup!</strong></li>
 			</ul>
-			<p>I love to push myself, often times past what I am capable of. If I'm not struggling, or being challenged I'm not satisfied. I love the industry, and dreaming big. Also currently the Full Sail SGA Campus Senator for the Web Program, and Project Manager for Zeunic.</p>
+			<p>I love to push myself, frequently past what I am capable of. If I am not struggling, or being challenged I'm not satisfied. I love the web industry, and how it allows me to dream big. I am currently the Full Sail SGA Campus Senator for the Web Program, Project Manager for Zeunic, a student, and father to a really cool daughter.</p>
 		</div>
 		
 		<div class="minibio">
