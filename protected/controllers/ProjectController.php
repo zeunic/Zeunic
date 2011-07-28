@@ -82,7 +82,13 @@ class ProjectController extends Controller
 	            	$file= $baseURL . $imageDir . $id . '_' . $uid . '.' . $value->extensionName;
 	            	$value->saveAs($file);
 	            	$image = Yii::app()->image->load($file);
-	            	$image->resize(960, 550)->quality(100);
+	            	$imageWidth = $image->width;
+	            	$imageHeight = $image->height;
+	            	if($imageWidth < 960 && $imageHeight < 960){
+	            	
+	            	} else {
+	            		$image->resize(960, 960)->quality(100);
+	            	}
 	            	$image->save();
 	            	$newImages[] = $id . '_' . $uid . '.' . $value->extensionName;
 	            	$galleryImage->image = $id . '_' . $uid . '.' . $value->extensionName;
@@ -206,7 +212,13 @@ class ProjectController extends Controller
 	            	$file= $baseURL . $imageDir . $id . '_' . $uid . '.' . $value->extensionName;
 	            	$value->saveAs($file);
 	            	$image = Yii::app()->image->load($file);
-	            	$image->resize(960, 550)->quality(100);
+	            	$imageWidth = $image->width;
+	            	$imageHeight = $image->height;
+	            	if($imageWidth < 960 && $imageHeight < 960){
+	            	
+	            	} else {
+	            		$image->resize(960, 960)->quality(100);
+	            	}
 	            	$image->save();
 	            	$newImages[] = $id . '_' . $uid . '.' . $value->extensionName;
 	            	$galleryImage->image = $id . '_' . $uid . '.' . $value->extensionName;
