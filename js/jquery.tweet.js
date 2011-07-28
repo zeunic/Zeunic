@@ -80,14 +80,10 @@ var H = function (a) {
 		var options = $.extend(defaults, options);
 		return this.each(function() {
 			var obj = $(this);
-			$.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?callback=?&screen_name='+options.username+'&count='+options.tweets,
+retrieve = options.tweets + 1;	$.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?callback=?&screen_name='+options.username+'&count='+retrieve+'&exclude_replies=true',
 		        function(data) {
-		            $.each(data, function(i, tweet) {
-		                if(typeof tweet.text == 'string') {
-		                    obj.text(tweet.text);
-		                    obj.siblings('cite').html(H(tweet.created_at)+' via '+tweet.source);
-		                }
-		            });
+		        	obj.text(data[data.length-1].text);
+		        	obj.siblings('cite').html(H(data[data.length-1].created_at)+' via '+data[data.length-1].source);
 		        }
 		    );
 		});
