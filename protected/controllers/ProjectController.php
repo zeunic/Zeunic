@@ -84,10 +84,10 @@ class ProjectController extends Controller
 	            	$image = Yii::app()->image->load($file);
 	            	$imageWidth = $image->width;
 	            	$imageHeight = $image->height;
-	            	if($imageWidth < 960 && $imageHeight < 550){
+	            	if($imageWidth < 960 && $imageHeight < 960){
 	            	
 	            	} else {
-	            		$image->resize(960, 550)->quality(100);
+	            		$image->resize(960, 960)->quality(100);
 	            	}
 	            	$image->save();
 	            	$newImages[] = $id . '_' . $uid . '.' . $value->extensionName;
@@ -214,10 +214,10 @@ class ProjectController extends Controller
 	            	$image = Yii::app()->image->load($file);
 	            	$imageWidth = $image->width;
 	            	$imageHeight = $image->height;
-	            	if($imageWidth < 960 && $imageHeight < 550){
+	            	if($imageWidth < 960 && $imageHeight < 960){
 	            	
 	            	} else {
-	            		$image->resize(960, 550)->quality(100);
+	            		$image->resize(960, 960)->quality(100);
 	            	}
 	            	$image->save();
 	            	$newImages[] = $id . '_' . $uid . '.' . $value->extensionName;
