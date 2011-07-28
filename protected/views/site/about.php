@@ -78,7 +78,7 @@ if(!$ajax){
 				<li>Money Wasted on Fallout DLC: <strong>Too Much</strong></li>
 				<li>Loves looking at: <strong>Minimalism in Design</strong></li>
 			</ul>
-			<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas faucibus mollis interdum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+			<p>I'm your go-to guy for anything CSS, HTML, and Javascript related. I've worked hard with industry professionals for the last two years at Full Sail University and now, my knowledge and possibilities are endless. I love this industry.</p>
 		</div>
 	</section>
 </article>
