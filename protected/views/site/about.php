@@ -18,7 +18,7 @@ if(!$ajax){
 	
 	<h1>&#8220;We're about the details. <em>Your details.</em>&#8221;</h1>
 	
-	<p>Zeunic was started in Spring 2011 around an idea that passion, focus, and energy could create great things if you could see both the big picture and the details that nobody else pays attention to.</p>
+	<p>Zeunic was started in the spring of 2011 around an idea that passion, focus, and energy could create great things if you could see both the big picture and the details that nobody else pays attention to.</p>
 
 	<p>Have you ever noticed how much nicer a glass of tea looks served with a mint leaf? Or that feeling of relief when you thought you lost everything only to find out the web application was saving your work for you? What about when you fell completely in love with a particular brand, not because of what it does or how it does it, but because of how it made you feel?</p>
 
