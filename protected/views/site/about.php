@@ -50,11 +50,11 @@ if(!$ajax){
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/joe.png" alt="joe" />
 			<ul>
 				<li class="tweet">Hangin with Edward Maya tonight <a href="http://t.co/Yb5OnO4">http://t.co/Yb5OnO4</a></li>
-				<li><strong>iPhones Destroyed:</strong> 2</li>
-				<li><strong>Music:</strong> House/Techno</li>
-				<li><strong>Status:</strong> Baller</li>
+				<li>Hobbies: <strong>Cycling and Golf</strong></li>
+				<li>Languages: <strong>PHP, Coldfusion and Javascript</strong></li>
+				<li>Hometowns: <strong>Rochester, MN</strong> | <strong>Fort Collins, CO</strong> | <strong>Casselberry, FL</strong></li>
 			</ul>
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent commodo cursus magna, vel scelerisque nisl consectetur et. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Etiam porta sem malesuada magna mollis euismod.</p>
+			<p>I discovered my love for the internet while working towards a degree in computer science at Colorado State University. I have spent the past few years immersing myself in web design and development at Full Sail University and strive to create web applications that bridge the gap between usability and feasibility.</p>
 		</div>
 		
 		<div class="minibio">
