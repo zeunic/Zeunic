@@ -31,6 +31,17 @@
 	padding: 4px 0;
 	border-bottom: 1px dashed #777777;
 }
+
+.minibio h3 {
+	font-size: 1.6em;
+	font-weight: bold;
+	margin: 0 0 10px 3px;
+}
+
+.minibio h3 span {
+	color: #676767;
+	font-size: .85em;
+}
  
 
 /*
