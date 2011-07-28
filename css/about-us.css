@@ -15,11 +15,15 @@
 	border: 1px solid black;
 	margin: 5px 0 15px 3px;
 	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,.5);
+	box-shadow: 0 0 5px rgba(0,0,0,.5);
 }
 
 .minibio img {
 	border: 1px solid black;
 	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.5);
+	-moz-box-shadow: 0 0 5px rgba(0,0,0,.5);
+	box-shadow: 0 0 5px rgba(0,0,0,.5);
 	float: left;
 	margin: 5px 20px 0 5px;
 }

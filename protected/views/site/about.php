@@ -51,7 +51,7 @@ if(!$ajax){
 				<li>Languages: <strong>PHP, Coldfusion and Javascript</strong></li>
 				<li>Hometowns: <strong>Rochester, MN</strong> | <strong>Fort Collins, CO</strong> | <strong>Casselberry, FL</strong></li>
 			</ul>
-			<p>I discovered my love for the internet while working towards a degree in computer science at Colorado State University. I have spent the past few years immersing myself in web design and development at Full Sail University and strive to create web applications that bridge the gap between usability and feasibility.</p>
+			<p>I discovered my love for the internet while working towards a degree in computer science at Colorado State University. I have spent the past couple years immersing myself in web development at Full Sail University and strive to create websites that make my clients happy.</p>
 		</div>
 		
 		<div class="minibio">
@@ -71,11 +71,11 @@ if(!$ajax){
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/spencer.png" alt="spencer" />
 			<ul>
 				<li class="tweet">Finished up the new Zeunic teaser site with help of my esteemed colleagues! Check it out over at zeunic.com</li>
-				<li>Cats: On A Couch</li>
-				<li>Likes: Not Presenting</li>
-				<li>Skinny Jeans: Definitely</li>
+				<li>Number of Cats: <strong>2</strong></li>
+				<li>Money Wasted on Fallout DLC: <strong>Too Much</strong></li>
+				<li>Loves looking at: <strong>Minimalism in Design</strong></li>
 			</ul>
-			<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas faucibus mollis interdum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
+			<p>I'm your go-to guy for anything CSS, HTML, and Javascript related. I've worked hard with industry professionals for the last two years at Full Sail University and now, my knowledge and possibilities are endless. I love this industry.</p>
 		</div>
 	</section>
 </article>
