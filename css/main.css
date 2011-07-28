@@ -364,6 +364,9 @@ form#contactform p.error img {
 	padding-left: 20px;
 }
 
+#contactform.contactsuccess {
+	
+}
 
 
 /* -----------------ARTICLE CONTENT------------------ */
