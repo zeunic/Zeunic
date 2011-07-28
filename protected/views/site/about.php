@@ -34,7 +34,7 @@ if(!$ajax){
 			<h3>Stephen Rivas JR <span>| Project Manager</span></h3>
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/stephen.png" alt="stephen" />
 			<ul>
-				<li class="tweet"><a href="twitter.com/olivierlacan">@olivierlacan</a> lol, I need to retain reference to a setInterval and setTimeout in a .bind()/.live() scenario. I'll call some time.</li>
+				<li class="tweet">loading latest tweet...</li>
 				<li>Likes: <strong>Javascript && CouchDB;</strong></li>
 				<li>Super Power: <strong>Teleporting.</strong></li>
 				<li>Proud Father: <strong>Yup!</strong></li>
@@ -46,7 +46,7 @@ if(!$ajax){
 			<h3>Joe Lessard <span>| Lead Developer</span></h3>
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/joe.png" alt="joe" />
 			<ul>
-				<li class="tweet">Hangin with Edward Maya tonight <a href="http://t.co/Yb5OnO4">http://t.co/Yb5OnO4</a></li>
+				<li class="tweet">loading latest tweet...</li>
 				<li>Hobbies: <strong>Cycling and Golf</strong></li>
 				<li>Languages: <strong>PHP, Coldfusion and Javascript</strong></li>
 				<li>Hometowns: <strong>Rochester, MN</strong> | <strong>Fort Collins, CO</strong> | <strong>Casselberry, FL</strong></li>
@@ -58,7 +58,7 @@ if(!$ajax){
 			<h3>Parker W Young <span>| Creative Director</span></h3>
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/parker.png" alt="parker" />
 			<ul>
-				<li class="tweet">Serif and Sans-serif fonts play nice together, you just gotta lay down some ground rules first. <a href="fb.me/12jIDAl0K" data-external="true">fb.me/12jIDAl0K</a></li>
+				<li class="tweet">loading latest tweet...</li>
 				<li>Passions: <strong>Design, art and strong concept</strong></li>
 				<li>Enjoys: <strong>Lifehacking to the extreme</strong></li>
 				<li>Would spend his final hour: <strong>Playing Halo Reach</strong></li>
@@ -70,7 +70,7 @@ if(!$ajax){
 			<h3>Spencer Bailey <span>| Front-End Developer</span></h3>
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/spencer.png" alt="spencer" />
 			<ul>
-				<li class="tweet">Finished up the new Zeunic teaser site with help of my esteemed colleagues! Check it out over at zeunic.com</li>
+				<li class="tweet">loading latest tweet...</li>
 				<li>Number of Cats: <strong>2</strong></li>
 				<li>Money Wasted on Fallout DLC: <strong>Too Much</strong></li>
 				<li>Loves looking at: <strong>Minimalism in Design</strong></li>
@@ -85,3 +85,5 @@ if(!$ajax){
 <? endif; ?>
 
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tweet.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/about-us.js"></script>
