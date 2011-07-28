@@ -82,7 +82,7 @@ $(function(){
 		}
 		//Don't use AJAX for pretty photo links
 		if(that.attr('rel') == 'prettyPhoto[gallery]'){
-			$("a[rel^='prettyPhoto']").prettyPhoto();
+			$("a[rel^='prettyPhoto']").prettyPhoto({deeplinking: false});
 			return false;
 		}
 		//Grab current HREF
