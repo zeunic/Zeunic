@@ -74,9 +74,9 @@ if(!$ajax){
 			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/spencer.png" alt="spencer" />
 			<ul>
 				<li class="tweet">Finished up the new Zeunic teaser site with help of my esteemed colleagues! Check it out over at zeunic.com</li>
-				<li>Cats: On A Couch</li>
-				<li>Likes: Not Presenting</li>
-				<li>Skinny Jeans: Definitely</li>
+				<li>Number of Cats: <strong>2</strong></li>
+				<li>Money Wasted on Fallout DLC: <strong>Too Much</strong></li>
+				<li>Loves looking at: <strong>Minimalism in Design</strong></li>
 			</ul>
 			<p>Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor auctor. Maecenas faucibus mollis interdum. Cras justo odio, dapibus ac facilisis in, egestas eget quam. Duis mollis, est non commodo luctus, nisi erat porttitor ligula, eget lacinia odio sem nec elit.</p>
 		</div>
