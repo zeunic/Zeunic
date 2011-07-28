@@ -1,0 +1,56 @@
+/*
+ *
+ * Home CSS Specifics for the Zeunic.com
+ * Author: Zeunic
+ *
+ */
+
+/*
+ * General ------------------------------------------------- /
+ */
+  
+#home h1 {	
+	font-size: 3em;
+	font-weight: bold;
+	margin: 10px 0 15px 0;
+}
+
+#home h2 {
+	font-size: 1.7em;
+}
+
+#home article {
+	margin: 15px 0;
+}
+
+#home article section {
+	float: left;
+	width: 180px;
+	padding: 5px;
+	margin: 0 0 0 10px;
+	background: rgba(0,0,0,.1);
+}
+
+#home article section:first-child {
+	margin: 0 0 0 0;
+}
+ 
+
+/*
+ * Slider ------------------------------------------------- /
+ */
+ 
+#newsgallery {
+	border: 1px solid #D1D1D1;
+	height: 180px;
+	padding: 0;
+	width: 588px;
+	overflow: hidden;
+}
+
+#newsgallery #slider li {
+	margin: 0;
+	padding: 0;
+	height: 180px;
+	width: 590px;
+}

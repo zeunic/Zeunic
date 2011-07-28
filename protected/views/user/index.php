@@ -2,7 +2,7 @@
 <?php $this->endWidget(); ?>
 
 <div id="main">
-
+<div id="admin">
 <h1>Users</h1>
 
 	<ul id="admin">
@@ -16,4 +16,5 @@
 		'itemView'=>'_view',
 	)); ?>
 
+</div>
 </div>

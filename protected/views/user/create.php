@@ -2,7 +2,7 @@
 <?php $this->endWidget(); ?>
 
 <div id="main">
-
+<div id="admin">
 	<h1>Create User</h1>
 
 	<ul id="admin">
@@ -11,5 +11,5 @@
 	</ul>
 
 <?php echo $this->renderPartial('_form', array('model'=>$model)); ?>
-
+</div>
 </div>
