@@ -66,7 +66,7 @@ if(!$ajax){
 				<li>Enjoys: <strong>Lifehacking to the extreme</strong></li>
 				<li>Would spend his final hour: <strong>Playing Halo Reach</strong></li>
 			</ul>
-			<p>The name would be Parker. The game is design. The tools of my trade are my eyes. People's creativity comes from their eye; a creative eye supplements the creative mind. In my world, it's all about grabbing people by the collar, pulling them in and immersing them in the meaningful aesthetics of my work.</p>
+			<p>The name would be Parker. The game is design. I'm a designer, geek, gamer and a seasoned lifehacker. I specialize in corporate branding and motion graphics engineering, but occasionally dabble in print design, web interfacing, traditional art and sketching.</p>
 		</div>
 		
 		<div class="minibio">
