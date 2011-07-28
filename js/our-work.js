@@ -122,6 +122,8 @@ $(function(){
 				that.animate({opacity: 0, width: 0, left: 590},300);
 				break;
 		}
+		
+		zeunic.portfolio = {};
 		// $(this).animate({ opacity: 0, width: 0 }, 300);
 	});
 	
