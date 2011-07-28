@@ -54,7 +54,7 @@ if(!$ajax){
 				<li>Languages: <strong>PHP, Coldfusion and Javascript</strong></li>
 				<li>Hometowns: <strong>Rochester, MN</strong> | <strong>Fort Collins, CO</strong> | <strong>Casselberry, FL</strong></li>
 			</ul>
-			<p>I discovered my love for the internet while working towards a degree in computer science at Colorado State University. I have spent the past few years immersing myself in web design and development at Full Sail University and strive to create web applications that bridge the gap between usability and feasibility.</p>
+			<p>I discovered my love for the internet while working towards a degree in computer science at Colorado State University. I have spent the past couple years immersing myself in web development at Full Sail University and strive to create websites that make my clients happy.</p>
 		</div>
 		
 		<div class="minibio">
