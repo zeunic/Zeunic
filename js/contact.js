@@ -51,10 +51,10 @@ $(function(){
 									  length: -1.5
 									}
 								  }
-														 		$('#main').css({overflow:'visible'}).parent().css({overflow:'visible'}); $(".contactsuccess").css({position:'relative'}).animate({path: new $.path.bezier(bezier_params)}, 1500, function(){
+														 		/*$('#main').css({overflow:'visible'}).parent().css({overflow:'visible'}); $(".contactsuccess").css({position:'relative'}).animate({path: new $.path.bezier(bezier_params)}, 1500, function(){
 														 $('#main').css({overflow:'hidden'}).parent().css({overflow:'hidden'}).remove('.contactsuccess'); 
 							 });
-							 }
+							 */}
 						});
 					}, 500);
 				});

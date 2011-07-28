@@ -14,8 +14,6 @@ if(!$ajax){
 <article id="about_us">
 	<section>
 	
-	<img class="header" src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/header.png" alt="About Zeunic" />
-	
 	<h1>&#8220;We're about the details. <em>Your details.</em>&#8221;</h1>
 	
 	<p>Zeunic was started in the spring of 2011 around an idea that passion, focus, and energy could create great things if you could see both the big picture and the details that nobody else pays attention to.</p>

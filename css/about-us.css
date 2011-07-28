@@ -10,13 +10,26 @@
 /*
  * Images & Headings --------------------------------------------- /
  */
+ 
+ #about_us {
+ 	background: url(../images/teaglass.png) top center no-repeat;
+ 	padding-top: 22px;
+ 	margin-top:10px;
+ }
+ 
+#about_us h1 {
+	font-family: Garamond, sans-serif;
+	text-transform: lowercase;
+	float: right;
+	font-size: 2.4em;
+	line-height: 1.2em;
+	width: 250px;
+	margin: 25px 0 20px 90px;
+	font-weight: bold;
+}
 
-#about_us img.header {
-	border: 1px solid black;
-	margin: 5px 0 15px 3px;
-	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.5);
-	-moz-box-shadow: 0 0 5px rgba(0,0,0,.5);
-	box-shadow: 0 0 5px rgba(0,0,0,.5);
+#about_us h1 em {
+	font-weight: bold;
 }
 
 .minibio img {
