@@ -7,6 +7,9 @@ Thumbs.db
 # Blog Section #
 blog/*
 
+# images #
+protected/images/projects/*
+
 # Yii Files          #
 ######################
 *.swp
@@ -19,3 +22,4 @@ protected/data/*.db
 protected/tests/report/*
 index.php
 protected/config/main.php
+
