@@ -114,8 +114,12 @@ $(function(){
 		  success: function(html){
 			$('#main').animate({opacity:0, queue:false}, 500, function(){
 				container = $('#container');
+				
 				var bodyHeight = $('#container').css('height');
+				console.log('container height:' + bodyHeight );
+				
 				container.css({height:bodyHeight});
+				
 				var main = $(this);
 				
 				var h1 = $('#nav').find('h1').text();
@@ -127,6 +131,10 @@ $(function(){
 					main.animate({opacity:1,queue:false}, 500);
 				}, 500);
 				contentHeight = $('#content').css('height');
+				console.log('content height: ' + contentHeight);
+				console.log('inner: ' + $('#content').innerHeight());
+				console.log('inner: ' + $('#content').outerHeight());
+				
 				container.animate({height:contentHeight}, 1000, 'easeInOutQuad', function(){
 					container.css({height:'auto'});
 					$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
