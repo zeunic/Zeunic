@@ -81,11 +81,13 @@ var H = function (a) {
 		var options = $.extend(defaults, options);
 		return this.each(function() {
 			var obj = $(this);
-retrieve = options.tweets + 1;	$.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?callback=?&screen_name='+options.username+'&count='+retrieve+'&exclude_replies=true',
+retrieve = options.tweets + 10;	$.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?callback=?&screen_name='+options.username+'&count='+retrieve+'&exclude_replies=true',
 		        function(data) {
-		        	obj.text(data[data.length-1].text);
-		        	if (options.cite) {
-		        		obj.siblings('cite').html(H(data[data.length-1].created_at)+' via '+data[data.length-1].source);
+		        	for(var i = 0; i < options.tweets; i++){
+						obj.text(data[i].text);
+						if (options.cite) {
+							obj.siblings('cite').html(H(data[i].created_at)+' via '+data[data.length-1].source);
+						}
 		        	}
 		        }
 		    );

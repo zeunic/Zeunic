@@ -27,7 +27,7 @@
 	width: 91px;
 	height: 20px;
 	text-indent: -99999px;
-	margin: 3px 3px 10px 5px;
+	margin: 3px 4px 10px 5px;
 	border-radius: 5px;
 	-webkit-transition: box-shadow 0.5s ease-in;
 	-moz-transition: box-shadow 0.5s ease-in;
@@ -84,13 +84,13 @@
  */
  
 .button-row input[type="text"] {
-	width: 162px;
+	width: 161px;
 	height: 16px;
 	font-size: 1.2em;
 	padding: 2px 25px 2px 2px;
 	border: 1px solid #768ea3;
 	border-radius: 5px;
-	margin: 2px 2px 2px 7px;
+	margin: 2px 0 2px 5px;
 	-webkit-box-shadow: 0 0 5px rgba(0,0,0,.1);
 	background: #ffffff right center url(../images/icons/search_input.png) no-repeat;
 }
