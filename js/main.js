@@ -11,9 +11,8 @@ $(function(){
 	// nav links functionality
 	var navLinks = $('nav li a'),
 		navContainer = $('#main-nav'),
-		nav = $('#nav');
-		
-	navContainer.css({ backgroundPosition: '-40px 0px' });
+		nav = $('#nav'),
+		activePage = $('#main-nav .active');
 	
 	$('nav a#logo').bind('click', function(){
 		navContainer.animate({ backgroundPosition: '-40px 0' });
@@ -31,14 +30,29 @@ $(function(){
 		$('nav h1').text( def );
 	});
 	
-	navLinks.bind('click', function(){
-		var that = $(this),
-			parent = that.parent(),
-			pos =  (parent.position().left - 38) + 'px 0px';
+	var moveActiveLink = function(obj) {
+		var that = obj,
+		parent = that.parent(),
+		pos =  (parent.position().left - 38) + 'px 0px';
 		nav.find('.active').removeClass('active');
 		parent.addClass('active');
 		navContainer.animate({ 'background-position' : pos });
+	}
+	
+	navLinks.bind('click', function(){
+		moveActiveLink($(this));
 	});
+	
+	navContainer.css({ backgroundPosition: '-40px 0px' });
+	
+	// if the page was loaded directly without ajax, this code will animate the active
+	// background image, the delay is to avoid being 5px off because the document ready
+	// fires before the negative margin is applied (i think)
+	setTimeout(function(){
+		if (activePage.length != 0) {
+			moveActiveLink(activePage.children('a'));
+		}
+	}, 500);
 	
 	// Logo Flicker & Hover Animation
 	var logo = $('#logo');
