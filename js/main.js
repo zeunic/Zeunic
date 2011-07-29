@@ -73,15 +73,14 @@ $(function(){
 	//Open external links in a new browser window
 	$('a').not('a[href*="localhost"]').not('a[href^="/"]').attr('target', 'new');
 	
-	
 	//Dynamic AJAX Navigation
-	$('a[href*="localhost"], a[href*="zeunic.com"], a[href^="/"]').live('click', function(){
+	$('a[href*="localhost"], a[href*="zeunic.com"], a[href^="/"]').live('click', function(e){
 		var that = $(this);
 		//Don't use AJAX for admin links
 		if(that.parents('#admin').length > 0){
-			$("a[rel^='prettyPhoto']").prettyPhoto({deeplinking: false});
 			return true;
 		}
+		//Don't use AJAX for pretty photo links
 		//Grab current HREF
 		var ajaxLink = that.attr('href');
 		//If it ends with a /, get rid of it

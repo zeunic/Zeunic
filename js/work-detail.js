@@ -12,4 +12,5 @@ $(function(){
 			direction: 'next'
 		}
 	});
+	$("a[rel^='prettyPhoto']").unbind('click').prettyPhoto({deeplinking: false});
 });
