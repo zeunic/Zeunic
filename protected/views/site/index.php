@@ -11,7 +11,7 @@ if(!$ajax){
 <div id="main">
 <? endif; ?>
 <div id="home">
-<h1>Recharge your brand with Zeunic.</h1>
+<h1>Recharge your brand with Zeunic!</h1>
 
 <div id="newsgallery">
 	<ul id="slider">
