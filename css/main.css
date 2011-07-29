@@ -49,6 +49,7 @@ a:link, a:active, a:visited, a:hover {
 	margin: 20px 0 20px 325px;
 	float: left;
 	width: 590px;
+	min-height: 300px;
 }
 
 p {
@@ -368,6 +369,10 @@ form#contactform p.error img {
 	background-image: url(../images/bg_contact_front.png);
 	width:590px;
 	height:253px;
+	position:absolute;
+	top:0;
+	left:0;
+	z-index: 100;
 }
 
 #contactsuccess address {

@@ -38,7 +38,7 @@ if(!$ajax){
 				<li>Super Power: <strong>Teleporting.</strong></li>
 				<li>Proud Father: <strong>Yup!</strong></li>
 			</ul>
-			<p>I love to push myself, frequently past what I am capable of. If I am not struggling, or being challenged I'm not satisfied. I love the web industry, and how it allows me to dream big. I am currently the Full Sail SGA Campus Senator for the Web Program, Project Manager for Zeunic, a student, and father to a really cool daughter.</p>
+			<p>I love to push myself, frequently past what I am capable of. If I am not struggling, or being challenged I'm not satisfied. I love the web industry, and how it allows me to dream big. I am currently the Full Sail SGA Campus Senator for the Web Program, a student, and father to a really cool daughter.</p>
 		</div>
 		
 		<div class="minibio">

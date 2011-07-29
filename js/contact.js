@@ -33,28 +33,32 @@ $(function(){
 			success: function(response){
 				$('#main').animate({opacity:0, queue:false}, 500, function(){
 					main = $(this);
-					main.html(response);s
+					main.html(response);
+					$('#contactsuccess').find('address:first').html(name+'<br />'+contact);
 					setTimeout(function(){
 						main.animate({opacity:1,queue:false}, 500, function(){
+							var success = $('#contactsuccess');
 							//animate contact form out!
-							if($('.contactsuccess').length > 0){
-								var bezier_params = {
+							if(success.length > 0){
+								setTimeout(function(){
+									var bezier_params = {
 									start: { 
 									  x: 0, 
 									  y: 0, 
 									  angle: 0
 									},  
 									end: { 
-									  x:0,
-									  y:-500, 
-									  angle: 190, 
+									  x:500,
+									  y:-750, 
+									  angle: 150, 
 									  length: -1.5
 									}
 								  }
-														 		/*$('#main').css({overflow:'visible'}).parent().css({overflow:'visible'}); $(".contactsuccess").css({position:'relative'}).animate({path: new $.path.bezier(bezier_params)}, 1500, function(){
-														 $('#main').css({overflow:'hidden'}).parent().css({overflow:'hidden'}).remove('.contactsuccess'); 
-							 });
-							 */}
+																	$('#main').css({overflow:'visible'}).parent().css({overflow:'visible'}); success.animate({path: new $.path.bezier(bezier_params)}, 2500, function(){
+															 $('#main').css({overflow:'hidden'}).parent().css({overflow:'hidden'}).remove('#contactsuccess'); 
+								 });
+								}, 2000);
+							 }
 						});
 					}, 500);
 				});
