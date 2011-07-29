@@ -80,6 +80,13 @@ $(function(){
 		if(that.parents('#admin').length > 0){
 			return true;
 		}
+		
+		// Don't use default AJAX for blog links
+		if (that.attr('href').substring(0,26) == 'http://www.zeunic.com/blog') {
+			getBlogContent();
+			return false;
+		}
+		
 		//Don't use AJAX for pretty photo links
 		//Grab current HREF
 		var ajaxLink = that.attr('href');
@@ -107,7 +114,14 @@ $(function(){
 		  url: ajaxLink,
 		  cache: false,
 		  success: function(html){
-			$('#main').animate({opacity:0, queue:false}, 500, function(){
+				swapMainContent(html);
+		  }
+		});
+		return false;
+	});
+	
+	var swapMainContent = function(html) {
+		$('#main').animate({opacity:0, queue:false}, 500, function(){
 				container = $('#container');
 				
 				var bodyHeight = $('#container').css('height');
@@ -133,9 +147,13 @@ $(function(){
 				
 				$('.loader').remove();
 			});
-		  }
-		});
+	}
+	
+	
+	var getBlogContent = function(){
+		swapMainContent('<h1>Blog Post Incoming</h1>');
+		
 		return false;
-	});
+	}
 	
 });

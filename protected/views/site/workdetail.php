@@ -15,9 +15,9 @@ if(!$ajax){
 	<article id="work-detail">
 		<section>
 			<h1>| <? echo $project->title ?></h1>
-			<p id="project_link"><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio">Back to List</a> | 
+			<p id="project_link"><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio">Back to List</a> 
 			<? if($project->link): ?>
-				<a href="<? echo $project->link ?>" target="new">View Full Project</a>
+				 | <a href="<? echo $project->link ?>" target="new">View Full Project</a>
 			<? endif; ?>
 			</p>
 		</section>
