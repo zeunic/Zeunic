@@ -73,7 +73,7 @@ var H = function (a) {
 (function($){
 
 	$.fn.tweets = function(options) {
-		$.ajaxSetup({ cache: true });
+		$.ajaxSetup({ cache: false });
 		var defaults = {
 			tweets: 5,
 			cite: true
