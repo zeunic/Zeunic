@@ -73,13 +73,13 @@ $(function(){
 	//Open external links in a new browser window
 	$('a').not('a[href*="localhost"]').not('a[href^="/"]').attr('target', 'new');
 	
-	$("a[rel^='prettyPhoto']").prettyPhoto({deeplinking: false});
 	
 	//Dynamic AJAX Navigation
 	$('a[href*="localhost"], a[href*="zeunic.com"], a[href^="/"]').live('click', function(){
 		var that = $(this);
 		//Don't use AJAX for admin links
 		if(that.parents('#admin').length > 0){
+			$("a[rel^='prettyPhoto']").prettyPhoto({deeplinking: false});
 			return true;
 		}
 		//Grab current HREF
