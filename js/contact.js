@@ -33,7 +33,7 @@ $(function(){
 			success: function(response){
 				$('#main').animate({opacity:0, queue:false}, 500, function(){
 					main = $(this);
-					main.html(response);
+					main.html(response);s
 					setTimeout(function(){
 						main.animate({opacity:1,queue:false}, 500, function(){
 							//animate contact form out!

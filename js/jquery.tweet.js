@@ -75,7 +75,8 @@ var H = function (a) {
 	$.fn.tweets = function(options) {
 		$.ajaxSetup({ cache: true });
 		var defaults = {
-			tweets: 5
+			tweets: 5,
+			cite: true
 		};
 		var options = $.extend(defaults, options);
 		return this.each(function() {
@@ -83,7 +84,9 @@ var H = function (a) {
 retrieve = options.tweets + 1;	$.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?callback=?&screen_name='+options.username+'&count='+retrieve+'&exclude_replies=true',
 		        function(data) {
 		        	obj.text(data[data.length-1].text);
-		        	obj.siblings('cite').html(H(data[data.length-1].created_at)+' via '+data[data.length-1].source);
+		        	if (options.cite) {
+		        		obj.siblings('cite').html(H(data[data.length-1].created_at)+' via '+data[data.length-1].source);
+		        	}
 		        }
 		    );
 		});

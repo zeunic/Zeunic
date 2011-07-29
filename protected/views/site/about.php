@@ -20,8 +20,6 @@ if(!$ajax){
 
 	<p>Have you ever noticed how much nicer a glass of tea looks served with a mint leaf? Or that feeling of relief when you thought you lost everything only to find out the web application was saving your work for you? What about when you fell completely in love with a particular brand, not because of what it does or how it does it, but because of how it made you feel?</p>
 
-	<!--<p><strong>We create projects that revolve around the flourish of the details.</strong></p> -->
-
 	<p><strong>Zeunic is about creativity and vision meeting the effective simplicity of the smallest details.</strong></p>
 	<p>The greatest web application in the world will not work without the little things that make make it a great experience, nor would the smallest details matter without a vision to make them a part of the greater whole.</p>
 
@@ -29,25 +27,25 @@ if(!$ajax){
 	</section>
 	
 	<section>
-		<h2>Meet the Team</h2>
+		<!-- <h2>Meet the Team</h2> -->
 		
 		<div class="minibio">
-			<h3>Stephen Rivas JR <span>| Project Manager</span></h3>
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/stephen.png" alt="stephen" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/stephen_square.jpg" alt="stephen" />
 			<ul>
-				<li class="tweet"><a href="twitter.com/olivierlacan">@olivierlacan</a> lol, I need to retain reference to a setInterval and setTimeout in a .bind()/.live() scenario. I'll call some time.</li>
+				<li class="bioTitle">Stephen Rivas JR <span>| Project Manager</span></li>
+				<li class="tweet">loading latest tweet...</li>
 				<li>Likes: <strong>Javascript && CouchDB;</strong></li>
 				<li>Super Power: <strong>Teleporting.</strong></li>
 				<li>Proud Father: <strong>Yup!</strong></li>
 			</ul>
-			<p>I love to push myself, often times past what I am capable of. If I'm not struggling, or being challenged I'm not satisfied. I love the industry, and dreaming big. Also currently the Full Sail SGA Campus Senator for the Web Program, and Project Manager for Zeunic.</p>
+			<p>I love to push myself, frequently past what I am capable of. If I am not struggling, or being challenged I'm not satisfied. I love the web industry, and how it allows me to dream big. I am currently the Full Sail SGA Campus Senator for the Web Program, Project Manager for Zeunic, a student, and father to a really cool daughter.</p>
 		</div>
 		
 		<div class="minibio">
-			<h3>Joe Lessard <span>| Lead Developer</span></h3>
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/joe.png" alt="joe" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/joe_square.jpg" alt="joe" />
 			<ul>
-				<li class="tweet">Hangin with Edward Maya tonight <a href="http://t.co/Yb5OnO4">http://t.co/Yb5OnO4</a></li>
+				<li class="bioTitle">Joe Lessard <span>| Lead Developer</span></li>
+				<li class="tweet">loading latest tweet...</li>
 				<li>Hobbies: <strong>Cycling and Golf</strong></li>
 				<li>Languages: <strong>PHP, Coldfusion and Javascript</strong></li>
 				<li>Hometowns: <strong>Rochester, MN</strong> | <strong>Fort Collins, CO</strong> | <strong>Casselberry, FL</strong></li>
@@ -56,10 +54,10 @@ if(!$ajax){
 		</div>
 		
 		<div class="minibio">
-			<h3>Parker W Young <span>| Creative Director</span></h3>
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/parker.png" alt="parker" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/parker_square.jpg" alt="parker" />
 			<ul>
-				<li class="tweet">Serif and Sans-serif fonts play nice together, you just gotta lay down some ground rules first. <a href="fb.me/12jIDAl0K" data-external="true">fb.me/12jIDAl0K</a></li>
+				<li class="bioTitle">Parker W Young <span>| Creative Director</span></li>
+				<li class="tweet">loading latest tweet...</li>
 				<li>Passions: <strong>Design, art and strong concept</strong></li>
 				<li>Enjoys: <strong>Lifehacking to the extreme</strong></li>
 				<li>Would spend his final hour: <strong>Playing Halo Reach</strong></li>
@@ -68,10 +66,10 @@ if(!$ajax){
 		</div>
 		
 		<div class="minibio">
-			<h3>Spencer Bailey <span>| Front-End Developer</span></h3>
-			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/spencer.png" alt="spencer" />
+			<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/about/spencer_square.jpg" alt="spencer" />
 			<ul>
-				<li class="tweet">Finished up the new Zeunic teaser site with help of my esteemed colleagues! Check it out over at zeunic.com</li>
+				<li class="bioTitle">Spencer Bailey <span>| Front-End Developer</span></li>
+				<li class="tweet">loading latest tweet...</li>
 				<li>Number of Cats: <strong>2</strong></li>
 				<li>Money Wasted on Fallout DLC: <strong>Too Much</strong></li>
 				<li>Loves looking at: <strong>Minimalism in Design</strong></li>
@@ -86,3 +84,5 @@ if(!$ajax){
 <? endif; ?>
 
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tweet.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/about-us.js"></script>
