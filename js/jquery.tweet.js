@@ -85,9 +85,7 @@ var H = function (a) {
 $.getJSON('http://api.twitter.com/1/statuses/user_timeline.json?callback=?&screen_name='+options.username+'&count='+retrieve+'&exclude_replies=true',
 		        function(data) {
 		        
-		        	for(var i = 0; i < data.length; i++){
-		        		console.log(data[i].text);
-		        	}
+		        	console.log(options.tweets);
 		        	for(var i = 0; i < Number(options.tweets); i++){
 						obj.text(data[i].text);
 						if (options.cite) {
