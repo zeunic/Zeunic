@@ -4,9 +4,9 @@ $(function(){
 
 	$('.tweet').each(function(index){
 		$(this).tweets({
+			tweets: 1,
 			username: twProfiles[index],
-			cite: false,
-			tweets: 1
+			cite: false
 		});
 	});
 });
