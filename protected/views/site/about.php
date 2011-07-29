@@ -79,10 +79,10 @@ if(!$ajax){
 	</section>
 </article>
 
-<? if(!$ajax): ?>
-</div>
-<? endif; ?>
-
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script> 
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tweet.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/about-us.js"></script>
+
+<? if(!$ajax): ?>
+</div>
+<? endif; ?>
