@@ -22,7 +22,7 @@ if(!$ajax){
 	<p>Have you ever noticed how much nicer a glass of tea looks served with a mint leaf? Or that feeling of relief when you thought you lost everything only to find out the web application was saving your work for you? What about when you fell completely in love with a particular brand, not because of what it does or how it does it, but because of how it made you feel?</p>
 
 	<p><strong>Zeunic is about creativity and vision meeting the effective simplicity of the smallest details.</strong></p>
-	<p>The greatest web application in the world will not work without the little things that make make it a great experience, nor would the smallest details matter without a vision to make them a part of the greater whole.</p>
+	<p>The greatest web application in the world will not work without the little things that make it a great experience, nor would the smallest details matter without a vision to make them a part of the greater whole.</p>
 
 	<p>That's what we are about. Why don't you <a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/contact">tell us about you?</a></p>
 	</section>
