@@ -15,7 +15,11 @@ if(!$ajax){
 	<article id="work-detail">
 		<section>
 			<h1>| <? echo $project->title ?></h1>
-			<p id="project_link"><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio">Back to List</a> | <a href="<? echo $project->link ?>" target="new">View Full Project</a></p>
+			<p id="project_link"><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio">Back to List</a> | 
+			<? if($project->link): ?>
+				<a href="<? echo $project->link ?>" target="new">View Full Project</a>
+			<? endif; ?>
+			</p>
 		</section>
 		
 		<section id="gallery">
@@ -53,6 +57,7 @@ if(!$ajax){
 				<? endforeach; ?>
 			</ul>
 		</section>
+		<? if(count($project->testimonials) > 0): ?>
 		<section id="project-testimonials">
 			<h2>| What the clients and users said...</h2>
 			<ul>
@@ -71,6 +76,7 @@ if(!$ajax){
 				<? endforeach; ?>
 			</ul>
 		</section>
+		<? endif; ?>
 	</article>
 <? if(!$ajax): ?>
 </div>
