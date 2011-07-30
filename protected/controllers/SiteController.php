@@ -148,7 +148,7 @@ class SiteController extends Controller
 				    'X-Mailer: PHP/' . phpversion();
 				
 				mail($to, $subject, $message, $headers);
-				$this->render('contactSuccess');
+				$this->render('contactSuccess',array('ajax'=>false));
             } else {
 				$this->render('contact',array('model'=>$model));
 			}
