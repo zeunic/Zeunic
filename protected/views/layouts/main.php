@@ -6,7 +6,6 @@
 	<meta name="keywords" content="zeunic, zeunic.com, mobile, mobile development, web, web design, web site, branding, corporate branding, orlando, florida," />
 	<meta name="author" content="Stephen Rivas JR, Joe Lessard & Parker W. Young" />
 	<meta name="robots" content="all" />
-	<meta name="rights-standard" content="Copyright © 2011 Zeunic. All Rights Reserved." />
 	<meta name="dcterms.description" content="Mobile Development, Web Design & Branding" />
 
 	<!-- Social Open Graph --> 
