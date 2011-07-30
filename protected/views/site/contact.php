@@ -41,7 +41,7 @@ if(!$ajax){
 	<aside class="contact-media">
 		<ul>
 			<li id="contact-phone"><a href="#">407-615-0794</a></li>
-			<li id="contact-placeholder"><a href="#">"placeholder"</a></li>
+			<li id="contact-placeholder"><a href="#">407-718-2799</a></li>
 			<li id="contact-email"><a href="#">social@zeunic.com</a></li>
 		</ul>
 	</aside>
