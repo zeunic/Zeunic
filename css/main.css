@@ -391,7 +391,7 @@ form#contactform p.error img {
 	margin: 30px auto;
 }
 
-#contactsuccess+h2 {
+h2#messageSent {
 	position: absolute;
 	top:0;
 	left:0;
@@ -400,7 +400,7 @@ form#contactform p.error img {
 	color: #151d24;
 }
 
-#contactsuccess+h2+p {
+h2#messageSent+p {
 	position: absolute;
 	top:35px;
 	left:0;
@@ -409,7 +409,7 @@ form#contactform p.error img {
 	color: #151d24;
 }
 
-#contactsuccess+h2+p+p {
+h2#messageSent+p+p {
 	position: absolute;
 	top:85px;
 	left:0;
