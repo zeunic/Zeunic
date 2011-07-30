@@ -101,7 +101,6 @@ $(function(){
 			return false;
 		}
 		
-		//Don't use AJAX for pretty photo links
 		//Grab current HREF
 		var ajaxLink = that.attr('href');
 		//If it ends with a /, get rid of it
@@ -138,7 +137,7 @@ $(function(){
 		$('#main').animate({opacity:0, queue:false}, 500, function(){
 				container = $('#container');
 				
-				var bodyHeight = $('#container').css('height');
+				var bodyHeight = container.css('height');
 				
 				container.css({height:bodyHeight});
 				
@@ -152,12 +151,14 @@ $(function(){
 				setTimeout(function(){
 					main.animate({opacity:1,queue:false}, 500);
 				}, 500);
-				contentHeight = $('#content').css('height');
+				setTimeout(function(){
+					contentHeight = $('#content').css('height');
+					container.animate({height:contentHeight}, 1000, 'easeInOutQuad', function(){
+						container.css({height:'auto'});
+						$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
+					});
+				}, 100);
 				
-				container.animate({height:contentHeight}, 1000, 'easeInOutQuad', function(){
-					container.css({height:'auto'});
-					$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
-				});
 				
 				$('.loader').remove();
 			});
