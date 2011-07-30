@@ -11,6 +11,7 @@ $this->endWidget();
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/our-work.css" />
 
+<? if(!$ajax): ?>
 <ul class="button-row">
 		<li><a class="selected" href="#" data-value="all">All</a></li>
 		<li><a href="#" data-value="web">Web</a></li>
@@ -19,6 +20,7 @@ $this->endWidget();
 		<li><a href="#" data-value="search" style="display:none">Search</a></li>
 		<li id="lastbutton-row"><input type="text" name="search" <? echo (isset($tag)) ? 'value="'.$tag.'"' : '' ?> id="search" placeholder="Search..." /><a id="searchbutton" href="#">Search</a></li>
 </ul>
+<? endif; ?>
 
 <article id="portfolio-article">
 <section class="our-work">
