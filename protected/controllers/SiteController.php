@@ -141,7 +141,7 @@ class SiteController extends Controller
 		    if($model->validate()){
 		    	$attributes = $model->attributes;
 		    	$message = 'Name: '.$attributes['name'].'<br /><br />Contact: '.$attributes['email'].'<br /><br />'.$attributes['body'];
-            	$to      = 'joe@zeunic.com';
+            	$to      = 'social@zeunic.com';
 				$subject = 'Zeunic Contact Form';
 				$headers = 'From: web@zeunic.com' . "\r\n" .
 				    'Reply-To: '.$attributes['email'].''."\r\n" .

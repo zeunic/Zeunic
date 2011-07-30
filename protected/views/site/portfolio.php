@@ -25,7 +25,7 @@ $this->endWidget();
 <article id="portfolio-article">
 <section class="our-work">
 	
-	<div class="extend-thumb"><a href=""><img src="" width="590" height="120" /></a></div>
+	<div class="extend-thumb"><a href=""><img src="#" alt="Wide Project Thumbnail" width="590" height="120" /></a></div>
 	
 	<ul class="portfolio_display">
 		<!-- this list is the displayed result after the ajax and quicksand sorting -->
@@ -33,7 +33,7 @@ $this->endWidget();
 			<? foreach($projects as $key => $project): ?>
 				<li>
 					<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio/<? echo $project->id ?>">
-						<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/projects/thumbs/<? echo $project->thumb ?>"/>
+						<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/projects/thumbs/<? echo $project->thumb ?>" alt="Project Thumbnail"/>
 					</a>
 				</li>
 			<? endforeach; ?>
@@ -46,7 +46,7 @@ $this->endWidget();
 			<? foreach($projects as $key => $project): ?>
 				<li data-id="id-<? echo ($key + 1) ?>" data-type="<? echo $project->type ?>">
 					<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio/<? echo $project->id ?>">
-						<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/projects/thumbs/<? echo $project->thumb ?>" data-extended="<? echo $project->thumb_lg ?>" />
+						<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/projects/thumbs/<? echo $project->thumb ?>" alt="Project Thumbnail" data-extended="<? echo $project->thumb_lg ?>" />
 					</a>
 				</li>
 			<? endforeach; ?>
