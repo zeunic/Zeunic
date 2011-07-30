@@ -40,9 +40,9 @@ if(!$ajax){
 	
 	<aside class="contact-media">
 		<ul>
-			<li id="contact-phone"><a href="#">407-615-0794</a></li>
+			<li id="contact-phone">407-615-0794</li>
 <!-- 			<li id="contact-placeholder"><a href="#">"placeholder"</a></li> -->
-			<li id="contact-email"><a href="#">social@zeunic.com</a></li>
+			<li id="contact-email">social@zeunic.com</li>
 		</ul>
 	</aside>
 	
@@ -50,7 +50,7 @@ if(!$ajax){
 		<ul>
 			<li id="contact-twitter"><a href="http://www.twitter.com/zeunic">twitter.com/zeunic</a></li>
 <!-- 			<li id="contact-gplus"><a href="http://www.google.com/plus">zeunic.com/+</a></li> -->
-			<li id="contact-facebook"><a href="http://www.facebook.com/zeunic">facebook.com/zeunic</a></li>
+			<li id="contact-facebook"><a href="https://www.facebook.com/pages/Zeunic/180660031988847">facebook.com/zeunic</a></li>
 		</ul>
 	</aside>
 <? if(!$ajax): ?>

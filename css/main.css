@@ -320,6 +320,7 @@ form#contactform p.error img {
 
 .contact-print a, .contact-media a, .contact-social a {
 	color: #333;
+	text-decoration: underline;
 }
 
 .contact-print a:hover, .contact-media a:hover, .contact-social a:hover {
@@ -386,13 +387,32 @@ form#contactform p.error img {
 	margin: 30px auto;
 }
 
-#contactsuccess+p {
+#contactsuccess+h2 {
 	position: absolute;
 	top:0;
 	left:0;
 	z-index:50;
+	font: 23px "Droid Sans", sans-serif;
+	color: #151d24;
 }
 
+#contactsuccess+h2+p {
+	position: absolute;
+	top:35px;
+	left:0;
+	z-index:50;
+	font: 13px/1.4 "Droid Sans", sans-serif;
+	color: #151d24;
+}
+
+#contactsuccess+h2+p+p {
+	position: absolute;
+	top:85px;
+	left:0;
+	z-index:50;
+	font: 13px/1.4 "Droid Sans", sans-serif;
+	color: #151d24;
+}
 
 /* -----------------ARTICLE CONTENT------------------ */
 
