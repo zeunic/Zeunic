@@ -29,7 +29,7 @@ if(!$ajax){
 	</section>
 </article>
 
-<h1>Recharge your brand with Zeunic!</h1>
+<h1>Let Us Recharge Your Brand!</h1>
 </div>
 <? if(!$ajax): ?>
 </div>
