@@ -11,7 +11,7 @@ $this->endWidget();
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/our-work.css" />
 
-<? if(!$ajax): ?>
+<? if($ajax): ?>
 <ul class="button-row">
 		<li><a class="selected" href="#" data-value="all">All</a></li>
 		<li><a href="#" data-value="web">Web</a></li>
