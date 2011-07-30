@@ -140,7 +140,7 @@ class SiteController extends Controller
 		    $model->attributes=$_POST['ContactForm'];
 		    if($model->validate()){
 		    	$attributes = $model->attributes;
-		    	$message = 'Name: '.$attributes['name'].'<br /><br />Contact: '.$attributes['email'].'<br /><br ?'.$attributes['body'];
+		    	$message = 'Name: '.$attributes['name'].'<br /><br />Contact: '.$attributes['email'].'<br /><br />'.$attributes['body'];
             	$to      = 'joe@zeunic.com';
 				$subject = 'Zeunic Contact Form';
 				$headers = 'From: web@zeunic.com' . "\r\n" .
@@ -166,7 +166,7 @@ class SiteController extends Controller
 		    $model->attributes=$_POST['ContactForm'];
 		    if($model->validate()){
 		    	$attributes = $model->attributes;
-		    	$message = 'Name: '.$attributes['name'].'<br /><br />Contact: '.$attributes['email'].'<br /><br ?'.$attributes['body'];
+		    	$message = 'Name: '.$attributes['name'].'<br /><br />Contact: '.$attributes['email'].'<br /><br />'.$attributes['body'];
             	$to      = 'social@zeunic.com';
 				$subject = 'Zeunic Contact Form';
 				$headers = 'From: web@zeunic.com' . "\r\n" .

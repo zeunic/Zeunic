@@ -27,17 +27,28 @@ $this->endWidget();
 	
 	<ul class="portfolio_display">
 		<!-- this list is the displayed result after the ajax and quicksand sorting -->
+		<? if(!$ajax): ?>
+			<? foreach($projects as $key => $project): ?>
+				<li>
+					<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio/<? echo $project->id ?>">
+						<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/projects/thumbs/<? echo $project->thumb ?>"/>
+					</a>
+				</li>
+			<? endforeach; ?>
+		<? endif; ?>
 	</ul>
 	
 	<ul id="data" class="hidden">
 		<!-- this list is populated via the selected user choice, sorted, and then cloned into the display -->
-		<? foreach($projects as $key => $project): ?>
-			<li data-id="id-<? echo ($key + 1) ?>" data-type="<? echo $project->type ?>">
-				<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio/<? echo $project->id ?>">
-					<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/projects/thumbs/<? echo $project->thumb ?>" data-extended="<? echo $project->thumb_lg ?>" />
-				</a>
-			</li>
-		<? endforeach; ?>
+		<? if($ajax): ?>
+			<? foreach($projects as $key => $project): ?>
+				<li data-id="id-<? echo ($key + 1) ?>" data-type="<? echo $project->type ?>">
+					<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio/<? echo $project->id ?>">
+						<img src="<?php echo Yii::app()->request->baseUrl; ?>/images/projects/thumbs/<? echo $project->thumb ?>" data-extended="<? echo $project->thumb_lg ?>" />
+					</a>
+				</li>
+			<? endforeach; ?>
+		<? endif; ?>
 	</ul>
 </section>
 </article>
