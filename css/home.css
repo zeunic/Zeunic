@@ -46,7 +46,7 @@
 	color: #000;
 }
 
-#home article section #innershadow {
+#home article section .innershadow {
 	position:absolute;
 	z-index: 100;
 	top:0;

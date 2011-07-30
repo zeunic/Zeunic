@@ -6,22 +6,22 @@
 	<meta name="keywords" content="zeunic, zeunic.com, mobile, mobile development, web, web design, web site, branding, corporate branding, orlando, florida," />
 	<meta name="author" content="Stephen Rivas JR, Joe Lessard & Parker W. Young" />
 	<meta name="robots" content="all" />
-	<meta name="rights" content="Copyright © 2011 Zeunic. All Rights Reserved." />
+	<meta name="rights-standard" content="Copyright © 2011 Zeunic. All Rights Reserved." />
 	<meta name="dcterms.description" content="Mobile Development, Web Design & Branding" />
 
 	<!-- Social Open Graph --> 
-	<meta name="og:title" content="zeunic | home" />
-	<meta name="og:type" content="company" />
-	<meta name="og:image" content="http://www.zeunic.com/images/og.jpg" />
-	<meta name="og:url" content="http://www.zeunic.com/" />
-	<meta name="og:description" content="Mobile Development, Web Design & Branding" />
-	<meta name="og:site_name" content="zeunic.com" />
-	<meta name="fb:admins" content="555537034, 19213532, 1469677507"/>
-	<meta name="og:email" content="social@zeunic.com" />
-	<meta name="og:locality" content="Orlando" />
-	<meta name="og:region" content="FL" />
-	<meta name="og:postal-code" content="32779" /> 
-	<meta name="og:country-name" content="USA" />
+	<meta property="og:title" content="zeunic | home" />
+	<meta property="og:type" content="company" />
+	<meta property="og:image" content="http://www.zeunic.com/images/og.jpg" />
+	<meta property="og:url" content="http://www.zeunic.com/" />
+	<meta property="og:description" content="Mobile Development, Web Design & Branding" />
+	<meta property="og:site_name" content="zeunic.com" />
+	<meta property="fb:admins" content="555537034, 19213532, 1469677507"/>
+	<meta property="og:email" content="social@zeunic.com" />
+	<meta property="og:locality" content="Orlando" />
+	<meta property="og:region" content="FL" />
+	<meta property="og:postal-code" content="32779" /> 
+	<meta property="og:country-name" content="USA" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/reset.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/main.css" />
 	<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/admin.css" />
@@ -29,7 +29,7 @@
 
 	<link rel="shortcut icon" href="http://www.zeunic.com/favicon.ico" type="image/x-icon" />
 	<link rel="image_src" href="http://www.zeunic.com/images/og.jpg" />
-	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700&v2' rel='stylesheet' type='text/css'>
+	<link href='http://fonts.googleapis.com/css?family=Droid+Sans:400,700&amp;v2' rel='stylesheet' type='text/css'>
 	
 	
 	<!-- jQuery & Modernizr Loaded in Header -->
@@ -55,7 +55,7 @@
 	<footer>
 		<aside>
 			<a href="http://www.twitter.com/zeunic" title="Follow Us on Twitter @zeunic"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/@zeunic.png" alt="@Zeunic" /></a><br />
-			<q>Just realized if you took the cost of education to get us where we are, the website we&#29;re deploying this month cost roughly $225,000.</q>
+			<q>Just realized if you took the cost of education to get us where we are, the website we&#0039;re deploying this month cost roughly $225,000.</q>
 			<cite>yesterday via twitter for mac</cite>
 		</aside>
 	</footer>
