@@ -28,8 +28,6 @@ if(!$ajax){
 		<p><a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio/4"><span id="innershadow"></span><img alt="NESOI" src="<?php echo Yii::app()->request->baseUrl; ?>/images/home_nesoi.jpg" /><span class="projectText">NESOI</span></a></p>
 	</section>
 </article>
-
-<h1>Let Us Recharge Your Brand!</h1>
 </div>
 <? if(!$ajax): ?>
 </div>
