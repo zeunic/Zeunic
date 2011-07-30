@@ -8,6 +8,8 @@ $this->endWidget();
 <? if(!$ajax): ?>
 <div id="main">
 <? endif; ?>
+	
+<? if($ajax): ?> 
 	<div id="contactsuccess">
 		<address>
 			Joseph Lessard<br />
@@ -19,6 +21,7 @@ $this->endWidget();
 			Orlando, FL 32825
 		</address>
 	</div>
+<? endif; ?>
 	<h2>We got it!</h2>
 	<p>We will respond as soon as we are able.  If you need to get ahold of us sooner
 please give us a call at (407) 615-0794 and our project manager Stephen will
