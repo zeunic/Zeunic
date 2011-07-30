@@ -144,7 +144,7 @@ nav ul {
 	width: 150px;
 	overflow: hidden;
 	float: left;
-	background: center left url(../images/icons/nav_active.png) no-repeat;
+	background: center -50px url(../images/icons/nav_active.png) no-repeat;
 }
 
 nav li a {
