@@ -42,6 +42,8 @@ if(!$ajax){
 
 	<?php $this->endWidget(); ?>
 	
+</div>
+	
 <? if(!$ajax): ?>	
 </div>
 <? endif; ?>
