@@ -43,6 +43,10 @@ a:link, a:active, a:visited, a:hover {
 	position: relative;
 }
 
+#nav {
+	position: absolute;
+}
+
 #main {
 	overflow: hidden;
 	position: relative;
