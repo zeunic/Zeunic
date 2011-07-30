@@ -157,7 +157,7 @@ $(function(){
 						container.css({height:'auto'});
 						$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 					});
-				}, 200);
+				}, 300);
 				
 				
 				$('.loader').remove();
