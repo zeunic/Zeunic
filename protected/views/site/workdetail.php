@@ -52,8 +52,10 @@ if(!$ajax){
 			<h2>| Tags</h2>
 			<ul>
 				<? foreach($project->tags as $key => $tag): ?>
-					<? $tagurl =  Yii::app()->request->baseUrl.'/index.php/site/portfolio/?tag='.$tag->tag ?>
-					<li><a href="<? echo $tagurl ?>"><? echo $tag->tag ?></a></li>
+					<? if($key < 8): ?>
+						<? $tagurl =  Yii::app()->request->baseUrl.'/index.php/site/portfolio/?tag='.$tag->tag ?>
+						<li><a href="<? echo $tagurl ?>"><? echo $tag->tag ?></a></li>
+					<? endif; ?>
 				<? endforeach; ?>
 			</ul>
 		</section>
