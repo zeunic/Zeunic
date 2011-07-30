@@ -150,15 +150,11 @@ $(function(){
 				$('a').not('a[href*="localhost"]').not('a[href^="/"]').attr('target', 'new');
 				setTimeout(function(){
 					main.animate({opacity:1,queue:false}, 500);
-				}, 500);
-				setTimeout(function(){
 					contentHeight = $('#content').css('height');
 					container.animate({height:contentHeight}, 1000, 'easeInOutQuad', function(){
 						container.css({height:'auto'});
 						$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
-					});
-				}, 400);
-				
+				}, 500);
 				
 				$('.loader').remove();
 			});
