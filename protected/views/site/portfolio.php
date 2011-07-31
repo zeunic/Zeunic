@@ -10,7 +10,6 @@ $this->endWidget();
 
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/our-work.css" />
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
 
 <? if($ajax): ?>
 <ul class="button-row">
@@ -19,7 +18,7 @@ $this->endWidget();
 		<li><a href="#" data-value="mobile">Mobile</a></li>
 		<li><a href="#" data-value="brand">Branding</a></li>
 		<li><a href="#" data-value="search" style="display:none">Search</a></li>
-		<li id="lastbutton-row"><input type="text" name="search" <? echo (isset($tag)) ? 'value="'.$tag.'"' : '' ?> id="search" placeholder="Search..." /><a id="searchbutton" href="#">Search</a></li>
+		<li id="lastbutton-row"><input type="text" name="search" id="search" placeholder="Search..." /><a id="searchbutton" href="#">Search</a></li>
 </ul>
 <? endif; ?>
 
@@ -60,6 +59,7 @@ $this->endWidget();
 <? endif; ?>
 <!-- page specific JS loads -->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.quicksand.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/our-work.js"></script>
 <script type="text/javascript">
 	tags = <?php echo json_encode($tags);?>;
