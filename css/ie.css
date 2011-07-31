@@ -32,6 +32,11 @@ q {
 	width: 590px;
 }
 
-#about_us {
-	background: none;
+#main #about_us {
+	background-image: none;
+}
+
+
+#about_us .minibio {
+	padding-top:20px;
 }
