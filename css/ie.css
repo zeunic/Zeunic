@@ -22,3 +22,19 @@ q {
 #main #portfolio-article {
 	padding-bottom: 20px;
 }
+
+#slider li {
+	margin-bottom: 10px;
+}
+
+#work-detail h1 {
+	border-bottom: none;
+}
+
+#work-detail p {
+	border-bottom: none;
+}
+
+#work-detail #project-tags a:hover {
+	text-decoration: none;
+}
