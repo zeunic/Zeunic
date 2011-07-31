@@ -458,7 +458,7 @@ footer {
 	background-repeat: no-repeat, repeat-x;
 }
 
-footer aside {
+footer #footcontainer {
 	width: 870px;
 	margin: 0 auto;
 	text-align: right;
@@ -467,7 +467,7 @@ footer aside {
 	overflow: hidden;
 }
 
-footer aside q {
+footer #footcontainer  q {
 	color: #909498;
 	font: 12px/1.4 "Droid Sans", sans-serif;
 	width: 375px;
@@ -476,7 +476,7 @@ footer aside q {
 	margin: 0 0 5px 0;
 }
 
-footer aside cite {
+footer #footcontainer  cite {
 	color: #505355;
 	font: bold 10px "Droid Sans", sans-serif;
 	display: block;
