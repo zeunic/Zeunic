@@ -1,3 +1,4 @@
+<!-- portfolio -->
 <?php 
 if(!$ajax){
 $this->beginWidget('application.components.NavWidget', array('page'=>0));
@@ -7,7 +8,6 @@ $this->endWidget();
 <? if(!$ajax): ?>
 <div id="main">
 <? endif; ?>
-
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/our-work.css" />
 

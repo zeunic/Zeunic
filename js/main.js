@@ -148,6 +148,9 @@ $(function(){
 				main.html(html);
 				//Open external links in a new browser window
 				$('a').not('a[href*="localhost"]').not('a[href^="/"]').attr('target', 'new');
+				if(html.indexOf('<!-- portfolio -->' > -1)){
+					var timeoutLength = 1000;
+				} else var timeoutLength = 500;
 				setTimeout(function(){
 					main.animate({opacity:1,queue:false}, 500);
 					contentHeight = $('#content').css('height');
@@ -155,7 +158,7 @@ $(function(){
 						container.css({height:'auto'});
 						$('#content #nav').stickyfloat({ duration: 900, tartOffset: 200, offsetY: 0 });
 					});
-				}, 700);
+				}, timeoutLength);
 				
 				
 				$('.loader').remove();
