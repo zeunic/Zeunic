@@ -21,4 +21,5 @@ q {
 
 #main #portfolio-article .our-work ul {
 	position: static;
+	height: 500px;
 }
