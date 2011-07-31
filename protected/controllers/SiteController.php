@@ -236,17 +236,51 @@ class SiteController extends Controller
 	
 	public function actionGetProjectsByTag($tag)
 	{
+		$tagCopy = $tag;
+		//search for tags using tag
+		$tags = findTags($tag);
+		//if no tags were found check if the word ends in s and try the singular version
+		if(count($tags) == 0 && preg_match('/s$/', $tag)){
+			preg_replace('/s$/', '', $tag);
+			$tags = findTags($tag);
+			if(count($tags) == 0){
+				//reset tag
+				$tag = $tagCopy;
+			}
+		}
+		//if no tags were found check if the word ends in es and try the singular version
+		if(count($tags) == 0 && preg_match('/es$/', $tag)){
+			preg_replace('/es$/', '', $tag);
+			$tags = findTags($tag);
+			if(count($tags) == 0){
+				//reset tag
+				$tag = $tagCopy;
+			}
+		}
+		//if no tags were found check if the word ends in ies and try the singular version
+		if(count($tags) == 0 && preg_match('/ies$/', $tag)){
+			preg_replace('/ies$/', 'y', $tag);
+			$tags = findTags($tag);
+			if(count($tags) == 0){
+				//reset tag
+				$tag = $tagCopy;
+			}
+		}
+		$projects = array();
+		foreach($tags as $key => $tag){
+			$projects[] = Project::model()->findByPk($tag->projectID);
+		}
+		$this->renderPartial('_projectSearch', array('projects'=>$projects));
+	}
+	
+	protected function findTags($tag){
 		$tags = Tag::model()->findAll(array(
 				    'select'=>'t.projectID',
 				    'condition'=>'tag=:tag',
 				    'params'=>array(':tag'=>$tag),
 				    'distinct'=>true,
 				));
-		$projects = array();
-		foreach($tags as $key => $tag){
-			$projects[] = Project::model()->findByPk($tag->projectID);
-		}
-		$this->renderPartial('_projectSearch', array('projects'=>$projects));
+		return $tags;
 	}
 
 }
