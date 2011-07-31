@@ -27,3 +27,7 @@ q {
 	text-decoration: none;
 	cursor: default;
 }
+
+#about_us .minibio p {
+	width: 590px;
+}
