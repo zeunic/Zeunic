@@ -28,11 +28,11 @@ q {
 }
 
 #main h1 {
-	border-bottom: 0;
+	border: 0px solid black;
 }
 
 #main p {
-	border-bottom: 0;
+	border: 0px solid black;
 }
 
 #work-detail #project-tags a:hover {
