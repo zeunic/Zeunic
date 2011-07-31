@@ -23,28 +23,8 @@ q {
 	padding-bottom: 20px;
 }
 
-#slider ul li a {
-	margin-bottom: 10px;
-}
-
-#slider ul li a img {
-	margin-bottom: 10px;
-}
-
-#slider ul li a {
-	padding-bottom: 10px;
-}
-
-#slider ul li a img {
-	padding-bottom: 10px;
-}
-
-#main #work-detail h1 {
-	border: 0px solid black;
-}
-
-#main #work-detail p {
-	border: 0px solid black;
+#main #work-detail #slider ul li {
+	height: 200px;
 }
 
 #work-detail #project-tags a:hover {
