@@ -148,7 +148,7 @@ $(function(){
 				main.html(html);
 				//Open external links in a new browser window
 				$('a').not('a[href*="localhost"]').not('a[href^="/"]').attr('target', 'new');
-				if(html.indexOf('<!-- portfolio -->' > -1)){
+				if(html.indexOf('<!-- portfolio -->') > -1){
 					var timeoutLength = 1000;
 				} else var timeoutLength = 500;
 				console.log(timeoutLength);
