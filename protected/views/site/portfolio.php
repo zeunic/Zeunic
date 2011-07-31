@@ -74,3 +74,19 @@ $this->endWidget();
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/our-work.js"></script>
  <!--<![endif]-->
+	<!--[if gt IE 8]><!-->
+<script type="text/javascript">
+	tags = <?php echo json_encode($tags);?>;
+	<? if(isset($tag)): ?>
+		tag = <?php echo json_encode($tag);?>;
+	<? endif; ?>
+	$(function(){
+		if(typeof(tag) != "undefined" && tag !== null) {
+			filterProjects(tag);
+		}
+	});
+</script>
+	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.quicksand.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/our-work.js"></script>
+	 <!--<![endif]-->

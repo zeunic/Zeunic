@@ -13,6 +13,9 @@ if(!$ajax){
 <!--[if !IE]><!-->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/about-us.js"></script>
  <!--<![endif]-->
+	<!--[if gt IE 8]><!-->
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/about-us.js"></script>
+	 <!--<![endif]-->
 
 <article id="about_us">
 	<section>
