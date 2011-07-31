@@ -56,11 +56,11 @@
 	</div>
 	
 	<footer>
-		<aside id="footcontainer">
+		<div id="footcontainer">
 			<a href="http://www.twitter.com/zeunic" title="Follow Us on Twitter @zeunic"><img src="<?php echo Yii::app()->request->baseUrl; ?>/images/icons/@zeunic.png" alt="@Zeunic" /></a><br />
 			<q>Just realized if you took the cost of education to get us where we are, the website we&#0039;re deploying this month cost roughly $225,000.</q>
 			<cite>yesterday via twitter for mac</cite>
-		</aside>
+		</div>
 	</footer>
 	
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tweet.js"></script>
