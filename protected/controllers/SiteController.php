@@ -239,6 +239,7 @@ class SiteController extends Controller
 		$tagCopy = $tag;
 		//search for tags using tag
 		$tags = findTags($tag);
+		echo 'hello';
 		//if no tags were found check if the word ends in s and try the singular version
 		if(count($tags) == 0 && preg_match('/s$/', $tag)){
 			preg_replace('/s$/', '', $tag);
@@ -274,13 +275,12 @@ class SiteController extends Controller
 	}
 	
 	protected function findTags($tag){
-		$tags = Tag::model()->findAll(array(
+		return Tag::model()->findAll(array(
 				    'select'=>'t.projectID',
 				    'condition'=>'tag=:tag',
 				    'params'=>array(':tag'=>$tag),
 				    'distinct'=>true,
 				));
-		return $tags;
 	}
 
 }
