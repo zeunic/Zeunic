@@ -239,10 +239,9 @@ class SiteController extends Controller
 		$tagCopy = $tag;
 		//search for tags using tag
 		$tags = findTags($tag);
-		echo 'hello';
 		//if no tags were found check if the word ends in s and try the singular version
 		if(count($tags) == 0 && preg_match('/s$/', $tag)){
-			preg_replace('/s$/', '', $tag);
+			$tag = preg_replace('/s$/', '', $tag);
 			$tags = findTags($tag);
 			if(count($tags) == 0){
 				//reset tag
@@ -251,7 +250,7 @@ class SiteController extends Controller
 		}
 		//if no tags were found check if the word ends in es and try the singular version
 		if(count($tags) == 0 && preg_match('/es$/', $tag)){
-			preg_replace('/es$/', '', $tag);
+			$tag = preg_replace('/es$/', '', $tag);
 			$tags = findTags($tag);
 			if(count($tags) == 0){
 				//reset tag
@@ -260,7 +259,7 @@ class SiteController extends Controller
 		}
 		//if no tags were found check if the word ends in ies and try the singular version
 		if(count($tags) == 0 && preg_match('/ies$/', $tag)){
-			preg_replace('/ies$/', 'y', $tag);
+			$tag = preg_replace('/ies$/', 'y', $tag);
 			$tags = findTags($tag);
 			if(count($tags) == 0){
 				//reset tag
