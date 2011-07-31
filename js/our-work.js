@@ -147,8 +147,20 @@ $(function(){
 	
 	var search = $('#search');
 	
+	search.bind('focus', function(){
+		$('body').bind('keypress', function(e){
+			if(e.keyCode == 13){
+				console.log('enter')
+			}
+		});
+	});
+	
+	search.bind('blur', function(){
+		$('body').unbind('keypress');
+	});
+	
 	//AUTOCOMPLETE FUNCTIONALITY
-	$('#search').autocomplete({
+	search.autocomplete({
 		source: tags,
 		select: function(event, ui){
 			filterProjects(ui.item.value);
