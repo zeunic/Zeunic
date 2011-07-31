@@ -150,7 +150,7 @@ $(function(){
 	search.bind('focus', function(){
 		$('body').bind('keypress', function(e){
 			if(e.keyCode == 13){
-				console.log('enter')
+				filterProjects($('#search').val());
 			}
 		});
 	});
