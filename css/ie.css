@@ -23,10 +23,6 @@ q {
 	padding-bottom: 20px;
 }
 
-#main #work-detail #slider ul li {
-	height: 200px;
-}
-
 #work-detail #project-tags a:hover {
 	text-decoration: none;
 	cursor: default;

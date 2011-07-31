@@ -10,7 +10,9 @@ if(!$ajax){
 <? endif; ?>
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/about-us.css" />
+<!--[if !IE]><!-->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/about-us.js"></script>
+ <!--<![endif]-->
 
 <article id="about_us">
 	<section>

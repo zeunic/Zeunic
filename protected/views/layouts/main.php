@@ -32,8 +32,11 @@
 	
 	
 	<!-- jQuery & Modernizr Loaded in Header -->
+	
+	<!--[if !IE]><!-->
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery-1.6.2.min.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.easing.1.3.js"></script>
+	 <!--<![endif]-->
 	<!--[if lt IE 9]>
 		<link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/ie.css" />
 		<script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
@@ -63,10 +66,12 @@
 		</div>
 	</footer>
 	
+<!--[if !IE]><!-->
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tweet.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.stickyfloat.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.color.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.backgroundPosition.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/main.js"></script>
+ <!--<![endif]-->
 </body>
 </html>

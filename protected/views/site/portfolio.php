@@ -58,6 +58,7 @@ $this->endWidget();
 </div>
 <? endif; ?>
 <!-- page specific JS loads -->
+<!--[if !IE]><!-->
 <script type="text/javascript">
 	tags = <?php echo json_encode($tags);?>;
 	<? if(isset($tag)): ?>
@@ -69,8 +70,7 @@ $this->endWidget();
 		}
 	});
 </script>
-<!--[if !IE]><!-->
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.quicksand.js"></script>
- <!--<![endif]-->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/our-work.js"></script>
+ <!--<![endif]-->

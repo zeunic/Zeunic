@@ -49,4 +49,6 @@ if(!$ajax){
 <? endif; ?>
 
 <!-- page specific JS loads -->
+<!--[if !IE]><!-->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/login.js"></script>
+ <!--<![endif]-->
