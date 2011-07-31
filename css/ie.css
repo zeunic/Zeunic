@@ -36,7 +36,15 @@ q {
 	background-image: none;
 }
 
-
 #about_us .minibio {
 	padding-top:20px;
+}
+
+form#contactform input {
+	padding-top: 10px;
+}
+
+form#contactform #submit {
+	color: blue;
+	text-decoration: underline;
 }
