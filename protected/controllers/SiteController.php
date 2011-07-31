@@ -274,7 +274,7 @@ class SiteController extends Controller
 		$this->renderPartial('_projectSearch', array('projects'=>$projects));
 	}
 	
-	protected function findTags($tag){
+	public function findTags($tag){
 		return Tag::model()->findAll(array(
 				    'select'=>'t.projectID',
 				    'condition'=>'tag=:tag',
