@@ -28,13 +28,14 @@ q {
 }
 
 #work-detail h1 {
-	border-bottom: none;
+	border-bottom: 0;
 }
 
 #work-detail p {
-	border-bottom: none;
+	border-bottom: 0;
 }
 
 #work-detail #project-tags a:hover {
 	text-decoration: none;
+	cursor: default;
 }
