@@ -48,3 +48,8 @@ form#contactform #submit {
 	color: blue;
 	text-decoration: underline;
 }
+
+h2#messageSent, h2#messageSent + p, h2#messageSent + p + p {
+	position: static;
+	padding-bottom: 10px;
+}
