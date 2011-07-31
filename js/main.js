@@ -151,6 +151,7 @@ $(function(){
 				if(html.indexOf('<!-- portfolio -->' > -1)){
 					var timeoutLength = 1000;
 				} else var timeoutLength = 500;
+				console.log(timeoutLength);
 				setTimeout(function(){
 					main.animate({opacity:1,queue:false}, 500);
 					contentHeight = $('#content').css('height');
