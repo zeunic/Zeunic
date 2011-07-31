@@ -10,6 +10,7 @@ $this->endWidget();
 
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/our-work.css" />
+<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
 
 <? if($ajax): ?>
 <ul class="button-row">
@@ -59,7 +60,6 @@ $this->endWidget();
 <? endif; ?>
 <!-- page specific JS loads -->
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.quicksand.js"></script>
-<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/our-work.js"></script>
 <script type="text/javascript">
 	tags = <?php echo json_encode($tags);?>;

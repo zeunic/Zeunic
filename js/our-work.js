@@ -148,7 +148,7 @@ $(function(){
 	var search = $('#search');
 	
 	//AUTOCOMPLETE FUNCTIONALITY
-	search.autocomplete({
+	$('#search').autocomplete({
 		source: tags,
 		select: function(event, ui){
 			filterProjects(ui.item.value);
