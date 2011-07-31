@@ -7,6 +7,7 @@
 	position: static;
 	float: left;
 	margin: 20px 0 0 20px;
+	height: auto;
 }
 
 q {
