@@ -23,16 +23,16 @@ q {
 	padding-bottom: 20px;
 }
 
-#slider ul li {
-	padding-bottom: 10px;
+#slider ul li img {
+	margin-bottom: 10px;
 }
 
 #main h1 {
-	border-bottom: none;
+	border-bottom: 0;
 }
 
 #main p {
-	border-bottom: none;
+	border-bottom: 0;
 }
 
 #work-detail #project-tags a:hover {
