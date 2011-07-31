@@ -18,3 +18,8 @@ q {
 #main #portfolio-article .our-work .extend-thumb {
 	display: none;
 }
+
+#main #portfolio-article {
+	height: 1000px;
+	margin-bottom: 20px;
+}
