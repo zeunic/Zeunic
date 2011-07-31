@@ -19,7 +19,6 @@ q {
 	display: none;
 }
 
-#main #portfolio-article .our-work ul {
-	position: static;
-	height: 500px;
+#main #portfolio-article {
+	height: 1000px;
 }
