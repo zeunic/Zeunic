@@ -19,11 +19,6 @@ a:link, a:active, a:visited, a:hover {
 	text-decoration: none;
 }
 
-.blog-title {
-	font-size: 1.5em;
-	font-weight: bold;
-}
-
 #container {
 	border-bottom: 1px solid black;
 	border-top: 1px solid black;
@@ -448,6 +443,19 @@ ul#admin li {
 
 .row {
 	clear: left;
+}
+
+/* -----------------BLOG------------------ */
+
+.blog-post {
+	padding-bottom: 20px;
+	margin-bottom: 30px;
+	background: bottom center url(../images/horiz_rule.png) no-repeat;
+}
+
+.blog-title {
+	font-size: 1.5em;
+	font-weight: bold;
 }
 
 

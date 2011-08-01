@@ -236,7 +236,7 @@ $(function(){
 	
 		if (json.post) {
 			// display one post
-			postHtml = "<!-- Display the Title as a link to the Post's permalink. -->"
+			postHtml += "<!-- Display the Title as a link to the Post's permalink. -->"
 				+ '<h2 class="blog-title"><a href="' + json.post.url + '" rel="bookmark" title="'+ json.post.title +'" target="new">'+ json.post.title +'</a></h2>'
 				+ "<!-- Display the date (November 16th, 2009 format) and a link to other posts by this posts author. -->"
 				+ '<small>' + json.post.date + ' by <a href="http://zeunic.com/blog/?author=' + json.post.author.id + '" title="Posts by '+ json.post.author.name +'" rel="author">' + json.post.author.name + '</a></small>'
@@ -246,20 +246,22 @@ $(function(){
 				+ '</div>';
 		} else if (json.posts) {
 			// loop posts
-			postHtml = "<!-- Display WordPress Post List -->"
+			postHtml += "<!-- Display WordPress Post List -->";
 			for (var post in json.posts) {
+				postHtml += "<div class='blog-post'>";
 				postHtml += "<!-- Display the Title as a link to the Post's permalink. -->"
 				+ '<h2 class="blog-title"><a href="' + json.posts[post].url + '" rel="bookmark" title="'+ json.posts[post].title +'" target="new">'+ json.posts[post].title +'</a></h2>'
 				+ "<!-- Display the date (November 16th, 2009 format) and a link to other posts by this posts author. -->"
 				+ '<small>' + json.posts[post].date + ' by <a href="http://zeunic.com/blog/?author=' + json.posts[post].author.id + '" title="Posts by '+ json.posts[post].author.name +'" rel="author">' + json.posts[post].author.name + '</a></small>'
 				+ "<!-- Display the Post's Content in a div box. -->"
 				+ '<div class="entry">'
-				+ json.posts[post].content
+				+ json.posts[post].excerpt
 				+ '</div>';
+				postHtml += "</div";
 			}
 			
 		} else {
-			postHtml = '<h2>Unable to fetch that request.</h2>'
+			postHtml = '<h2 class="blog-title">Unable to fetch that request.</h2>'
 				+ '<p>Please try reloading <a href="http://zeunic.com/blog">http://zeunic.com/blog</a> if you feel this message was displayed in error.</p>';
 		}
 	
