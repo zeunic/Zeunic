@@ -236,6 +236,7 @@ $(function(){
 	
 		if (json.post) {
 			// display one post
+			postHtml += '<a href="http://zeunic.com/blog"><- Blog Home</a>';
 			postHtml += "<!-- Display the Title as a link to the Post's permalink. -->"
 				+ '<h2 class="blog-title"><a href="' + json.post.url + '" rel="bookmark" title="'+ json.post.title +'" target="new">'+ json.post.title +'</a></h2>'
 				+ "<!-- Display the date (November 16th, 2009 format) and a link to other posts by this posts author. -->"
@@ -257,7 +258,7 @@ $(function(){
 				+ '<div class="entry">'
 				+ json.posts[post].excerpt
 				+ '</div>';
-				postHtml += "</div";
+				postHtml += "</div>";
 			}
 			
 		} else {
