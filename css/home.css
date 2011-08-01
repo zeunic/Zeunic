@@ -16,8 +16,9 @@
 }
 
 #home h2 {
-	font-size: 1.7em;
-	margin-bottom: 10px;
+	font: bold 1.4em "Droid Sans", sans-serif;
+	margin-bottom: 5px;
+	text-align: center;
 }
 
 #home article {
@@ -28,6 +29,14 @@
 	float: left;
 	width: 190px;
 	margin: 0 0 20px 10px;
+}
+
+#home #mobile {
+	margin-left: 0;
+}
+
+#home section img {
+	margin-left: 0;
 }
 
 #home article section p {
