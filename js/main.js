@@ -224,7 +224,6 @@ $(function(){
 			},
 			error: function(ajax) {
 				swapMainContent('<h2>There was an error loading the requested content from the server</h2>');
-				console.log(ajax);
 			}
 		});
 		
@@ -238,23 +237,27 @@ $(function(){
 		if (json.post) {
 			// display one post
 			postHtml = "<!-- Display the Title as a link to the Post's permalink. -->"
-				+ '<h2><a href="' + json.post.url + '" rel="bookmark" title="'+ json.post.title +'" target="new">'+ json.post.title +'</a></h2>'
+				+ '<h2 class="blog-title"><a href="' + json.post.url + '" rel="bookmark" title="'+ json.post.title +'" target="new">'+ json.post.title +'</a></h2>'
 				+ "<!-- Display the date (November 16th, 2009 format) and a link to other posts by this posts author. -->"
-				+ '<small>' + json.post.date + ' by <a href="http://zeunic.com/blog/?author=' + json.post.author.id + '" title="Posts by '+ json.post.author.name +'" rel="author">' + json.post.author.name + '</a></small>';
+				+ '<small>' + json.post.date + ' by <a href="http://zeunic.com/blog/?author=' + json.post.author.id + '" title="Posts by '+ json.post.author.name +'" rel="author">' + json.post.author.name + '</a></small>'
 				+ "<!-- Display the Post's Content in a div box. -->"
-			/*	
-			<div class="entry">
-			   <p>We had a lot of fun developing this site, we poured a lot of energy in to it over the last few weeks of development. As much time as we could spare outside client work and tying up loose ends for our flagship projects. (which start in August!) The last few weeks we logged no fewer than 8 afternoons that bled in to realizing it was 7am again and time for breakfast at Subway.</p>
-			<p>Version 1 of Zeunic is hosted on its own VPS that allows us to maintain version control with Git. (as well as automatic deploying to different environments with git hooks!) We also tackled the project in a framework new to us, and decided to take Yii out for a spin. We were quite impressed with the framework, and can’t wait to tap in to it’s real abilities on future projects. In addition to that we implemented both a Javascript Ajax version as well as a No-JS alternative.</p>
-			<p>We also took our own branding out for a test drive with its a new aesthetic campaign we’re calling Amp, and we updated all of our social media sites with the new look.</p>
-			<p>We’re looking forward to continuing to improve on our skills and methods, so that we can keep delivering the best we can for our clients and ourselves. Over the next few days we’ll be making small adjustments here and there; adding new features and content – a lot of which we’re very excited about.</p>
-			<p>Look forward to it, the momentum is building up and (despite the physical exhaustion) the energy levels are high!</p>
-
-			<!-- Display a comma separated list of the Post's Categories. -->
-			<p class="postmetadata">Posted in <a href="http://zeunic.com/blog/?cat=1" title="View all posts in Uncategorized" rel="category" target="new">Uncategorized</a></p>
-			</div> */
+				+ '<div class="entry">'
+				+ json.post.content
+				+ '</div>';
 		} else if (json.posts) {
 			// loop posts
+			postHtml = "<!-- Display WordPress Post List -->"
+			for (var post in json.posts) {
+				postHtml += "<!-- Display the Title as a link to the Post's permalink. -->"
+				+ '<h2 class="blog-title"><a href="' + json.posts[post].url + '" rel="bookmark" title="'+ json.posts[post].title +'" target="new">'+ json.posts[post].title +'</a></h2>'
+				+ "<!-- Display the date (November 16th, 2009 format) and a link to other posts by this posts author. -->"
+				+ '<small>' + json.posts[post].date + ' by <a href="http://zeunic.com/blog/?author=' + json.posts[post].author.id + '" title="Posts by '+ json.posts[post].author.name +'" rel="author">' + json.posts[post].author.name + '</a></small>'
+				+ "<!-- Display the Post's Content in a div box. -->"
+				+ '<div class="entry">'
+				+ json.posts[post].content
+				+ '</div>';
+			}
+			
 		} else {
 			postHtml = '<h2>Unable to fetch that request.</h2>'
 				+ '<p>Please try reloading <a href="http://zeunic.com/blog">http://zeunic.com/blog</a> if you feel this message was displayed in error.</p>';
