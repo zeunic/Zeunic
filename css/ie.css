@@ -28,6 +28,10 @@ q {
 	cursor: default;
 }
 
+#work-detail section:first-child {
+	border: none;
+}
+
 #about_us .minibio p {
 	width: 590px;
 }
