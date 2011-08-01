@@ -208,10 +208,10 @@ $(function(){
 	var getBlogContent = function(ajaxUrl){
 		// swapMainContent('<h1>Blog Post Incoming</h1>');
 		
-		if(ajaxUrl.indexOf('?') == -1) {
+		if(ajaxUrl.indexOf('?') != -1) {
 			ajaxUrl += "&json=1";
 		} else {
-			ajaxUrl += '?json=1';
+			ajaxUrl += '/?json=1';
 		}
 		
 		console.log(ajaxUrl);
