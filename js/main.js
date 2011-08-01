@@ -30,13 +30,41 @@ $(function(){
 		$('nav h1').text( def );
 	});
 	
-	var moveActiveLink = function(obj) {
-		var that = obj,
-		parent = that.parent(),
-		pos =  (parent.position().left - 38) + 'px 0px';
-		nav.find('.active').removeClass('active');
-		parent.addClass('active');
-		navContainer.animate({ 'background-position' : pos });
+	var moveActiveLink = function(section) {
+		if(typeof section === "object") {
+			var that = section,
+			parent = that.parent(),
+			pos =  (parent.position().left - 38) + 'px 0px';
+			nav.find('.active').removeClass('active');
+			parent.addClass('active');
+			$('#nav h1').text(that.attr('title'));
+			navContainer.animate({ 'background-position' : pos });
+			return;
+		} else if (typeof section === "string") {
+			var rc = section.substr(section.indexOf('zeunic.com')+17, section.length).split('/', 2);
+			if(rc[0] == 'site') {
+				switch (rc[1]) {
+					case 'portfolio' :
+						var section = $('#portfolio a');
+						break;
+					case 'about' :
+						var section = $('#about a');
+						break;
+					case 'blog' :
+						var section = $('#blog a');
+						break;
+					case 'contact' :
+						var section = $('#contact a');
+						break;
+					case 'login' :
+						var section = $('#login a');
+						break;
+				}
+				
+				moveActiveLink(section);
+			}
+			
+		}
 	}
 	
 	navLinks.bind('click', function(e){
@@ -89,15 +117,20 @@ $(function(){
 	
 	//Dynamic AJAX Navigation
 	$('a[href*="localhost"], a[href*="zeunic.com"], a[href^="/"]').live('click', function(e){
+		// used to show that links clicking are being fired twice
+		// not sure why but this could be a bug later
+		
 		var that = $(this);
+		
 		//Don't use AJAX for admin links
 		if(that.parents('#admin').length > 0){
 			return true;
 		}
 		
 		// Don't use default AJAX for blog links
-		if (that.attr('href').substring(0,26) == 'http://www.zeunic.com/blog') {
-			getBlogContent();
+		// if (that.attr('href').substring(0,26) == 'http://www.zeunic.com/blog') {
+		if (that.attr('href').indexOf('zeunic.com/blog') != -1) {
+			getBlogContent(that.attr('href'));
 			return false;
 		}
 		
@@ -127,6 +160,12 @@ $(function(){
 		  url: ajaxLink,
 		  cache: false,
 		  success: function(html){
+		  		// if its not a nav link, but local and the ajax was a success
+		  		// pass the href to the moveActiveLink function to determine which
+		  		// appropriate section to activate
+		  		if(that.parents('#nav').length == 0){
+		  			moveActiveLink(that.attr('href'));
+		  		}
 				swapMainContent(html);
 		  }
 		});
@@ -151,7 +190,7 @@ $(function(){
 				if(html.indexOf('<!-- portfolio -->') > -1){
 					var timeoutLength = 1000;
 				} else var timeoutLength = 500;
-				console.log(timeoutLength);
+				// console.log(timeoutLength);
 				setTimeout(function(){
 					main.animate({opacity:1,queue:false}, 500);
 					contentHeight = $('#content').css('height');
@@ -166,11 +205,68 @@ $(function(){
 			});
 	}
 	
-	
-	var getBlogContent = function(){
-		swapMainContent('<h1>Blog Post Incoming</h1>');
+	var getBlogContent = function(ajaxUrl){
+		// swapMainContent('<h1>Blog Post Incoming</h1>');
+		
+		if(ajaxUrl.indexOf('?') != -1) {
+			ajaxUrl += "&json=1";
+		} else {
+			ajaxUrl += '/?json=1';
+		}
+		
+		console.log(ajaxUrl);
+		
+		$.ajax({
+			url: ajaxUrl,
+			cache: false,
+			success: function(json){
+				swapMainContent( buildPostHtml(json) );
+			},
+			error: function(ajax) {
+				swapMainContent('<h2>There was an error loading the requested content from the server</h2>');
+			}
+		});
 		
 		return false;
+	}
+	
+	var buildPostHtml = function(json) {
+		
+		var postHtml = '';
+	
+		if (json.post) {
+			// display one post
+			postHtml += '<a href="http://zeunic.com/blog"><- Blog Home</a>';
+			postHtml += "<!-- Display the Title as a link to the Post's permalink. -->"
+				+ '<h2 class="blog-title"><a href="' + json.post.url + '" rel="bookmark" title="'+ json.post.title +'" target="new">'+ json.post.title +'</a></h2>'
+				+ "<!-- Display the date (November 16th, 2009 format) and a link to other posts by this posts author. -->"
+				+ '<small>' + json.post.date + ' by <a href="http://zeunic.com/blog/?author=' + json.post.author.id + '" title="Posts by '+ json.post.author.name +'" rel="author">' + json.post.author.name + '</a></small>'
+				+ "<!-- Display the Post's Content in a div box. -->"
+				+ '<div class="entry">'
+				+ json.post.content
+				+ '</div>';
+		} else if (json.posts) {
+			// loop posts
+			postHtml += "<!-- Display WordPress Post List -->";
+			for (var post in json.posts) {
+				postHtml += "<div class='blog-post'>";
+				postHtml += "<!-- Display the Title as a link to the Post's permalink. -->"
+				+ '<h2 class="blog-title"><a href="' + json.posts[post].url + '" rel="bookmark" title="'+ json.posts[post].title +'" target="new">'+ json.posts[post].title +'</a></h2>'
+				+ "<!-- Display the date (November 16th, 2009 format) and a link to other posts by this posts author. -->"
+				+ '<small>' + json.posts[post].date + ' by <a href="http://zeunic.com/blog/?author=' + json.posts[post].author.id + '" title="Posts by '+ json.posts[post].author.name +'" rel="author">' + json.posts[post].author.name + '</a></small>'
+				+ "<!-- Display the Post's Content in a div box. -->"
+				+ '<div class="entry">'
+				+ json.posts[post].excerpt
+				+ '</div>';
+				postHtml += "</div>";
+			}
+			
+		} else {
+			postHtml = '<h2 class="blog-title">Unable to fetch that request.</h2>'
+				+ '<p>Please try reloading <a href="http://zeunic.com/blog">http://zeunic.com/blog</a> if you feel this message was displayed in error.</p>';
+		}
+	
+		return postHtml;
 	}
 	
 });
