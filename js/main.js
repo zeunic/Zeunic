@@ -30,13 +30,41 @@ $(function(){
 		$('nav h1').text( def );
 	});
 	
-	var moveActiveLink = function(obj) {
-		var that = obj,
-		parent = that.parent(),
-		pos =  (parent.position().left - 38) + 'px 0px';
-		nav.find('.active').removeClass('active');
-		parent.addClass('active');
-		navContainer.animate({ 'background-position' : pos });
+	var moveActiveLink = function(section) {
+		if(typeof section === "object") {
+			var that = section,
+			parent = that.parent(),
+			pos =  (parent.position().left - 38) + 'px 0px';
+			nav.find('.active').removeClass('active');
+			parent.addClass('active');
+			$('#nav h1').text(that.attr('title'));
+			navContainer.animate({ 'background-position' : pos });
+			return;
+		} else if (typeof section === "string") {
+			var rc = section.substr(20, section.length).split('/', 2);			
+			if(rc[0] == 'site') {
+				switch (rc[1]) {
+					case 'portfolio' :
+						var section = $('#portfolio a');
+						break;
+					case 'about' :
+						var section = $('#about a');
+						break;
+					case 'blog' :
+						var section = $('#blog a');
+						break;
+					case 'contact' :
+						var section = $('#contact a');
+						break;
+					case 'login' :
+						var section = $('#login a');
+						break;
+				}
+				
+				moveActiveLink(section);
+			}
+			
+		}
 	}
 	
 	navLinks.bind('click', function(){
@@ -89,7 +117,11 @@ $(function(){
 	
 	//Dynamic AJAX Navigation
 	$('a[href*="localhost"], a[href*="zeunic.com"], a[href^="/"]').live('click', function(e){
+		// used to show that links clicking are being fired twice
+		// not sure why but this could be a bug later
+		
 		var that = $(this);
+		
 		//Don't use AJAX for admin links
 		if(that.parents('#admin').length > 0){
 			return true;
@@ -127,6 +159,12 @@ $(function(){
 		  url: ajaxLink,
 		  cache: false,
 		  success: function(html){
+		  		// if its not a nav link, but local and the ajax was a success
+		  		// pass the href to the moveActiveLink function to determine which
+		  		// appropriate section to activate
+		  		if(that.parents('#nav').length == 0){
+		  			moveActiveLink(that.attr('href'));
+		  		}
 				swapMainContent(html);
 		  }
 		});
@@ -151,7 +189,7 @@ $(function(){
 				if(html.indexOf('<!-- portfolio -->') > -1){
 					var timeoutLength = 1000;
 				} else var timeoutLength = 500;
-				console.log(timeoutLength);
+				// console.log(timeoutLength);
 				setTimeout(function(){
 					main.animate({opacity:1,queue:false}, 500);
 					contentHeight = $('#content').css('height');
