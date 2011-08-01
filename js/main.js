@@ -128,8 +128,9 @@ $(function(){
 		}
 		
 		// Don't use default AJAX for blog links
-		if (that.attr('href').substring(0,26) == 'http://www.zeunic.com/blog') {
-			getBlogContent();
+		// if (that.attr('href').substring(0,26) == 'http://www.zeunic.com/blog') {
+		if (that.attr('href').indexOf('zeunic.com/blog') != -1) {
+			getBlogContent(that.attr('href'));
 			return false;
 		}
 		
@@ -204,11 +205,26 @@ $(function(){
 			});
 	}
 	
-	
-	var getBlogContent = function(){
+	var getBlogContent = function(ajaxUrl){
 		swapMainContent('<h1>Blog Post Incoming</h1>');
 		
+		ajaxUrl += "&json=1";
+		console.log(ajaxUrl);
+		
+		$.ajax({
+			url: ajaxUrl,
+			cache: false,
+			sucess: function(json){
+				buildPostHtml(json);
+			}
+		});
+		
 		return false;
+	}
+	
+	var buildPostHtml = function(json) {
+		var postHtml = "hey";
+		return postHtml;
 	}
 	
 });
