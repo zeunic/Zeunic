@@ -13,7 +13,7 @@
 				$anchor = '<a href="'.$base.'/index.php/'.$section.'/" title="'.$value[1].'">'. $value[1].'</a>';
 				
 				if ($value[1] == 'our blog') {
-					$anchor = '<a href="http://www.zeunic.com/blog" title="our blog">' . $value[1] . '</a>';
+					$anchor = '<a href="http://zeunic.com/blog" title="our blog">' . $value[1] . '</a>';
 				}
 				
 				echo '<li id="'.$value[0].'"';

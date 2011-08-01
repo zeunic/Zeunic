@@ -208,17 +208,23 @@ $(function(){
 	var getBlogContent = function(ajaxUrl){
 		// swapMainContent('<h1>Blog Post Incoming</h1>');
 		
-		if(ajaxUrl.indexOf('?') != -1) {
+		if(ajaxUrl.indexOf('?') == -1) {
 			ajaxUrl += "&json=1";
 		} else {
 			ajaxUrl += '?json=1';
 		}
 		
+		console.log(ajaxUrl);
+		
 		$.ajax({
 			url: ajaxUrl,
 			cache: false,
-			sucess: function(json){
+			success: function(json){
 				swapMainContent( buildPostHtml(json) );
+			},
+			error: function(ajax) {
+				swapMainContent('<h2>There was an error loading the requested content from the server</h2>');
+				console.log(ajax);
 			}
 		});
 		
