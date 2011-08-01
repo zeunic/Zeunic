@@ -39,7 +39,7 @@ $(function(){
 		navContainer.animate({ 'background-position' : pos });
 	}
 	
-	navLinks.bind('click', function(){
+	navLinks.bind('click', function(e){
 		moveActiveLink($(this));
 	});
 	
