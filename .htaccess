@@ -1,0 +1,8 @@
+RewriteEngine On
+
+#  let the server know that we were reached via /xyz and not
+#  via the physical path prefix /abc/def
+RewriteBase   /
+
+#  now the rewriting rules
+RewriteRule   ^/portfolio$  /index.php/site/portfolio
