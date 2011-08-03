@@ -41,7 +41,9 @@ $(function(){
 			navContainer.animate({ 'background-position' : pos });
 			return;
 		} else if (typeof section === "string") {
-			var rc = section.substr(section.indexOf('zeunic.com')+17, section.length).split('/', 2);
+			
+			var rc = section.substr(section.indexOf('/index.php/site')+11, section.length).split('/', 2);
+			
 			if(rc[0] == 'site') {
 				switch (rc[1]) {
 					case 'portfolio' :
@@ -60,7 +62,6 @@ $(function(){
 						var section = $('#login a');
 						break;
 				}
-				
 				moveActiveLink(section);
 			}
 			
