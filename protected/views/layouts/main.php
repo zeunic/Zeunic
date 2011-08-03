@@ -77,12 +77,12 @@
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.backgroundPosition.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/main.js"></script>
  <!--<![endif]-->
-	<!--[if gt IE 8]><!-->
+ <!--[if gt IE 8]>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.tweet.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.stickyfloat.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.color.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.backgroundPosition.js"></script>
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/main.js"></script>
-	 <!--<![endif]-->
+<![endif]-->
 </body>
 </html>

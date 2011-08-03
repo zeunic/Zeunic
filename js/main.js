@@ -68,7 +68,7 @@ $(function(){
 		}
 	}
 	
-	navLinks.bind('click', function(){
+	navLinks.bind('click', function(e){
 		moveActiveLink($(this));
 	});
 	

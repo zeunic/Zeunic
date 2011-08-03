@@ -11,7 +11,6 @@ $this->endWidget();
 <!-- page specific CSS sheets loaded here until a compiler/compressor could be implemented -->
 <link rel="stylesheet" type="text/css" href="<?php echo Yii::app()->request->baseUrl; ?>/css/our-work.css" />
 
-<? if($ajax): ?>
 <ul class="button-row">
 		<li><a class="selected" href="#" data-value="all">All</a></li>
 		<li><a href="#" data-value="web">Web</a></li>
@@ -20,7 +19,6 @@ $this->endWidget();
 		<li><a href="#" data-value="search" style="display:none">Search</a></li>
 		<li id="lastbutton-row"><input type="text" name="search" <? echo (isset($tag)) ? 'value="'.$tag.'"' : '' ?> id="search" placeholder="Search..." /><a id="searchbutton" href="#">Search</a></li>
 </ul>
-<? endif; ?>
 
 <article id="portfolio-article">
 <section class="our-work">
@@ -42,7 +40,6 @@ $this->endWidget();
 	
 	<ul id="data" class="hidden">
 		<!-- this list is populated via the selected user choice, sorted, and then cloned into the display -->
-		<? if($ajax): ?>
 			<? foreach($projects as $key => $project): ?>
 				<li data-id="id-<? echo ($key + 1) ?>" data-type="<? echo $project->type ?>">
 					<a href="<?php echo Yii::app()->request->baseUrl; ?>/index.php/site/portfolio/<? echo $project->id ?>">
@@ -50,7 +47,6 @@ $this->endWidget();
 					</a>
 				</li>
 			<? endforeach; ?>
-		<? endif; ?>
 	</ul>
 </section>
 </article>
@@ -74,7 +70,7 @@ $this->endWidget();
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/our-work.js"></script>
  <!--<![endif]-->
-	<!--[if gt IE 8]><!-->
+	<!--[if gt IE 8]>
 <script type="text/javascript">
 	tags = <?php echo json_encode($tags);?>;
 	<? if(isset($tag)): ?>
@@ -89,4 +85,4 @@ $this->endWidget();
 	<script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.quicksand.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/jquery.autocomplete.js"></script>
 <script type="text/javascript" src="<?php echo Yii::app()->request->baseUrl; ?>/js/our-work.js"></script>
-	 <!--<![endif]-->
+	 <![endif]-->
